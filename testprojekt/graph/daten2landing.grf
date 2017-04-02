@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Graph author="Dan" created="Mon Mar 27 15:19:15 CEST 2017" guiVersion="4.5.0" id="1490620897375" licenseCode="RegCode" name="new-graph" showComponentDetails="true">
+<Global>
+<Metadata id="Metadata2">
+<Record fieldDelimiter=";" label="BU.csv" name="BU_csv" previewAttachment="${DATAIN_DIR}/BU.csv" previewAttachmentCharset="ISO-8859-1" quoteChar="both" quotedStrings="false" recordDelimiter="\r\n" skipSourceRows="0" type="delimited">
+<Field name="VNr" type="string"/>
+<Field name="KuNr" type="string"/>
+<Field name="Wertbetrag" type="string"/>
+<Field name="RateMonat" type="string"/>
+<Field name="RateQuartal" type="string"/>
+<Field name="RateHalbjahr" type="string"/>
+<Field name="RateJahr" type="string"/>
+<Field name="Field8" type="string"/>
+<Field name="Field9" type="string"/>
+<Field eofAsDelimiter="true" name="Field10" type="string"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata3" previewAttachment="./data-in/BU.csv" previewAttachmentCharset="ISO-8859-1">
+<Record fieldDelimiter=";" label="BU.csv" name="BU_zeitstempel" previewAttachment="./data-in/BU.csv" previewAttachmentCharset="ISO-8859-1" recordDelimiter="\r\n" type="delimited">
+<Field name="VNr" type="string"/>
+<Field eofAsDelimiter="true" name="Zeitstempel" trim="true" type="date"/>
+<Field name="KuNr" type="string"/>
+<Field name="Wertbetrag" type="string"/>
+<Field name="RateMonat" type="string"/>
+<Field name="RateQuartal" type="string"/>
+<Field name="RateHalbjahr" type="string"/>
+<Field name="RateJahr" type="string"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata4">
+<Record fieldDelimiter=";" label="KFZ.csv" name="KFZ_csv" previewAttachment="${DATAIN_DIR}/KFZ.csv" previewAttachmentCharset="ISO-8859-1" quoteChar="both" quotedStrings="false" recordDelimiter="\r\n" skipSourceRows="1" type="delimited">
+<Field label="VNr" name="VNr" type="string"/>
+<Field label="KuNr" name="KuNr" type="string"/>
+<Field label="KFZ-KZ" name="KFZ_KZ" type="string"/>
+<Field label="Art" name="Art" type="string"/>
+<Field label="Neuwert" name="Neuwert" type="string"/>
+<Field label="Erstzulassung" name="Erstzulassung" type="string"/>
+<Field label="Vbeginn" name="Vbeginn" type="string"/>
+<Field label="HP/Monat" name="HP_Monat" type="string"/>
+<Field label="TK/Monat" name="TK_Monat" type="string"/>
+<Field label="VK/Monat" name="VK_Monat" type="string"/>
+<Field label="HP-Satz" name="HP_Satz" type="string"/>
+<Field label="TK-Satz" name="TK_Satz" type="string"/>
+<Field label="VK-Satz" name="VK_Satz" type="string"/>
+<Field label="SB TK" name="SB_TK" type="string"/>
+<Field label="SBVK" name="SBVK" type="string"/>
+<Field label="Schadensumme Sach" name="Schadensumme_Sach" type="string"/>
+<Field eofAsDelimiter="true" label="Schadensumme Person" name="Schadensumme_Person" type="string"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata5" previewAttachment="./data-in/KFZ.csv" previewAttachmentCharset="ISO-8859-1">
+<Record fieldDelimiter=";" label="KFZ.csv" name="kfz_zeitstempel" previewAttachment="./data-in/KFZ.csv" previewAttachmentCharset="ISO-8859-1" recordDelimiter="\r\n" skipSourceRows="1" type="delimited">
+<Field label="VNr" name="VNr" type="string"/>
+<Field name="Zeitstempel" type="date"/>
+<Field label="KuNr" name="KuNr" type="string"/>
+<Field label="KFZ-KZ" name="KFZ_KZ" type="string"/>
+<Field label="Art" name="Art" type="string"/>
+<Field label="Neuwert" name="Neuwert" type="string"/>
+<Field label="Erstzulassung" name="Erstzulassung" type="string"/>
+<Field label="Vbeginn" name="Vbeginn" type="string"/>
+<Field label="HP/Monat" name="HP_Monat" type="string"/>
+<Field label="TK/Monat" name="TK_Monat" type="string"/>
+<Field label="VK/Monat" name="VK_Monat" type="string"/>
+<Field label="HP-Satz" name="HP_Satz" type="string"/>
+<Field label="TK-Satz" name="TK_Satz" type="string"/>
+<Field label="VK-Satz" name="VK_Satz" type="string"/>
+<Field label="SB TK" name="SB_TK" type="string"/>
+<Field label="SBVK" name="SBVK" type="string"/>
+<Field label="Schadensumme Sach" name="Schadensumme_Sach" type="string"/>
+<Field eofAsDelimiter="true" label="Schadensumme Person" name="Schadensumme_Person" type="string"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata6">
+<Record fieldDelimiter=";" label="KV.csv" name="KV_csv" previewAttachment="${DATAIN_DIR}/KV.csv" previewAttachmentCharset="ISO-8859-1" quoteChar="both" quotedStrings="false" recordDelimiter="\r\n" skipSourceRows="0" type="delimited">
+<Field name="VNr" type="string"/>
+<Field name="KuNr" type="string"/>
+<Field name="Art" type="string"/>
+<Field name="VBeginn" type="string"/>
+<Field name="RateMonat" type="string"/>
+<Field name="SB" type="string"/>
+<Field name="R1" type="string"/>
+<Field name="R2" type="string"/>
+<Field eofAsDelimiter="true" name="R3" type="string"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata7" previewAttachment="./data-in/KV.csv" previewAttachmentCharset="ISO-8859-1">
+<Record fieldDelimiter=";" label="KV.csv" name="kv_zeitstempel" previewAttachment="./data-in/KV.csv" previewAttachmentCharset="ISO-8859-1" recordDelimiter="\r\n" type="delimited">
+<Field name="VNr" type="string"/>
+<Field name="Zeitstempel" type="date"/>
+<Field name="KuNr" type="string"/>
+<Field name="Art" type="string"/>
+<Field name="VBeginn" type="string"/>
+<Field name="RateMonat" type="string"/>
+<Field name="SB" type="string"/>
+<Field name="R1" type="string"/>
+<Field name="R2" type="string"/>
+<Field eofAsDelimiter="true" name="R3" type="string"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata8">
+<Record fieldDelimiter=";" label="LV.csv" name="LV_csv" previewAttachment="${DATAIN_DIR}/LV.csv" previewAttachmentCharset="ISO-8859-1" quoteChar="both" quotedStrings="false" recordDelimiter="\r\n" skipSourceRows="1" type="delimited">
+<Field label="VNr" name="VNr" type="string"/>
+<Field label="KuNr" name="KuNr" type="string"/>
+<Field label="Wertfaktor" name="Wertfaktor" type="string"/>
+<Field label="Vbeginn" name="Vbeginn" type="string"/>
+<Field label="Laufzeit" name="Laufzeit" type="string"/>
+<Field label="Rate/Monat" name="Rate_Monat" type="string"/>
+<Field label="Rate/Quartal" name="Rate_Quartal" type="string"/>
+<Field label="Rate/Halbjahr" name="Rate_Halbjahr" type="string"/>
+<Field label="Rate/Jahr" name="Rate_Jahr" type="string"/>
+<Field label="Begünstigter" name="Begunstigter" type="string"/>
+<Field eofAsDelimiter="true" label="BU" name="BU" type="string"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata9" previewAttachment="./data-in/LV.csv" previewAttachmentCharset="ISO-8859-1">
+<Record fieldDelimiter=";" label="LV.csv" name="lv_zeitstempel" previewAttachment="./data-in/LV.csv" previewAttachmentCharset="ISO-8859-1" recordDelimiter="\r\n" skipSourceRows="1" type="delimited">
+<Field label="VNr" name="VNr" type="string"/>
+<Field name="Zeitstempel" type="date"/>
+<Field label="KuNr" name="KuNr" type="string"/>
+<Field label="Wertfaktor" name="Wertfaktor" type="string"/>
+<Field label="Vbeginn" name="Vbeginn" type="string"/>
+<Field label="Laufzeit" name="Laufzeit" type="string"/>
+<Field label="Rate/Monat" name="Rate_Monat" type="string"/>
+<Field label="Rate/Quartal" name="Rate_Quartal" type="string"/>
+<Field label="Rate/Halbjahr" name="Rate_Halbjahr" type="string"/>
+<Field label="Rate/Jahr" name="Rate_Jahr" type="string"/>
+<Field label="Begünstigter" name="Begunstigter" type="string"/>
+<Field eofAsDelimiter="true" label="BU" name="BU" type="string"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata10">
+<Record fieldDelimiter=";" label="Sach.csv" name="Sach_csv" previewAttachment="${DATAIN_DIR}/Sach.csv" previewAttachmentCharset="ISO-8859-1" quoteChar="both" quotedStrings="false" recordDelimiter="\r\n" skipSourceRows="1" type="delimited">
+<Field label="VNr" name="VNr" type="string"/>
+<Field label="KuNr" name="KuNr" type="string"/>
+<Field label="Art" name="Art" type="string"/>
+<Field label="V-Wert" name="V_Wert" type="string"/>
+<Field label="Vbeginn" name="Vbeginn" type="string"/>
+<Field label="Laufzeit" name="Laufzeit" type="string"/>
+<Field label="K-Frist" name="K_Frist" type="string"/>
+<Field label="Rate/Monat" name="Rate_Monat" type="string"/>
+<Field label="Rate/Quartal" name="Rate_Quartal" type="string"/>
+<Field label="Rate/Halbjahr" name="Rate_Halbjahr" type="string"/>
+<Field label="Rate/Jahr" name="Rate_Jahr" type="string"/>
+<Field label="" name="_" type="string"/>
+<Field label="" name="__1" type="string"/>
+<Field label="" name="__2" type="string"/>
+<Field label="" name="__3" type="string"/>
+<Field eofAsDelimiter="true" label="" name="__4" type="string"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata11" previewAttachment="./data-in/Sach.csv" previewAttachmentCharset="ISO-8859-1">
+<Record fieldDelimiter=";" label="Sach.csv" name="sach_zeitstempel" previewAttachment="./data-in/Sach.csv" previewAttachmentCharset="ISO-8859-1" recordDelimiter="\r\n" skipSourceRows="1" type="delimited">
+<Field label="VNr" name="VNr" type="string"/>
+<Field name="Zeitstempel" type="date"/>
+<Field label="KuNr" name="KuNr" type="string"/>
+<Field label="Art" name="Art" type="string"/>
+<Field label="V-Wert" name="V_Wert" type="string"/>
+<Field label="Vbeginn" name="Vbeginn" type="string"/>
+<Field label="Laufzeit" name="Laufzeit" type="string"/>
+<Field label="K-Frist" name="K_Frist" type="string"/>
+<Field label="Rate/Monat" name="Rate_Monat" type="string"/>
+<Field label="Rate/Quartal" name="Rate_Quartal" type="string"/>
+<Field label="Rate/Halbjahr" name="Rate_Halbjahr" type="string"/>
+<Field label="Rate/Jahr" name="Rate_Jahr" type="string"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata0">
+<Record fieldDelimiter=";" label="Stammdaten A.txt" name="Stammdaten_A_txt" previewAttachment="${DATAIN_DIR}/Stammdaten A.txt" previewAttachmentCharset="UTF-8" quoteChar="both" quotedStrings="false" recordDelimiter="\r\n" skipSourceRows="1" type="delimited">
+<Field label="KuNr" name="KuNr" type="string"/>
+<Field label="Name" name="Name" type="string"/>
+<Field label="Vorname 1" name="Vorname_1" type="string"/>
+<Field label="Vorname 2" name="Vorname_2" type="string"/>
+<Field label="Geb.Dat." name="Geb_Dat" type="string"/>
+<Field label="Geb.Ort" name="Geb_Ort" type="string"/>
+<Field label="Strasse" name="Strasse" type="string"/>
+<Field label="HNr" name="HNr" type="string"/>
+<Field label="PLZ" name="PLZ" type="string"/>
+<Field label="Ort" name="Ort" type="string"/>
+<Field label="Tel priv" name="Tel_priv" type="string"/>
+<Field label="Tel Arbeit" name="Tel_Arbeit" type="string"/>
+<Field label="Mobil" name="Mobil" type="string"/>
+<Field label="Fax" name="Fax" type="string"/>
+<Field label="eMail 1" name="eMail_1" type="string"/>
+<Field label="eMail 2" name="eMail_2" type="string"/>
+<Field label="Prio Kontakt" name="Prio_Kontakt" type="string"/>
+<Field label="FamStand" name="FamStand" type="string"/>
+<Field label="Anz Kinder" name="Anz_Kinder" type="string"/>
+<Field label="Anz Kinder MV" name="Anz_Kinder_MV" type="string"/>
+<Field eofAsDelimiter="true" label="Ehepart MV" name="Ehepart_MV" type="string"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata1" previewAttachment="./data-in/Stammdaten A.txt" previewAttachmentCharset="UTF-8">
+<Record fieldDelimiter=";" label="Stammdaten A.txt" name="stammdaten_zeitstempel" previewAttachment="./data-in/Stammdaten A.txt" previewAttachmentCharset="UTF-8" recordDelimiter="\r\n" skipSourceRows="1" type="delimited">
+<Field label="KuNr" name="KuNr" type="string"/>
+<Field label="Name" name="Name" type="string"/>
+<Field label="Vorname 1" name="Vorname_1" type="string"/>
+<Field label="Vorname 2" name="Vorname_2" type="string"/>
+<Field label="Geb.Dat." name="Geb_Dat" type="string"/>
+<Field label="Geb.Ort" name="Geb_Ort" type="string"/>
+<Field label="Strasse" name="Strasse" type="string"/>
+<Field label="HNr" name="HNr" type="string"/>
+<Field label="PLZ" name="PLZ" type="string"/>
+<Field label="Ort" name="Ort" type="string"/>
+<Field label="Tel priv" name="Tel_priv" type="string"/>
+<Field label="Tel Arbeit" name="Tel_Arbeit" type="string"/>
+<Field label="Mobil" name="Mobil" type="string"/>
+<Field label="Fax" name="Fax" type="string"/>
+<Field label="eMail 1" name="eMail_1" type="string"/>
+<Field label="eMail 2" name="eMail_2" type="string"/>
+<Field label="Prio Kontakt" name="Prio_Kontakt" type="string"/>
+<Field label="FamStand" name="FamStand" type="string"/>
+<Field label="Anz Kinder" name="Anz_Kinder" type="string"/>
+<Field label="Anz Kinder MV" name="Anz_Kinder_MV" type="string"/>
+<Field eofAsDelimiter="true" label="Ehepart MV" name="Ehepart_MV" type="string"/>
+<Field name="Zeitstempel" type="date"/>
+</Record>
+</Metadata>
+<Connection database="MYSQL" dbURL="jdbc:mysql://localhost:3306/db2?user=root" id="JDBC0" jdbcSpecific="MYSQL" name="NewConnection" password="toor" type="JDBC" user="root"/>
+<GraphParameters>
+<GraphParameterFile fileURL="workspace.prm"/>
+</GraphParameters>
+<Dictionary/>
+</Global>
+<Phase number="0">
+<Node dbConnection="JDBC0" dbTable="stammdaten" guiName="DBOutputTable" guiX="587" guiY="264" id="DBOUTPUT_TABLE" maxErrors="100" type="DB_OUTPUT_TABLE"/>
+<Node dbConnection="JDBC0" dbTable="bu" guiName="DBOutputTable" guiX="587" guiY="134" id="DBOUTPUT_TABLE1" maxErrors="100" type="DB_OUTPUT_TABLE"/>
+<Node dbConnection="JDBC0" dbTable="kfz" guiName="DBOutputTable" guiX="596" guiY="19" id="DBOUTPUT_TABLE2" type="DB_OUTPUT_TABLE"/>
+<Node dbConnection="JDBC0" dbTable="kv" guiName="DBOutputTable" guiX="596" guiY="423" id="DBOUTPUT_TABLE3" type="DB_OUTPUT_TABLE"/>
+<Node dbConnection="JDBC0" dbTable="lv" guiName="DBOutputTable" guiX="1383" guiY="438" id="DBOUTPUT_TABLE4" type="DB_OUTPUT_TABLE"/>
+<Node dbConnection="JDBC0" dbTable="sach" guiName="DBOutputTable" guiX="1383" guiY="312" id="DBOUTPUT_TABLE5" type="DB_OUTPUT_TABLE"/>
+<Node guiName="Reformat" guiX="401" guiY="264" id="REFORMAT" type="REFORMAT">
+<attr name="transform"><![CDATA[//#CTL2
+date now = today();
+
+// Transforms input record into output record.
+function integer transform() {
+	$out.0.KuNr = $in.0.KuNr;
+	$out.0.Name = $in.0.Name;
+	$out.0.Vorname_1 = $in.0.Vorname_1;
+	$out.0.Vorname_2 = $in.0.Vorname_2;
+	$out.0.Geb_Dat = $in.0.Geb_Dat;
+	$out.0.Geb_Ort = $in.0.Geb_Ort;
+	$out.0.Strasse = $in.0.Strasse;
+	$out.0.HNr = $in.0.HNr;
+	$out.0.PLZ = $in.0.PLZ;
+	$out.0.Ort = $in.0.Ort;
+	$out.0.Tel_priv = $in.0.Tel_priv;
+	$out.0.Tel_Arbeit = $in.0.Tel_Arbeit;
+	$out.0.Mobil = $in.0.Mobil;
+	$out.0.Fax = $in.0.Fax;
+	$out.0.eMail_1 = $in.0.eMail_1;
+	$out.0.eMail_2 = $in.0.eMail_2;
+	$out.0.Prio_Kontakt = $in.0.Prio_Kontakt;
+	$out.0.FamStand = $in.0.FamStand;
+	$out.0.Anz_Kinder = $in.0.Anz_Kinder;
+	$out.0.Anz_Kinder_MV = $in.0.Anz_Kinder_MV;
+	$out.0.Ehepart_MV = $in.0.Ehepart_MV;
+	$out.0.Zeitstempel = now;
+
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+</Node>
+<Node guiName="Reformat" guiX="406" guiY="134" id="REFORMAT1" type="REFORMAT">
+<attr name="transform"><![CDATA[//#CTL2
+date now = today();
+
+// Transforms input record into output record.
+function integer transform() {
+	$out.0.VNr = $in.0.VNr;
+	$out.0.KuNr = $in.0.KuNr;
+	$out.0.Wertbetrag = $in.0.Wertbetrag;
+	$out.0.RateMonat = $in.0.RateMonat;
+	$out.0.RateQuartal = $in.0.RateQuartal;
+	$out.0.RateHalbjahr = $in.0.RateHalbjahr;
+	$out.0.RateJahr = $in.0.RateJahr;
+	$out.0.Zeitstempel = now;
+
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+</Node>
+<Node guiName="Reformat" guiX="406" guiY="19" id="REFORMAT2" type="REFORMAT">
+<attr name="transform"><![CDATA[//#CTL2
+date now = today();
+
+// Transforms input record into output record.
+function integer transform() {
+	$out.0.VNr = $in.0.VNr;
+	$out.0.KuNr = $in.0.KuNr;
+	$out.0.KFZ_KZ = $in.0.KFZ_KZ;
+	$out.0.Art = $in.0.Art;
+	$out.0.Neuwert = $in.0.Neuwert;
+	$out.0.Erstzulassung = $in.0.Erstzulassung;
+	$out.0.Vbeginn = $in.0.Vbeginn;
+	$out.0.HP_Monat = $in.0.HP_Monat;
+	$out.0.TK_Monat = $in.0.TK_Monat;
+	$out.0.VK_Monat = $in.0.VK_Monat;
+	$out.0.HP_Satz = $in.0.HP_Satz;
+	$out.0.TK_Satz = $in.0.TK_Satz;
+	$out.0.VK_Satz = $in.0.VK_Satz;
+	$out.0.SB_TK = $in.0.SB_TK;
+	$out.0.SBVK = $in.0.SBVK;
+	$out.0.Schadensumme_Sach = $in.0.Schadensumme_Sach;
+	$out.0.Schadensumme_Person = $in.0.Schadensumme_Person;
+	$out.0.Zeitstempel = now;
+
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+</Node>
+<Node guiName="Reformat" guiX="406" guiY="423" id="REFORMAT3" type="REFORMAT">
+<attr name="transform"><![CDATA[//#CTL2
+date now = today();
+
+// Transforms input record into output record.
+function integer transform() {
+	$out.0.VNr = $in.0.VNr;
+	$out.0.KuNr = $in.0.KuNr;
+	$out.0.Art = $in.0.Art;
+	$out.0.VBeginn = $in.0.VBeginn;
+	$out.0.RateMonat = $in.0.RateMonat;
+	$out.0.SB = $in.0.SB;
+	$out.0.R1 = $in.0.R1;
+	$out.0.R2 = $in.0.R2;
+	$out.0.R3 = $in.0.R3;
+	$out.0.Zeitstempel = now;
+
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+</Node>
+<Node guiName="Reformat" guiX="1169" guiY="438" id="REFORMAT4" type="REFORMAT">
+<attr name="transform"><![CDATA[//#CTL2
+date now = today();
+
+// Transforms input record into output record.
+function integer transform() {
+	$out.0.VNr = $in.0.VNr;
+	$out.0.KuNr = $in.0.KuNr;
+	$out.0.Wertfaktor = $in.0.Wertfaktor;
+	$out.0.Vbeginn = $in.0.Vbeginn;
+	$out.0.Laufzeit = $in.0.Laufzeit;
+	$out.0.Rate_Monat = $in.0.Rate_Monat;
+	$out.0.Rate_Quartal = $in.0.Rate_Quartal;
+	$out.0.Rate_Halbjahr = $in.0.Rate_Halbjahr;
+	$out.0.Rate_Jahr = $in.0.Rate_Jahr;
+	$out.0.Begunstigter = $in.0.Begunstigter;
+	$out.0.BU = $in.0.BU;
+	$out.0.Zeitstempel = now;
+
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+</Node>
+<Node guiName="Reformat" guiX="1154" guiY="312" id="REFORMAT5" type="REFORMAT">
+<attr name="transform"><![CDATA[//#CTL2
+date now = today();
+
+// Transforms input record into output record.
+function integer transform() {
+	$out.0.VNr = $in.0.VNr;
+	$out.0.KuNr = $in.0.KuNr;
+	$out.0.Art = $in.0.Art;
+	$out.0.V_Wert = $in.0.V_Wert;
+	$out.0.Vbeginn = $in.0.Vbeginn;
+	$out.0.Laufzeit = $in.0.Laufzeit;
+	$out.0.K_Frist = $in.0.K_Frist;
+	$out.0.Rate_Monat = $in.0.Rate_Monat;
+	$out.0.Rate_Quartal = $in.0.Rate_Quartal;
+	$out.0.Zeitstempel = now;
+	$out.0.Rate_Halbjahr = $in.0.Rate_Halbjahr;
+	$out.0.Rate_Jahr = $in.0.Rate_Jahr;
+
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+</Node>
+<Node charset="ISO-8859-1" dataPolicy="strict" fileURL="${DATAIN_DIR}/Stammdaten A.txt" guiName="UniversalDataReader" guiX="164" guiY="264" id="UNIVERSAL_DATA_READER" type="DATA_READER"/>
+<Node charset="ISO-8859-1" dataPolicy="strict" fileURL="${DATAIN_DIR}/BU.csv" guiName="UniversalDataReader" guiX="164" guiY="134" id="UNIVERSAL_DATA_READER1" skipRows="1" type="DATA_READER"/>
+<Node charset="ISO-8859-1" fileURL="${DATAIN_DIR}/KFZ.csv" guiName="UniversalDataReader" guiX="164" guiY="19" id="UNIVERSAL_DATA_READER2" skipRows="0" type="DATA_READER"/>
+<Node charset="ISO-8859-1" fileURL="${DATAIN_DIR}/KV.csv" guiName="UniversalDataReader" guiX="164" guiY="423" id="UNIVERSAL_DATA_READER3" skipRows="1" type="DATA_READER"/>
+<Node charset="ISO-8859-1" fileURL="${DATAIN_DIR}/LV.csv" guiName="UniversalDataReader" guiX="886" guiY="438" id="UNIVERSAL_DATA_READER4" skipRows="0" type="DATA_READER"/>
+<Node charset="ISO-8859-1" fileURL="${DATAIN_DIR}/Sach.csv" guiName="UniversalDataReader" guiX="886" guiY="312" id="UNIVERSAL_DATA_READER5" skipRows="0" type="DATA_READER"/>
+<Edge debugMode="false" fromNode="REFORMAT:0" guiBendpoints="" guiRouter="Manhattan" id="Edge4" inPort="Port 0 (in)" metadata="Metadata1" outPort="Port 0 (out)" toNode="DBOUTPUT_TABLE:0"/>
+<Edge debugMode="false" fromNode="REFORMAT1:0" guiBendpoints="" guiRouter="Manhattan" id="Edge5" inPort="Port 0 (in)" metadata="Metadata3" outPort="Port 0 (out)" toNode="DBOUTPUT_TABLE1:0"/>
+<Edge debugMode="false" fromNode="REFORMAT2:0" guiBendpoints="" guiRouter="Manhattan" id="Edge7" inPort="Port 0 (in)" metadata="Metadata5" outPort="Port 0 (out)" toNode="DBOUTPUT_TABLE2:0"/>
+<Edge debugMode="false" fromNode="REFORMAT3:0" guiBendpoints="" guiRouter="Manhattan" id="Edge9" inPort="Port 0 (in)" metadata="Metadata7" outPort="Port 0 (out)" toNode="DBOUTPUT_TABLE3:0"/>
+<Edge debugMode="false" fromNode="REFORMAT4:0" guiBendpoints="" guiRouter="Manhattan" id="Edge11" inPort="Port 0 (in)" metadata="Metadata9" outPort="Port 0 (out)" toNode="DBOUTPUT_TABLE4:0"/>
+<Edge debugMode="false" fromNode="REFORMAT5:0" guiBendpoints="" guiRouter="Manhattan" id="Edge13" inPort="Port 0 (in)" metadata="Metadata11" outPort="Port 0 (out)" toNode="DBOUTPUT_TABLE5:0"/>
+<Edge fromNode="UNIVERSAL_DATA_READER:0" guiBendpoints="" guiRouter="Manhattan" id="Edge1" inPort="Port 0 (in)" metadata="Metadata0" outPort="Port 0 (output)" toNode="REFORMAT:0"/>
+<Edge fromNode="UNIVERSAL_DATA_READER1:0" guiBendpoints="" guiRouter="Manhattan" id="Edge0" inPort="Port 0 (in)" metadata="Metadata2" outPort="Port 0 (output)" toNode="REFORMAT1:0"/>
+<Edge fromNode="UNIVERSAL_DATA_READER2:0" guiBendpoints="" guiRouter="Manhattan" id="Edge6" inPort="Port 0 (in)" metadata="Metadata4" outPort="Port 0 (output)" toNode="REFORMAT2:0"/>
+<Edge fromNode="UNIVERSAL_DATA_READER3:0" guiBendpoints="" guiRouter="Manhattan" id="Edge8" inPort="Port 0 (in)" metadata="Metadata6" outPort="Port 0 (output)" toNode="REFORMAT3:0"/>
+<Edge fromNode="UNIVERSAL_DATA_READER4:0" guiBendpoints="" guiRouter="Manhattan" id="Edge10" inPort="Port 0 (in)" metadata="Metadata8" outPort="Port 0 (output)" toNode="REFORMAT4:0"/>
+<Edge fromNode="UNIVERSAL_DATA_READER5:0" guiBendpoints="" guiRouter="Manhattan" id="Edge12" inPort="Port 0 (in)" metadata="Metadata10" outPort="Port 0 (output)" toNode="REFORMAT5:0"/>
+</Phase>
+</Graph>

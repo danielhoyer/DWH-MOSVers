@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Graph author="Dan" created="Sun Apr 02 13:37:27 CEST 2017" guiVersion="4.5.0" id="1491144784385" licenseCode="RegCode" name="landing2integration2" showComponentDetails="true">
+<Global>
+<Metadata id="Metadata9">
+<Record fieldDelimiter=";" name="sach_integration" recordDelimiter="\n" type="delimited">
+<Field name="VNr" size="255" type="string"/>
+<Field format="yyyy-MM-dd HH:mm:ss" name="Zeitstempel" size="19" trim="true" type="date"/>
+<Field name="KuNr" size="255" type="string"/>
+<Field name="Art" size="255" type="string"/>
+<Field length="8" name="VWert" size="255" type="decimal"/>
+<Field name="Vbeginn" size="255" type="date"/>
+<Field name="Laufzeit" size="255" type="integer"/>
+<Field name="KFrist" size="255" type="integer"/>
+<Field length="5" name="RateMonat" size="255" type="decimal"/>
+<Field length="5" name="RateQuartal" size="255" type="decimal"/>
+<Field length="6" name="RateHalbjahr" size="255" type="decimal"/>
+<Field length="6" name="RateJahr" size="255" type="decimal"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata8">
+<Record fieldDelimiter=";" name="sach_landing" recordDelimiter="\n" type="delimited">
+<Field name="VNr" size="255" type="string"/>
+<Field format="yyyy-MM-dd HH:mm:ss" name="Zeitstempel" size="19" type="date"/>
+<Field name="KuNr" size="255" type="string"/>
+<Field name="Art" size="255" type="string"/>
+<Field name="VWert" size="255" type="string"/>
+<Field name="Vbeginn" size="255" type="string"/>
+<Field name="Laufzeit" size="255" type="string"/>
+<Field name="KFrist" size="255" type="string"/>
+<Field name="RateMonat" size="255" type="string"/>
+<Field name="RateQuartal" size="255" type="string"/>
+<Field name="RateHalbjahr" size="255" type="string"/>
+<Field name="RateJahr" size="255" type="string"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata11">
+<Record fieldDelimiter=";" name="stammdaten_integration" recordDelimiter="\n" type="delimited">
+<Field name="KuNr" size="30" type="string"/>
+<Field name="Name" size="255" type="string"/>
+<Field name="Vorname_1" size="30" type="string"/>
+<Field name="Vorname_2" size="30" type="string"/>
+<Field name="GebDat" size="30" type="date"/>
+<Field name="GebOrt" size="255" type="string"/>
+<Field name="Strasse" size="255" type="string"/>
+<Field name="HNr" size="30" type="string"/>
+<Field name="PLZ" size="30" type="integer"/>
+<Field name="Ort" size="255" type="string"/>
+<Field name="Tel_priv" size="30" type="string"/>
+<Field name="Tel_Arbeit" size="30" type="string"/>
+<Field name="Mobil" size="30" type="string"/>
+<Field name="Fax" size="30" type="string"/>
+<Field name="eMail_1" size="255" type="string"/>
+<Field name="eMail_2" size="255" type="string"/>
+<Field name="Prio_Kontakt" size="30" type="string"/>
+<Field name="FamStand" size="30" type="string"/>
+<Field name="Anz_Kinder" size="30" type="integer"/>
+<Field name="Anz_Kinder_MV" size="30" type="integer"/>
+<Field name="Ehepart_MV" size="30" type="string"/>
+<Field format="yyyy-MM-dd HH:mm:ss" name="Zeitstempel" size="19" trim="true" type="date"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata10">
+<Record fieldDelimiter=";" name="stammdaten_landing" recordDelimiter="\n" type="delimited">
+<Field name="KuNr" size="30" type="string"/>
+<Field name="Name" size="255" type="string"/>
+<Field name="Vorname_1" size="30" type="string"/>
+<Field name="Vorname_2" size="30" type="string"/>
+<Field name="GebDat" size="30" type="string"/>
+<Field name="GebOrt" size="255" type="string"/>
+<Field name="Strasse" size="255" type="string"/>
+<Field name="HNr" size="30" type="string"/>
+<Field name="PLZ" size="30" type="string"/>
+<Field name="Ort" size="255" type="string"/>
+<Field name="Tel_priv" size="30" type="string"/>
+<Field name="Tel_Arbeit" size="30" type="string"/>
+<Field name="Mobil" size="30" type="string"/>
+<Field name="Fax" size="30" type="string"/>
+<Field name="eMail_1" size="255" type="string"/>
+<Field name="eMail_2" size="255" type="string"/>
+<Field name="Prio_Kontakt" size="30" type="string"/>
+<Field name="FamStand" size="30" type="string"/>
+<Field name="Anz_Kinder" size="30" type="string"/>
+<Field name="Anz_Kinder_MV" size="30" type="string"/>
+<Field name="Ehepart_MV" size="30" type="string"/>
+<Field format="yyyy-MM-dd HH:mm:ss" name="Zeitstempel" size="19" type="date"/>
+</Record>
+</Metadata>
+<Connection database="MYSQL" dbURL="jdbc:mysql://localhost:3306/db2_iz?user=root" id="JDBC1" jdbcSpecific="MYSQL" name="mysql_integration" password="toor" type="JDBC" user="root"/>
+<Connection database="MYSQL" dbURL="jdbc:mysql://localhost:3306/db2?user=root" id="JDBC0" jdbcSpecific="MYSQL" name="mysql_landing" password="toor" type="JDBC" user="root"/>
+<GraphParameters>
+<GraphParameterFile fileURL="workspace.prm"/>
+</GraphParameters>
+<Dictionary/>
+</Global>
+<Phase number="0">
+<Node dbConnection="JDBC0" guiName="DBInputTable" guiX="260" guiY="75" id="DBINPUT_TABLE4" type="DB_INPUT_TABLE">
+<attr name="sqlQuery"><![CDATA[select * from `db2`.`sach`]]></attr>
+</Node>
+<Node dbConnection="JDBC0" guiName="DBInputTable" guiX="260" guiY="198" id="DBINPUT_TABLE5" type="DB_INPUT_TABLE">
+<attr name="sqlQuery"><![CDATA[select * from `db2`.`stammdaten`]]></attr>
+</Node>
+<Node dbConnection="JDBC1" dbTable="sach" guiName="DBOutputTable" guiX="737" guiY="76" id="DBOUTPUT_TABLE4" type="DB_OUTPUT_TABLE"/>
+<Node dbConnection="JDBC1" dbTable="stammdaten" guiName="DBOutputTable" guiX="737" guiY="197" id="DBOUTPUT_TABLE5" type="DB_OUTPUT_TABLE"/>
+<Node guiName="Filter" guiX="415" guiY="75" id="FILTER3" type="EXT_FILTER">
+<attr name="filterExpression"><![CDATA[//#CTL2
+isDate($in.0.Vbeginn, "dd.MM.yyyy")]]></attr>
+</Node>
+<Node guiName="Reformat" guiX="584" guiY="76" id="REFORMAT4" type="REFORMAT">
+<attr name="transform"><![CDATA[//#CTL2
+
+// Transforms input record into output record.
+function integer transform() {
+	$out.0.VNr = $in.0.VNr;
+	$out.0.Zeitstempel = $in.0.Zeitstempel;
+	$out.0.KuNr = $in.0.KuNr;
+	$out.0.Art = $in.0.Art;
+	$out.0.VWert = str2decimal(replace(trim($in.0.VWert),'\.',""), "#####,##");
+	$out.0.Vbeginn = str2date($in.0.Vbeginn, "dd.MM.yyyy");
+	$out.0.Laufzeit = str2integer(trim($in.0.Laufzeit));
+	$out.0.KFrist = str2integer(trim($in.0.KFrist));
+	$out.0.RateMonat = str2decimal(trim($in.0.RateMonat), "###,##");
+	$out.0.RateQuartal = str2decimal(trim($in.0.RateQuartal), "###,##");
+	$out.0.RateHalbjahr = str2decimal(trim($in.0.RateHalbjahr), "####,##");
+	$out.0.RateJahr = str2decimal(trim($in.0.RateJahr), "####,##");
+
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+</Node>
+<Node guiName="Reformat" guiX="584" guiY="198" id="REFORMAT5" type="REFORMAT">
+<attr name="transform"><![CDATA[//#CTL2
+
+// Transforms input record into output record.
+function integer transform() {
+	$out.0.KuNr = $in.0.KuNr;
+	$out.0.Name = $in.0.Name;
+	$out.0.Vorname_1 = $in.0.Vorname_1;
+	$out.0.Vorname_2 = $in.0.Vorname_2;
+	$out.0.GebDat = str2date(trim($in.0.GebDat),"dd.MM.yyyy");
+	$out.0.GebOrt = $in.0.GebOrt;
+	$out.0.Strasse = $in.0.Strasse;
+	$out.0.HNr = $in.0.HNr;
+	$out.0.PLZ = str2integer(trim($in.0.PLZ));
+	$out.0.Ort = $in.0.Ort;
+	$out.0.Tel_priv = $in.0.Tel_priv;
+	$out.0.Tel_Arbeit = $in.0.Tel_Arbeit;
+	$out.0.Mobil = $in.0.Mobil;
+	$out.0.Fax = $in.0.Fax;
+	$out.0.eMail_1 = $in.0.eMail_1;
+	$out.0.eMail_2 = $in.0.eMail_2;
+	$out.0.Prio_Kontakt = $in.0.Prio_Kontakt;
+	$out.0.FamStand = $in.0.FamStand;
+	$out.0.Anz_Kinder = str2integer(trim($in.0.Anz_Kinder));
+	$out.0.Anz_Kinder_MV = str2integer(trim($in.0.Anz_Kinder_MV));
+	$out.0.Ehepart_MV = $in.0.Ehepart_MV;
+	$out.0.Zeitstempel = $in.0.Zeitstempel;
+
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+</Node>
+<Edge fromNode="DBINPUT_TABLE4:0" guiBendpoints="" guiRouter="Manhattan" id="Edge12" inPort="Port 0 (in)" metadata="Metadata8" outPort="Port 0 (out)" toNode="FILTER3:0"/>
+<Edge fromNode="DBINPUT_TABLE5:0" guiBendpoints="" guiRouter="Manhattan" id="Edge15" inPort="Port 0 (in)" metadata="Metadata10" outPort="Port 0 (out)" toNode="REFORMAT5:0"/>
+<Edge debugMode="false" fromNode="FILTER3:0" guiBendpoints="" guiRouter="Manhattan" id="Edge14" inPort="Port 0 (in)" outPort="Port 0 (accepted)" toNode="REFORMAT4:0"/>
+<Edge debugMode="false" fromNode="REFORMAT4:0" guiBendpoints="" guiRouter="Manhattan" id="Edge13" inPort="Port 0 (in)" metadata="Metadata9" outPort="Port 0 (out)" toNode="DBOUTPUT_TABLE4:0"/>
+<Edge debugMode="false" fromNode="REFORMAT5:0" guiBendpoints="" guiRouter="Manhattan" id="Edge16" inPort="Port 0 (in)" metadata="Metadata11" outPort="Port 0 (out)" toNode="DBOUTPUT_TABLE5:0"/>
+</Phase>
+</Graph>
