@@ -15,16 +15,17 @@
 <Field eofAsDelimiter="true" name="Field10" type="string"/>
 </Record>
 </Metadata>
-<Metadata id="Metadata3" previewAttachment="./data-in/BU.csv" previewAttachmentCharset="ISO-8859-1">
+<Metadata id="Metadata1" previewAttachment="./data-in/BU.csv" previewAttachmentCharset="ISO-8859-1">
 <Record fieldDelimiter=";" label="BU.csv" name="BU_zeitstempel" previewAttachment="./data-in/BU.csv" previewAttachmentCharset="ISO-8859-1" recordDelimiter="\r\n" type="delimited">
 <Field name="VNr" type="string"/>
-<Field eofAsDelimiter="true" name="Zeitstempel" trim="true" type="date"/>
+<Field name="Zeitstempel" type="date"/>
 <Field name="KuNr" type="string"/>
 <Field name="Wertbetrag" type="string"/>
 <Field name="RateMonat" type="string"/>
 <Field name="RateQuartal" type="string"/>
 <Field name="RateHalbjahr" type="string"/>
 <Field name="RateJahr" type="string"/>
+<Field name="Datenquelle" type="string"/>
 </Record>
 </Metadata>
 <Metadata id="Metadata4">
@@ -49,7 +50,7 @@
 </Record>
 </Metadata>
 <Metadata id="Metadata5" previewAttachment="./data-in/KFZ.csv" previewAttachmentCharset="ISO-8859-1">
-<Record fieldDelimiter=";" label="KFZ.csv" name="kfz_zeitstempel" previewAttachment="./data-in/KFZ.csv" previewAttachmentCharset="ISO-8859-1" recordDelimiter="\r\n" skipSourceRows="1" type="delimited">
+<Record fieldDelimiter=";" label="KFZ.csv" name="KFZ_zeitstempel" previewAttachment="./data-in/KFZ.csv" previewAttachmentCharset="ISO-8859-1" recordDelimiter="\r\n" skipSourceRows="1" type="delimited">
 <Field label="VNr" name="VNr" type="string"/>
 <Field name="Zeitstempel" type="date"/>
 <Field label="KuNr" name="KuNr" type="string"/>
@@ -68,6 +69,7 @@
 <Field label="SBVK" name="SBVK" type="string"/>
 <Field label="Schadensumme Sach" name="Schadensumme_Sach" type="string"/>
 <Field eofAsDelimiter="true" label="Schadensumme Person" name="Schadensumme_Person" type="string"/>
+<Field name="Datenquelle" type="string"/>
 </Record>
 </Metadata>
 <Metadata id="Metadata6">
@@ -84,7 +86,7 @@
 </Record>
 </Metadata>
 <Metadata id="Metadata7" previewAttachment="./data-in/KV.csv" previewAttachmentCharset="ISO-8859-1">
-<Record fieldDelimiter=";" label="KV.csv" name="kv_zeitstempel" previewAttachment="./data-in/KV.csv" previewAttachmentCharset="ISO-8859-1" recordDelimiter="\r\n" type="delimited">
+<Record fieldDelimiter=";" label="KV.csv" name="KV_zeistempel" previewAttachment="./data-in/KV.csv" previewAttachmentCharset="ISO-8859-1" recordDelimiter="\r\n" type="delimited">
 <Field name="VNr" type="string"/>
 <Field name="Zeitstempel" type="date"/>
 <Field name="KuNr" type="string"/>
@@ -95,6 +97,7 @@
 <Field name="R1" type="string"/>
 <Field name="R2" type="string"/>
 <Field eofAsDelimiter="true" name="R3" type="string"/>
+<Field name="Datenquelle" type="string"/>
 </Record>
 </Metadata>
 <Metadata id="Metadata8">
@@ -112,8 +115,8 @@
 <Field eofAsDelimiter="true" label="BU" name="BU" type="string"/>
 </Record>
 </Metadata>
-<Metadata id="Metadata9" previewAttachment="./data-in/LV.csv" previewAttachmentCharset="ISO-8859-1">
-<Record fieldDelimiter=";" label="LV.csv" name="lv_zeitstempel" previewAttachment="./data-in/LV.csv" previewAttachmentCharset="ISO-8859-1" recordDelimiter="\r\n" skipSourceRows="1" type="delimited">
+<Metadata id="Metadata11" previewAttachment="./data-in/LV.csv" previewAttachmentCharset="ISO-8859-1">
+<Record fieldDelimiter=";" label="LV.csv" name="LV_zeitstempel" previewAttachment="./data-in/LV.csv" previewAttachmentCharset="ISO-8859-1" recordDelimiter="\r\n" skipSourceRows="1" type="delimited">
 <Field label="VNr" name="VNr" type="string"/>
 <Field name="Zeitstempel" type="date"/>
 <Field label="KuNr" name="KuNr" type="string"/>
@@ -126,6 +129,7 @@
 <Field label="Rate/Jahr" name="Rate_Jahr" type="string"/>
 <Field label="Begünstigter" name="Begunstigter" type="string"/>
 <Field eofAsDelimiter="true" label="BU" name="BU" type="string"/>
+<Field name="Datenquelle" type="string"/>
 </Record>
 </Metadata>
 <Metadata id="Metadata10">
@@ -141,17 +145,17 @@
 <Field label="Rate/Quartal" name="Rate_Quartal" type="string"/>
 <Field label="Rate/Halbjahr" name="Rate_Halbjahr" type="string"/>
 <Field label="Rate/Jahr" name="Rate_Jahr" type="string"/>
-<Field label="" name="_" type="string"/>
-<Field label="" name="__1" type="string"/>
-<Field label="" name="__2" type="string"/>
-<Field label="" name="__3" type="string"/>
-<Field eofAsDelimiter="true" label="" name="__4" type="string"/>
+<Field name="_" type="string"/>
+<Field name="__1" type="string"/>
+<Field name="__2" type="string"/>
+<Field name="__3" type="string"/>
+<Field eofAsDelimiter="true" name="__4" type="string"/>
 </Record>
 </Metadata>
-<Metadata id="Metadata11" previewAttachment="./data-in/Sach.csv" previewAttachmentCharset="ISO-8859-1">
-<Record fieldDelimiter=";" label="Sach.csv" name="sach_zeitstempel" previewAttachment="./data-in/Sach.csv" previewAttachmentCharset="ISO-8859-1" recordDelimiter="\r\n" skipSourceRows="1" type="delimited">
+<Metadata id="Metadata9" previewAttachment="./data-in/Sach.csv" previewAttachmentCharset="ISO-8859-1">
+<Record fieldDelimiter=";" label="Sach.csv" name="Sach_Zeitstempel" previewAttachment="./data-in/Sach.csv" previewAttachmentCharset="ISO-8859-1" recordDelimiter="\r\n" skipSourceRows="1" type="delimited">
 <Field label="VNr" name="VNr" type="string"/>
-<Field name="Zeitstempel" type="date"/>
+<Field name="Zeitstempel" trim="true" type="date"/>
 <Field label="KuNr" name="KuNr" type="string"/>
 <Field label="Art" name="Art" type="string"/>
 <Field label="V-Wert" name="V_Wert" type="string"/>
@@ -162,6 +166,7 @@
 <Field label="Rate/Quartal" name="Rate_Quartal" type="string"/>
 <Field label="Rate/Halbjahr" name="Rate_Halbjahr" type="string"/>
 <Field label="Rate/Jahr" name="Rate_Jahr" type="string"/>
+<Field name="Datenquelle" type="string"/>
 </Record>
 </Metadata>
 <Metadata id="Metadata0">
@@ -189,8 +194,8 @@
 <Field eofAsDelimiter="true" label="Ehepart MV" name="Ehepart_MV" type="string"/>
 </Record>
 </Metadata>
-<Metadata id="Metadata1" previewAttachment="./data-in/Stammdaten A.txt" previewAttachmentCharset="UTF-8">
-<Record fieldDelimiter=";" label="Stammdaten A.txt" name="stammdaten_zeitstempel" previewAttachment="./data-in/Stammdaten A.txt" previewAttachmentCharset="UTF-8" recordDelimiter="\r\n" skipSourceRows="1" type="delimited">
+<Metadata id="Metadata3" previewAttachment="./data-in/Stammdaten A.txt" previewAttachmentCharset="UTF-8">
+<Record fieldDelimiter=";" label="Stammdaten A.txt" name="Stammdaten_zeitstempel" previewAttachment="./data-in/Stammdaten A.txt" previewAttachmentCharset="UTF-8" recordDelimiter="\r\n" skipSourceRows="1" type="delimited">
 <Field label="KuNr" name="KuNr" type="string"/>
 <Field label="Name" name="Name" type="string"/>
 <Field label="Vorname 1" name="Vorname_1" type="string"/>
@@ -212,10 +217,11 @@
 <Field label="Anz Kinder" name="Anz_Kinder" type="string"/>
 <Field label="Anz Kinder MV" name="Anz_Kinder_MV" type="string"/>
 <Field eofAsDelimiter="true" label="Ehepart MV" name="Ehepart_MV" type="string"/>
-<Field name="Zeitstempel" type="date"/>
+<Field name="Zeistempel" type="date"/>
+<Field name="Datenquelle" type="string"/>
 </Record>
 </Metadata>
-<Connection database="MYSQL" dbURL="jdbc:mysql://localhost:3306/db2?user=root" id="JDBC0" jdbcSpecific="MYSQL" name="NewConnection" password="toor" type="JDBC" user="root"/>
+<Connection database="MYSQL" dbURL="jdbc:mysql://localhost:3306/dwh_sa_lz?user=root" id="JDBC0" jdbcSpecific="MYSQL" name="dwh_sa_lz" password="toor" type="JDBC" user="root"/>
 <GraphParameters>
 <GraphParameterFile fileURL="workspace.prm"/>
 </GraphParameters>
@@ -231,6 +237,7 @@
 <Node guiName="Reformat" guiX="401" guiY="264" id="REFORMAT" type="REFORMAT">
 <attr name="transform"><![CDATA[//#CTL2
 date now = today();
+string source = "Stammdaten A.txt";
 
 // Transforms input record into output record.
 function integer transform() {
@@ -255,7 +262,8 @@ function integer transform() {
 	$out.0.Anz_Kinder = $in.0.Anz_Kinder;
 	$out.0.Anz_Kinder_MV = $in.0.Anz_Kinder_MV;
 	$out.0.Ehepart_MV = $in.0.Ehepart_MV;
-	$out.0.Zeitstempel = now;
+	$out.0.Zeistempel = now;
+	$out.0.Datenquelle = source;
 
 	return ALL;
 }
@@ -282,6 +290,7 @@ function integer transform() {
 <Node guiName="Reformat" guiX="406" guiY="134" id="REFORMAT1" type="REFORMAT">
 <attr name="transform"><![CDATA[//#CTL2
 date now = today();
+string source = "BU.csv";
 
 // Transforms input record into output record.
 function integer transform() {
@@ -293,6 +302,7 @@ function integer transform() {
 	$out.0.RateHalbjahr = $in.0.RateHalbjahr;
 	$out.0.RateJahr = $in.0.RateJahr;
 	$out.0.Zeitstempel = now;
+	$out.0.Datenquelle = source;
 
 	return ALL;
 }
@@ -319,6 +329,7 @@ function integer transform() {
 <Node guiName="Reformat" guiX="406" guiY="19" id="REFORMAT2" type="REFORMAT">
 <attr name="transform"><![CDATA[//#CTL2
 date now = today();
+string source = "KFZ.csv";
 
 // Transforms input record into output record.
 function integer transform() {
@@ -340,6 +351,7 @@ function integer transform() {
 	$out.0.Schadensumme_Sach = $in.0.Schadensumme_Sach;
 	$out.0.Schadensumme_Person = $in.0.Schadensumme_Person;
 	$out.0.Zeitstempel = now;
+	$out.0.Datenquelle = source;
 
 	return ALL;
 }
@@ -366,6 +378,7 @@ function integer transform() {
 <Node guiName="Reformat" guiX="406" guiY="423" id="REFORMAT3" type="REFORMAT">
 <attr name="transform"><![CDATA[//#CTL2
 date now = today();
+string source = "KV.csv";
 
 // Transforms input record into output record.
 function integer transform() {
@@ -379,6 +392,7 @@ function integer transform() {
 	$out.0.R2 = $in.0.R2;
 	$out.0.R3 = $in.0.R3;
 	$out.0.Zeitstempel = now;
+	$out.0.Datenquelle = source;
 
 	return ALL;
 }
@@ -405,6 +419,7 @@ function integer transform() {
 <Node guiName="Reformat" guiX="1169" guiY="438" id="REFORMAT4" type="REFORMAT">
 <attr name="transform"><![CDATA[//#CTL2
 date now = today();
+string source = "LV.csv";
 
 // Transforms input record into output record.
 function integer transform() {
@@ -420,6 +435,7 @@ function integer transform() {
 	$out.0.Begunstigter = $in.0.Begunstigter;
 	$out.0.BU = $in.0.BU;
 	$out.0.Zeitstempel = now;
+	$out.0.Datenquelle = source;
 
 	return ALL;
 }
@@ -446,6 +462,7 @@ function integer transform() {
 <Node guiName="Reformat" guiX="1154" guiY="312" id="REFORMAT5" type="REFORMAT">
 <attr name="transform"><![CDATA[//#CTL2
 date now = today();
+string source = "Sach.csv";
 
 // Transforms input record into output record.
 function integer transform() {
@@ -458,9 +475,10 @@ function integer transform() {
 	$out.0.K_Frist = $in.0.K_Frist;
 	$out.0.Rate_Monat = $in.0.Rate_Monat;
 	$out.0.Rate_Quartal = $in.0.Rate_Quartal;
-	$out.0.Zeitstempel = now;
 	$out.0.Rate_Halbjahr = $in.0.Rate_Halbjahr;
 	$out.0.Rate_Jahr = $in.0.Rate_Jahr;
+	$out.0.Zeitstempel = now;
+	$out.0.Datenquelle = source;
 
 	return ALL;
 }
@@ -490,12 +508,12 @@ function integer transform() {
 <Node charset="ISO-8859-1" fileURL="${DATAIN_DIR}/KV.csv" guiName="UniversalDataReader" guiX="164" guiY="423" id="UNIVERSAL_DATA_READER3" skipRows="1" type="DATA_READER"/>
 <Node charset="ISO-8859-1" fileURL="${DATAIN_DIR}/LV.csv" guiName="UniversalDataReader" guiX="886" guiY="438" id="UNIVERSAL_DATA_READER4" skipRows="0" type="DATA_READER"/>
 <Node charset="ISO-8859-1" fileURL="${DATAIN_DIR}/Sach.csv" guiName="UniversalDataReader" guiX="886" guiY="312" id="UNIVERSAL_DATA_READER5" skipRows="0" type="DATA_READER"/>
-<Edge debugMode="false" fromNode="REFORMAT:0" guiBendpoints="" guiRouter="Manhattan" id="Edge4" inPort="Port 0 (in)" metadata="Metadata1" outPort="Port 0 (out)" toNode="DBOUTPUT_TABLE:0"/>
-<Edge debugMode="false" fromNode="REFORMAT1:0" guiBendpoints="" guiRouter="Manhattan" id="Edge5" inPort="Port 0 (in)" metadata="Metadata3" outPort="Port 0 (out)" toNode="DBOUTPUT_TABLE1:0"/>
-<Edge debugMode="false" fromNode="REFORMAT2:0" guiBendpoints="" guiRouter="Manhattan" id="Edge7" inPort="Port 0 (in)" metadata="Metadata5" outPort="Port 0 (out)" toNode="DBOUTPUT_TABLE2:0"/>
+<Edge debugMode="false" fromNode="REFORMAT:0" guiBendpoints="" guiRouter="Manhattan" id="Edge4" inPort="Port 0 (in)" metadata="Metadata3" outPort="Port 0 (out)" toNode="DBOUTPUT_TABLE:0"/>
+<Edge debugMode="false" fromNode="REFORMAT1:0" guiBendpoints="" guiRouter="Manhattan" id="Edge5" inPort="Port 0 (in)" metadata="Metadata1" outPort="Port 0 (out)" toNode="DBOUTPUT_TABLE1:0"/>
+<Edge debugMode="false" fromNode="REFORMAT2:0" guiBendpoints="" guiRouter="Manhattan" id="Edge3" inPort="Port 0 (in)" metadata="Metadata5" outPort="Port 0 (out)" toNode="DBOUTPUT_TABLE2:0"/>
 <Edge debugMode="false" fromNode="REFORMAT3:0" guiBendpoints="" guiRouter="Manhattan" id="Edge9" inPort="Port 0 (in)" metadata="Metadata7" outPort="Port 0 (out)" toNode="DBOUTPUT_TABLE3:0"/>
-<Edge debugMode="false" fromNode="REFORMAT4:0" guiBendpoints="" guiRouter="Manhattan" id="Edge11" inPort="Port 0 (in)" metadata="Metadata9" outPort="Port 0 (out)" toNode="DBOUTPUT_TABLE4:0"/>
-<Edge debugMode="false" fromNode="REFORMAT5:0" guiBendpoints="" guiRouter="Manhattan" id="Edge13" inPort="Port 0 (in)" metadata="Metadata11" outPort="Port 0 (out)" toNode="DBOUTPUT_TABLE5:0"/>
+<Edge debugMode="false" fromNode="REFORMAT4:0" guiBendpoints="" guiRouter="Manhattan" id="Edge11" inPort="Port 0 (in)" metadata="Metadata11" outPort="Port 0 (out)" toNode="DBOUTPUT_TABLE4:0"/>
+<Edge debugMode="false" fromNode="REFORMAT5:0" guiBendpoints="" guiRouter="Manhattan" id="Edge13" inPort="Port 0 (in)" metadata="Metadata9" outPort="Port 0 (out)" toNode="DBOUTPUT_TABLE5:0"/>
 <Edge fromNode="UNIVERSAL_DATA_READER:0" guiBendpoints="" guiRouter="Manhattan" id="Edge1" inPort="Port 0 (in)" metadata="Metadata0" outPort="Port 0 (output)" toNode="REFORMAT:0"/>
 <Edge fromNode="UNIVERSAL_DATA_READER1:0" guiBendpoints="" guiRouter="Manhattan" id="Edge0" inPort="Port 0 (in)" metadata="Metadata2" outPort="Port 0 (output)" toNode="REFORMAT1:0"/>
 <Edge fromNode="UNIVERSAL_DATA_READER2:0" guiBendpoints="" guiRouter="Manhattan" id="Edge6" inPort="Port 0 (in)" metadata="Metadata4" outPort="Port 0 (output)" toNode="REFORMAT2:0"/>

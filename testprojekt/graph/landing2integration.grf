@@ -11,6 +11,7 @@
 <Field length="4" name="RateQuartal" scale="2" size="255" trim="true" type="decimal"/>
 <Field length="5" name="RateHalbjahr" scale="2" size="255" trim="true" type="decimal"/>
 <Field length="5" name="RateJahr" scale="2" size="255" trim="true" type="decimal"/>
+<Field name="Datenquelle" type="string"/>
 </Record>
 </Metadata>
 <Metadata id="Metadata0">
@@ -23,6 +24,7 @@
 <Field name="RateQuartal" size="255" type="string"/>
 <Field name="RateHalbjahr" size="255" type="string"/>
 <Field name="RateJahr" size="255" type="string"/>
+<Field name="Datenquelle" size="30" type="string"/>
 </Record>
 </Metadata>
 <Metadata id="Metadata3">
@@ -32,19 +34,20 @@
 <Field name="KuNr" size="255" type="string"/>
 <Field name="KFZKZ" size="255" type="string"/>
 <Field name="Art" size="255" type="string"/>
-<Field length="8" name="Neuwert" size="255" type="decimal"/>
-<Field name="Erstzulassung" size="255" type="date"/>
-<Field name="Vbeginn" size="255" type="date"/>
-<Field length="6" name="HPMonat" size="255" type="decimal"/>
-<Field length="6" name="TKMonat" size="255" type="decimal"/>
-<Field length="6" name="VKMonat" size="255" type="decimal"/>
-<Field name="HPSatz" size="255" type="integer"/>
-<Field name="TKSatz" size="255" type="integer"/>
-<Field name="VKSatz" size="255" type="integer"/>
-<Field length="6" name="SB_TK" size="255" type="decimal"/>
-<Field length="7" name="SBVK" size="255" type="decimal"/>
-<Field length="9" name="Schadensumme_Sach" size="255" type="decimal"/>
-<Field length="10" name="Schadensumme_Person" size="255" type="decimal"/>
+<Field length="8" name="Neuwert" scale="2" size="255" trim="true" type="decimal"/>
+<Field name="Erstzulassung" size="255" trim="true" type="date"/>
+<Field name="Vbeginn" size="255" trim="true" type="date"/>
+<Field length="6" name="HPMonat" scale="2" size="255" trim="true" type="decimal"/>
+<Field length="6" name="TKMonat" scale="2" size="255" trim="true" type="decimal"/>
+<Field length="6" name="VKMonat" scale="2" size="255" trim="true" type="decimal"/>
+<Field name="HPSatz" size="255" trim="true" type="integer"/>
+<Field name="TKSatz" size="255" trim="true" type="integer"/>
+<Field name="VKSatz" size="255" trim="true" type="integer"/>
+<Field length="6" name="SB_TK" scale="2" size="255" trim="true" type="decimal"/>
+<Field length="7" name="SBVK" scale="2" size="255" trim="true" type="decimal"/>
+<Field length="9" name="Schadensumme_Sach" scale="2" size="255" trim="true" type="decimal"/>
+<Field length="10" name="Schadensumme_Person" scale="2" size="255" trim="true" type="decimal"/>
+<Field name="Datenquelle" type="string"/>
 </Record>
 </Metadata>
 <Metadata id="Metadata2">
@@ -67,6 +70,7 @@
 <Field name="SBVK" size="255" type="string"/>
 <Field name="Schadensumme_Sach" size="255" type="string"/>
 <Field name="Schadensumme_Person" size="255" type="string"/>
+<Field name="Datenquelle" size="30" type="string"/>
 </Record>
 </Metadata>
 <Metadata id="Metadata5">
@@ -75,12 +79,13 @@
 <Field format="yyyy-MM-dd HH:mm:ss" name="Zeitstempel" size="19" trim="true" type="date"/>
 <Field name="KuNr" size="255" type="string"/>
 <Field name="Art" size="255" type="string"/>
-<Field name="Vbeginn" size="255" type="date"/>
-<Field length="6" name="RateMonat" size="255" type="decimal"/>
-<Field length="7" name="SB" size="255" type="decimal"/>
-<Field length="6" name="R1" size="255" type="decimal"/>
-<Field length="7" name="R2" size="255" type="decimal"/>
-<Field length="7" name="R3" size="255" type="decimal"/>
+<Field name="Vbeginn" size="255" trim="true" type="date"/>
+<Field length="6" name="RateMonat" scale="2" size="255" trim="true" type="decimal"/>
+<Field length="7" name="SB" scale="2" size="255" trim="true" type="decimal"/>
+<Field length="6" name="R1" scale="2" size="255" trim="true" type="decimal"/>
+<Field length="7" name="R2" scale="2" size="255" trim="true" type="decimal"/>
+<Field length="7" name="R3" scale="2" size="255" trim="true" type="decimal"/>
+<Field name="Datenquelle" size="30" type="string"/>
 </Record>
 </Metadata>
 <Metadata id="Metadata4">
@@ -95,6 +100,7 @@
 <Field name="R1" size="255" type="string"/>
 <Field name="R2" size="255" type="string"/>
 <Field name="R3" size="255" type="string"/>
+<Field name="Datenquelle" size="30" type="string"/>
 </Record>
 </Metadata>
 <Metadata id="Metadata7">
@@ -102,15 +108,16 @@
 <Field label="VNr" name="VNr" size="255" type="string"/>
 <Field format="yyyy-MM-dd HH:mm:ss" label="Zeitstempel" name="Zeitstempel" size="19" trim="true" type="date"/>
 <Field label="KuNr" name="KuNr" size="255" type="string"/>
-<Field label="Wertfaktor" name="Wertfaktor" size="255" type="decimal"/>
-<Field label="Vbeginn" name="Vbeginn" size="255" type="date"/>
+<Field label="Wertfaktor" length="12" name="Wertfaktor" scale="2" size="255" trim="true" type="decimal"/>
+<Field label="Vbeginn" name="Vbeginn" size="255" trim="true" type="date"/>
 <Field label="Laufzeit" name="Laufzeit" size="255" type="string"/>
-<Field label="RateMonat" length="6" name="RateMonat" size="255" type="decimal"/>
-<Field label="RateQuartal" length="7" name="RateQuartal" size="255" type="decimal"/>
-<Field label="RateHalbjahr" length="7" name="RateHalbjahr" size="255" type="decimal"/>
-<Field label="RateJahr" length="7" name="RateJahr" size="255" type="decimal"/>
+<Field label="RateMonat" length="6" name="RateMonat" scale="2" size="255" trim="true" type="decimal"/>
+<Field label="RateQuartal" length="7" name="RateQuartal" scale="2" size="255" trim="true" type="decimal"/>
+<Field label="RateHalbjahr" length="7" name="RateHalbjahr" scale="2" size="255" trim="true" type="decimal"/>
+<Field label="RateJahr" length="7" name="RateJahr" scale="2" size="255" trim="true" type="decimal"/>
 <Field label="Begünstigter" name="Begunstigter" size="255" type="string"/>
 <Field label="BU" name="BU" size="255" type="string"/>
+<Field label="Datenquelle" name="Datenquelle" size="30" type="string"/>
 </Record>
 </Metadata>
 <Metadata id="Metadata6">
@@ -127,10 +134,11 @@
 <Field label="RateJahr" name="RateJahr" size="255" type="string"/>
 <Field label="Begünstigter" name="Begunstigter" size="255" type="string"/>
 <Field label="BU" name="BU" size="255" type="string"/>
+<Field label="Datenquelle" name="Datenquelle" size="30" type="string"/>
 </Record>
 </Metadata>
-<Connection database="MYSQL" dbURL="jdbc:mysql://localhost:3306/db2_iz?user=root" id="JDBC1" jdbcSpecific="MYSQL" name="mysql_integration" password="toor" type="JDBC" user="root"/>
-<Connection database="MYSQL" dbURL="jdbc:mysql://localhost:3306/db2?user=root" id="JDBC0" jdbcSpecific="MYSQL" name="mysql_landing" password="toor" type="JDBC" user="root"/>
+<Connection database="MYSQL" dbURL="jdbc:mysql://localhost:3306/dwh_sa_iz?user=root" id="JDBC1" jdbcSpecific="MYSQL" name="dwh_sa_iz" password="toor" type="JDBC" user="root"/>
+<Connection database="MYSQL" dbURL="jdbc:mysql://localhost:3306/dwh_sa_lz?user=root" id="JDBC0" jdbcSpecific="MYSQL" name="dwh_sa_lz" password="toor" type="JDBC" user="root"/>
 <GraphParameters>
 <GraphParameterFile fileURL="workspace.prm"/>
 </GraphParameters>
@@ -138,16 +146,16 @@
 </Global>
 <Phase number="0">
 <Node dbConnection="JDBC0" guiName="DBInputTable" guiX="157" guiY="81" id="DBINPUT_TABLE" type="DB_INPUT_TABLE">
-<attr name="sqlQuery"><![CDATA[select * from `db2`.`bu`]]></attr>
+<attr name="sqlQuery"><![CDATA[select * from `dwh_sa_lz`.`bu`]]></attr>
 </Node>
 <Node dbConnection="JDBC0" guiName="DBInputTable" guiX="157" guiY="202" id="DBINPUT_TABLE1" type="DB_INPUT_TABLE">
-<attr name="sqlQuery"><![CDATA[select * from `db2`.`kfz`]]></attr>
+<attr name="sqlQuery"><![CDATA[select * from `dwh_sa_lz`.`kfz`]]></attr>
 </Node>
 <Node dbConnection="JDBC0" guiName="DBInputTable" guiX="157" guiY="317" id="DBINPUT_TABLE2" type="DB_INPUT_TABLE">
-<attr name="sqlQuery"><![CDATA[select * from `db2`.`kv`]]></attr>
+<attr name="sqlQuery"><![CDATA[select * from `dwh_sa_lz`.`kv`]]></attr>
 </Node>
 <Node dbConnection="JDBC0" guiName="DBInputTable" guiX="156" guiY="441" id="DBINPUT_TABLE3" type="DB_INPUT_TABLE">
-<attr name="sqlQuery"><![CDATA[select * from `db2`.`lv`]]></attr>
+<attr name="sqlQuery"><![CDATA[select * from `dwh_sa_lz`.`lv`]]></attr>
 </Node>
 <Node dbConnection="JDBC1" dbTable="bu" guiName="DBOutputTable" guiX="686" guiY="81" id="DBOUTPUT_TABLE" type="DB_OUTPUT_TABLE"/>
 <Node dbConnection="JDBC1" dbTable="kfz" guiName="DBOutputTable" guiX="686" guiY="202" id="DBOUTPUT_TABLE1" type="DB_OUTPUT_TABLE"/>
@@ -178,6 +186,7 @@ function integer transform() {
 	$out.0.RateQuartal = str2decimal(trim($in.0.RateQuartal), "##,##", "de.DE");
 	$out.0.RateHalbjahr = str2decimal(trim($in.0.RateHalbjahr), "###,##", "de.DE");
 	$out.0.RateJahr = str2decimal(trim($in.0.RateJahr), "###,##", "de.DE");
+	$out.0.Datenquelle = $in.0.Datenquelle;
 
 	return ALL;
 }
@@ -224,6 +233,7 @@ function integer transform() {
 	$out.0.SBVK = str2decimal(trim(replace($in.0.SBVK, "-", "0")), "####,##", "de.DE");
 	$out.0.Schadensumme_Sach = str2decimal(trim($in.0.Schadensumme_Sach), "#######,##", "de.DE");
 	$out.0.Schadensumme_Person = str2decimal(trim($in.0.Schadensumme_Person), "####,##", "de.DE");
+	$out.0.Datenquelle = $in.0.Datenquelle;
 
 	return ALL;
 }
@@ -262,6 +272,7 @@ function integer transform() {
 	$out.0.R1 = str2decimal(trim($in.0.R1), "####,##", "de.DE");
 	$out.0.R2 = str2decimal(trim($in.0.R2), "#####,##", "de.DE");
 	$out.0.R3 = str2decimal(trim($in.0.R3), "#####,##", "de.DE");
+	$out.0.Datenquelle = $in.0.Datenquelle;
 
 	return ALL;
 }
@@ -302,6 +313,7 @@ function integer transform() {
 	$out.0.RateJahr = str2decimal(trim($in.0.RateJahr), "#####,##", "de.DE");
 	$out.0.Begunstigter = $in.0.Begunstigter;
 	$out.0.BU = $in.0.BU;
+	$out.0.Datenquelle = $in.0.Datenquelle;
 
 	return ALL;
 }

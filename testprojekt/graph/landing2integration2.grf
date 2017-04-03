@@ -7,17 +7,18 @@
 <Field format="yyyy-MM-dd HH:mm:ss" name="Zeitstempel" size="19" trim="true" type="date"/>
 <Field name="KuNr" size="255" type="string"/>
 <Field name="Art" size="255" type="string"/>
-<Field length="8" name="VWert" size="255" type="decimal"/>
-<Field name="Vbeginn" size="255" type="date"/>
-<Field name="Laufzeit" size="255" type="integer"/>
-<Field name="KFrist" size="255" type="integer"/>
-<Field length="5" name="RateMonat" size="255" type="decimal"/>
-<Field length="5" name="RateQuartal" size="255" type="decimal"/>
-<Field length="6" name="RateHalbjahr" size="255" type="decimal"/>
-<Field length="6" name="RateJahr" size="255" type="decimal"/>
+<Field length="8" name="VWert" scale="2" size="255" trim="true" type="decimal"/>
+<Field name="Vbeginn" size="255" trim="true" type="date"/>
+<Field name="Laufzeit" size="255" trim="true" type="integer"/>
+<Field name="KFrist" size="255" trim="true" type="integer"/>
+<Field length="5" name="RateMonat" scale="2" size="255" trim="true" type="decimal"/>
+<Field length="5" name="RateQuartal" scale="2" size="255" trim="true" type="decimal"/>
+<Field length="6" name="RateHalbjahr" scale="2" size="255" trim="true" type="decimal"/>
+<Field length="6" name="RateJahr" scale="2" size="255" trim="true" type="decimal"/>
+<Field name="Datenquelle" size="30" type="string"/>
 </Record>
 </Metadata>
-<Metadata id="Metadata8">
+<Metadata id="Metadata0">
 <Record fieldDelimiter=";" name="sach_landing" recordDelimiter="\n" type="delimited">
 <Field name="VNr" size="255" type="string"/>
 <Field format="yyyy-MM-dd HH:mm:ss" name="Zeitstempel" size="19" type="date"/>
@@ -31,6 +32,7 @@
 <Field name="RateQuartal" size="255" type="string"/>
 <Field name="RateHalbjahr" size="255" type="string"/>
 <Field name="RateJahr" size="255" type="string"/>
+<Field name="Datenquelle" size="30" type="string"/>
 </Record>
 </Metadata>
 <Metadata id="Metadata11">
@@ -39,11 +41,11 @@
 <Field name="Name" size="255" type="string"/>
 <Field name="Vorname_1" size="30" type="string"/>
 <Field name="Vorname_2" size="30" type="string"/>
-<Field name="GebDat" size="30" type="date"/>
+<Field name="GebDat" size="30" trim="true" type="date"/>
 <Field name="GebOrt" size="255" type="string"/>
 <Field name="Strasse" size="255" type="string"/>
 <Field name="HNr" size="30" type="string"/>
-<Field name="PLZ" size="30" type="integer"/>
+<Field name="PLZ" size="30" trim="true" type="integer"/>
 <Field name="Ort" size="255" type="string"/>
 <Field name="Tel_priv" size="30" type="string"/>
 <Field name="Tel_Arbeit" size="30" type="string"/>
@@ -53,13 +55,14 @@
 <Field name="eMail_2" size="255" type="string"/>
 <Field name="Prio_Kontakt" size="30" type="string"/>
 <Field name="FamStand" size="30" type="string"/>
-<Field name="Anz_Kinder" size="30" type="integer"/>
-<Field name="Anz_Kinder_MV" size="30" type="integer"/>
+<Field name="Anz_Kinder" size="30" trim="true" type="integer"/>
+<Field name="Anz_Kinder_MV" size="30" trim="true" type="integer"/>
 <Field name="Ehepart_MV" size="30" type="string"/>
 <Field format="yyyy-MM-dd HH:mm:ss" name="Zeitstempel" size="19" trim="true" type="date"/>
+<Field name="Datenquelle" size="30" type="string"/>
 </Record>
 </Metadata>
-<Metadata id="Metadata10">
+<Metadata id="Metadata1">
 <Record fieldDelimiter=";" name="stammdaten_landing" recordDelimiter="\n" type="delimited">
 <Field name="KuNr" size="30" type="string"/>
 <Field name="Name" size="255" type="string"/>
@@ -83,10 +86,11 @@
 <Field name="Anz_Kinder_MV" size="30" type="string"/>
 <Field name="Ehepart_MV" size="30" type="string"/>
 <Field format="yyyy-MM-dd HH:mm:ss" name="Zeitstempel" size="19" type="date"/>
+<Field name="Datenquelle" size="30" type="string"/>
 </Record>
 </Metadata>
-<Connection database="MYSQL" dbURL="jdbc:mysql://localhost:3306/db2_iz?user=root" id="JDBC1" jdbcSpecific="MYSQL" name="mysql_integration" password="toor" type="JDBC" user="root"/>
-<Connection database="MYSQL" dbURL="jdbc:mysql://localhost:3306/db2?user=root" id="JDBC0" jdbcSpecific="MYSQL" name="mysql_landing" password="toor" type="JDBC" user="root"/>
+<Connection database="MYSQL" dbURL="jdbc:mysql://localhost:3306/dwh_sa_iz?user=root" id="JDBC1" jdbcSpecific="MYSQL" name="dwh_sa_iz" password="toor" type="JDBC" user="root"/>
+<Connection database="MYSQL" dbURL="jdbc:mysql://localhost:3306/dwh_sa_lz?user=root" id="JDBC0" jdbcSpecific="MYSQL" name="dwh_sa_lz" password="toor" type="JDBC" user="root"/>
 <GraphParameters>
 <GraphParameterFile fileURL="workspace.prm"/>
 </GraphParameters>
@@ -94,10 +98,10 @@
 </Global>
 <Phase number="0">
 <Node dbConnection="JDBC0" guiName="DBInputTable" guiX="260" guiY="75" id="DBINPUT_TABLE4" type="DB_INPUT_TABLE">
-<attr name="sqlQuery"><![CDATA[select * from `db2`.`sach`]]></attr>
+<attr name="sqlQuery"><![CDATA[select * from `dwh_sa_lz`.`sach`]]></attr>
 </Node>
 <Node dbConnection="JDBC0" guiName="DBInputTable" guiX="260" guiY="198" id="DBINPUT_TABLE5" type="DB_INPUT_TABLE">
-<attr name="sqlQuery"><![CDATA[select * from `db2`.`stammdaten`]]></attr>
+<attr name="sqlQuery"><![CDATA[select * from `dwh_sa_lz`.`stammdaten`]]></attr>
 </Node>
 <Node dbConnection="JDBC1" dbTable="sach" guiName="DBOutputTable" guiX="737" guiY="76" id="DBOUTPUT_TABLE4" type="DB_OUTPUT_TABLE"/>
 <Node dbConnection="JDBC1" dbTable="stammdaten" guiName="DBOutputTable" guiX="737" guiY="197" id="DBOUTPUT_TABLE5" type="DB_OUTPUT_TABLE"/>
@@ -122,6 +126,7 @@ function integer transform() {
 	$out.0.RateQuartal = str2decimal(trim($in.0.RateQuartal), "###,##", "de.DE");
 	$out.0.RateHalbjahr = str2decimal(trim($in.0.RateHalbjahr), "####,##", "de.DE");
 	$out.0.RateJahr = str2decimal(trim($in.0.RateJahr), "####,##", "de.DE");
+	$out.0.Datenquelle = $in.0.Datenquelle;
 
 	return ALL;
 }
@@ -172,6 +177,7 @@ function integer transform() {
 	$out.0.Anz_Kinder_MV = str2integer(trim($in.0.Anz_Kinder_MV));
 	$out.0.Ehepart_MV = $in.0.Ehepart_MV;
 	$out.0.Zeitstempel = $in.0.Zeitstempel;
+	$out.0.Datenquelle = $in.0.Datenquelle;
 
 	return ALL;
 }
@@ -195,8 +201,8 @@ function integer transform() {
 // function string getMessage() {}
 ]]></attr>
 </Node>
-<Edge fromNode="DBINPUT_TABLE4:0" guiBendpoints="" guiRouter="Manhattan" id="Edge12" inPort="Port 0 (in)" metadata="Metadata8" outPort="Port 0 (out)" toNode="FILTER3:0"/>
-<Edge fromNode="DBINPUT_TABLE5:0" guiBendpoints="" guiRouter="Manhattan" id="Edge15" inPort="Port 0 (in)" metadata="Metadata10" outPort="Port 0 (out)" toNode="REFORMAT5:0"/>
+<Edge fromNode="DBINPUT_TABLE4:0" guiBendpoints="" guiRouter="Manhattan" id="Edge12" inPort="Port 0 (in)" metadata="Metadata0" outPort="Port 0 (out)" toNode="FILTER3:0"/>
+<Edge fromNode="DBINPUT_TABLE5:0" guiBendpoints="" guiRouter="Manhattan" id="Edge15" inPort="Port 0 (in)" metadata="Metadata1" outPort="Port 0 (out)" toNode="REFORMAT5:0"/>
 <Edge debugMode="false" fromNode="FILTER3:0" guiBendpoints="" guiRouter="Manhattan" id="Edge14" inPort="Port 0 (in)" outPort="Port 0 (accepted)" toNode="REFORMAT4:0"/>
 <Edge debugMode="false" fromNode="REFORMAT4:0" guiBendpoints="" guiRouter="Manhattan" id="Edge13" inPort="Port 0 (in)" metadata="Metadata9" outPort="Port 0 (out)" toNode="DBOUTPUT_TABLE4:0"/>
 <Edge debugMode="false" fromNode="REFORMAT5:0" guiBendpoints="" guiRouter="Manhattan" id="Edge16" inPort="Port 0 (in)" metadata="Metadata11" outPort="Port 0 (out)" toNode="DBOUTPUT_TABLE5:0"/>
