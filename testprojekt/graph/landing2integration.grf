@@ -25,28 +25,6 @@
 <Field name="RateJahr" size="255" type="string"/>
 </Record>
 </Metadata>
-<Metadata id="Metadata2">
-<Record fieldDelimiter=";" name="kfz_landing" recordDelimiter="\n" type="delimited">
-<Field name="VNr" size="255" type="string"/>
-<Field format="yyyy-MM-dd HH:mm:ss" name="Zeitstempel" size="19" type="date"/>
-<Field name="KuNr" size="255" type="string"/>
-<Field name="KFZKZ" size="255" type="string"/>
-<Field name="Art" size="255" type="string"/>
-<Field name="Neuwert" size="255" type="string"/>
-<Field name="Erstzulassung" size="255" type="string"/>
-<Field name="Vbeginn" size="255" type="string"/>
-<Field name="HPMonat" size="255" type="string"/>
-<Field name="TKMonat" size="255" type="string"/>
-<Field name="VKMonat" size="255" type="string"/>
-<Field name="HPSatz" size="255" type="string"/>
-<Field name="TKSatz" size="255" type="string"/>
-<Field name="VKSatz" size="255" type="string"/>
-<Field name="SB_TK" size="255" type="string"/>
-<Field name="SBVK" size="255" type="string"/>
-<Field name="Schadensumme_Sach" size="255" type="string"/>
-<Field name="Schadensumme_Person" size="255" type="string"/>
-</Record>
-</Metadata>
 <Metadata id="Metadata3">
 <Record fieldDelimiter=";" name="kfz_integration" recordDelimiter="\n" type="delimited">
 <Field name="VNr" size="255" type="string"/>
@@ -69,18 +47,26 @@
 <Field length="10" name="Schadensumme_Person" size="255" type="decimal"/>
 </Record>
 </Metadata>
-<Metadata id="Metadata4">
-<Record fieldDelimiter=";" name="kv_landing" recordDelimiter="\n" type="delimited">
+<Metadata id="Metadata2">
+<Record fieldDelimiter=";" name="kfz_landing" recordDelimiter="\n" type="delimited">
 <Field name="VNr" size="255" type="string"/>
 <Field format="yyyy-MM-dd HH:mm:ss" name="Zeitstempel" size="19" type="date"/>
 <Field name="KuNr" size="255" type="string"/>
+<Field name="KFZKZ" size="255" type="string"/>
 <Field name="Art" size="255" type="string"/>
+<Field name="Neuwert" size="255" type="string"/>
+<Field name="Erstzulassung" size="255" type="string"/>
 <Field name="Vbeginn" size="255" type="string"/>
-<Field name="RateMonat" size="255" type="string"/>
-<Field name="SB" size="255" type="string"/>
-<Field name="R1" size="255" type="string"/>
-<Field name="R2" size="255" type="string"/>
-<Field name="R3" size="255" type="string"/>
+<Field name="HPMonat" size="255" type="string"/>
+<Field name="TKMonat" size="255" type="string"/>
+<Field name="VKMonat" size="255" type="string"/>
+<Field name="HPSatz" size="255" type="string"/>
+<Field name="TKSatz" size="255" type="string"/>
+<Field name="VKSatz" size="255" type="string"/>
+<Field name="SB_TK" size="255" type="string"/>
+<Field name="SBVK" size="255" type="string"/>
+<Field name="Schadensumme_Sach" size="255" type="string"/>
+<Field name="Schadensumme_Person" size="255" type="string"/>
 </Record>
 </Metadata>
 <Metadata id="Metadata5">
@@ -97,20 +83,18 @@
 <Field length="7" name="R3" size="255" type="decimal"/>
 </Record>
 </Metadata>
-<Metadata id="Metadata6">
-<Record fieldDelimiter=";" name="lv_landing" recordDelimiter="\n" type="delimited">
-<Field label="VNr" name="VNr" size="255" type="string"/>
-<Field format="yyyy-MM-dd HH:mm:ss" label="Zeitstempel" name="Zeitstempel" size="19" type="date"/>
-<Field label="KuNr" name="KuNr" size="255" type="string"/>
-<Field label="Wertfaktor" name="Wertfaktor" size="255" type="string"/>
-<Field label="Vbeginn" name="Vbeginn" size="255" type="string"/>
-<Field label="Laufzeit" name="Laufzeit" size="255" type="string"/>
-<Field label="RateMonat" name="RateMonat" size="255" type="string"/>
-<Field label="RateQuartal" name="RateQuartal" size="255" type="string"/>
-<Field label="RateHalbjahr" name="RateHalbjahr" size="255" type="string"/>
-<Field label="RateJahr" name="RateJahr" size="255" type="string"/>
-<Field label="Begünstigter" name="Begunstigter" size="255" type="string"/>
-<Field label="BU" name="BU" size="255" type="string"/>
+<Metadata id="Metadata4">
+<Record fieldDelimiter=";" name="kv_landing" recordDelimiter="\n" type="delimited">
+<Field name="VNr" size="255" type="string"/>
+<Field format="yyyy-MM-dd HH:mm:ss" name="Zeitstempel" size="19" type="date"/>
+<Field name="KuNr" size="255" type="string"/>
+<Field name="Art" size="255" type="string"/>
+<Field name="Vbeginn" size="255" type="string"/>
+<Field name="RateMonat" size="255" type="string"/>
+<Field name="SB" size="255" type="string"/>
+<Field name="R1" size="255" type="string"/>
+<Field name="R2" size="255" type="string"/>
+<Field name="R3" size="255" type="string"/>
 </Record>
 </Metadata>
 <Metadata id="Metadata7">
@@ -125,6 +109,22 @@
 <Field label="RateQuartal" length="7" name="RateQuartal" size="255" type="decimal"/>
 <Field label="RateHalbjahr" length="7" name="RateHalbjahr" size="255" type="decimal"/>
 <Field label="RateJahr" length="7" name="RateJahr" size="255" type="decimal"/>
+<Field label="Begünstigter" name="Begunstigter" size="255" type="string"/>
+<Field label="BU" name="BU" size="255" type="string"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata6">
+<Record fieldDelimiter=";" name="lv_landing" recordDelimiter="\n" type="delimited">
+<Field label="VNr" name="VNr" size="255" type="string"/>
+<Field format="yyyy-MM-dd HH:mm:ss" label="Zeitstempel" name="Zeitstempel" size="19" type="date"/>
+<Field label="KuNr" name="KuNr" size="255" type="string"/>
+<Field label="Wertfaktor" name="Wertfaktor" size="255" type="string"/>
+<Field label="Vbeginn" name="Vbeginn" size="255" type="string"/>
+<Field label="Laufzeit" name="Laufzeit" size="255" type="string"/>
+<Field label="RateMonat" name="RateMonat" size="255" type="string"/>
+<Field label="RateQuartal" name="RateQuartal" size="255" type="string"/>
+<Field label="RateHalbjahr" name="RateHalbjahr" size="255" type="string"/>
+<Field label="RateJahr" name="RateJahr" size="255" type="string"/>
 <Field label="Begünstigter" name="Begunstigter" size="255" type="string"/>
 <Field label="BU" name="BU" size="255" type="string"/>
 </Record>
@@ -173,11 +173,11 @@ function integer transform() {
 	$out.0.VNr = $in.0.VNr;
 	$out.0.Zeitstempel = $in.0.Zeitstempel;
 	$out.0.KuNr = $in.0.KuNr;
-	$out.0.Wertbetrag = str2decimal(trim($in.0.Wertbetrag), "##,##");
-	$out.0.RateMonat = str2decimal(trim($in.0.RateMonat), "##,##");
-	$out.0.RateQuartal = str2decimal(trim($in.0.RateQuartal), "##,##");
-	$out.0.RateHalbjahr = str2decimal(trim($in.0.RateHalbjahr), "###,##");
-	$out.0.RateJahr = str2decimal(trim($in.0.RateJahr), "###,##");
+	$out.0.Wertbetrag = str2decimal(trim($in.0.Wertbetrag), "##,##", "de.DE");
+	$out.0.RateMonat = str2decimal(trim($in.0.RateMonat), "##,##", "de.DE");
+	$out.0.RateQuartal = str2decimal(trim($in.0.RateQuartal), "##,##", "de.DE");
+	$out.0.RateHalbjahr = str2decimal(trim($in.0.RateHalbjahr), "###,##", "de.DE");
+	$out.0.RateJahr = str2decimal(trim($in.0.RateJahr), "###,##", "de.DE");
 
 	return ALL;
 }
@@ -211,19 +211,19 @@ function integer transform() {
 	$out.0.KuNr = $in.0.KuNr;
 	$out.0.KFZKZ = $in.0.KFZKZ;
 	$out.0.Art = $in.0.Art;
-	$out.0.Neuwert = str2decimal(trim($in.0.Neuwert), "######,##");
+	$out.0.Neuwert = str2decimal(trim($in.0.Neuwert), "######,##", "de.DE");
 	$out.0.Erstzulassung = str2date($in.0.Erstzulassung, "yyyyMMdd");
 	$out.0.Vbeginn = str2date($in.0.Vbeginn, "dd.MM.yyyy");
-	$out.0.HPMonat = str2decimal(trim($in.0.HPMonat), "####,##");
-	$out.0.TKMonat = str2decimal(trim($in.0.TKMonat), "####,##");
-	$out.0.VKMonat = str2decimal(trim($in.0.VKMonat), "####,##");
-	$out.0.HPSatz = str2integer(replace($in.0.HPSatz, "%", ""), "###");
-	$out.0.TKSatz = str2integer(replace($in.0.TKSatz, "%", ""), "###");
-	$out.0.VKSatz = str2integer(replace($in.0.VKSatz, "%", ""), "###");
-	$out.0.SB_TK = str2decimal(trim(replace($in.0.SB_TK, "-", "0")), "####,##");
-	$out.0.SBVK = str2decimal(trim(replace($in.0.SBVK, "-", "0")), "####,##");
-	$out.0.Schadensumme_Sach = str2decimal(trim($in.0.Schadensumme_Sach), "#######,##");
-	$out.0.Schadensumme_Person = str2decimal(trim($in.0.Schadensumme_Person), "####,##");
+	$out.0.HPMonat = str2decimal(trim($in.0.HPMonat), "####,##", "de.DE");
+	$out.0.TKMonat = str2decimal(trim($in.0.TKMonat), "####,##", "de.DE");
+	$out.0.VKMonat = str2decimal(trim($in.0.VKMonat), "####,##", "de.DE");
+	$out.0.HPSatz = str2integer(replace($in.0.HPSatz, "%", ""), "###", "de.DE");
+	$out.0.TKSatz = str2integer(replace($in.0.TKSatz, "%", ""), "###", "de.DE");
+	$out.0.VKSatz = str2integer(replace($in.0.VKSatz, "%", ""), "###", "de.DE");
+	$out.0.SB_TK = str2decimal(trim(replace($in.0.SB_TK, "-", "0")), "####,##", "de.DE");
+	$out.0.SBVK = str2decimal(trim(replace($in.0.SBVK, "-", "0")), "####,##", "de.DE");
+	$out.0.Schadensumme_Sach = str2decimal(trim($in.0.Schadensumme_Sach), "#######,##", "de.DE");
+	$out.0.Schadensumme_Person = str2decimal(trim($in.0.Schadensumme_Person), "####,##", "de.DE");
 
 	return ALL;
 }
@@ -257,11 +257,11 @@ function integer transform() {
 	$out.0.KuNr = $in.0.KuNr;
 	$out.0.Art = $in.0.Art;
 	$out.0.Vbeginn = str2date($in.0.Vbeginn, "yyyyMMdd");
-	$out.0.RateMonat = str2decimal(trim($in.0.RateMonat), "####,##");
-	$out.0.SB = str2decimal(trim(replace($in.0.SB,"-","0")), "#####,##");
-	$out.0.R1 = str2decimal(trim($in.0.R1), "####,##");
-	$out.0.R2 = str2decimal(trim($in.0.R2), "#####,##");
-	$out.0.R3 = str2decimal(trim($in.0.R3), "#####,##");
+	$out.0.RateMonat = str2decimal(trim($in.0.RateMonat), "####,##", "de.DE");
+	$out.0.SB = str2decimal(trim(replace($in.0.SB,"-","0")), "#####,##", "de.DE");
+	$out.0.R1 = str2decimal(trim($in.0.R1), "####,##", "de.DE");
+	$out.0.R2 = str2decimal(trim($in.0.R2), "#####,##", "de.DE");
+	$out.0.R3 = str2decimal(trim($in.0.R3), "#####,##", "de.DE");
 
 	return ALL;
 }
@@ -293,13 +293,13 @@ function integer transform() {
 	$out.0.VNr = $in.0.VNr;
 	$out.0.Zeitstempel = $in.0.Zeitstempel;
 	$out.0.KuNr = $in.0.KuNr;
-	$out.0.Wertfaktor = str2decimal($in.0.Wertfaktor, "#,##");
+	$out.0.Wertfaktor = str2decimal($in.0.Wertfaktor, "#,##", "de.DE");
 	$out.0.Vbeginn = str2date($in.0.Vbeginn, "yyyyMMdd");
 	$out.0.Laufzeit = $in.0.Laufzeit;
-	$out.0.RateMonat = str2decimal(trim($in.0.RateMonat), "####,##");
-	$out.0.RateQuartal = str2decimal(trim($in.0.RateQuartal), "#####,##");
-	$out.0.RateHalbjahr = str2decimal(trim($in.0.RateHalbjahr), "#####,##");
-	$out.0.RateJahr = str2decimal(trim($in.0.RateJahr), "#####,##");
+	$out.0.RateMonat = str2decimal(trim($in.0.RateMonat), "####,##", "de.DE");
+	$out.0.RateQuartal = str2decimal(trim($in.0.RateQuartal), "#####,##", "de.DE");
+	$out.0.RateHalbjahr = str2decimal(trim($in.0.RateHalbjahr), "#####,##", "de.DE");
+	$out.0.RateJahr = str2decimal(trim($in.0.RateJahr), "#####,##", "de.DE");
 	$out.0.Begunstigter = $in.0.Begunstigter;
 	$out.0.BU = $in.0.BU;
 

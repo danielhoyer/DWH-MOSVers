@@ -114,14 +114,14 @@ function integer transform() {
 	$out.0.Zeitstempel = $in.0.Zeitstempel;
 	$out.0.KuNr = $in.0.KuNr;
 	$out.0.Art = $in.0.Art;
-	$out.0.VWert = str2decimal(replace(trim($in.0.VWert),'\.',""), "#####,##");
+	$out.0.VWert = str2decimal(replace(trim($in.0.VWert),'\.',""), "#####,##", "de.DE");
 	$out.0.Vbeginn = str2date($in.0.Vbeginn, "dd.MM.yyyy");
 	$out.0.Laufzeit = str2integer(trim($in.0.Laufzeit));
 	$out.0.KFrist = str2integer(trim($in.0.KFrist));
-	$out.0.RateMonat = str2decimal(trim($in.0.RateMonat), "###,##");
-	$out.0.RateQuartal = str2decimal(trim($in.0.RateQuartal), "###,##");
-	$out.0.RateHalbjahr = str2decimal(trim($in.0.RateHalbjahr), "####,##");
-	$out.0.RateJahr = str2decimal(trim($in.0.RateJahr), "####,##");
+	$out.0.RateMonat = str2decimal(trim($in.0.RateMonat), "###,##", "de.DE");
+	$out.0.RateQuartal = str2decimal(trim($in.0.RateQuartal), "###,##", "de.DE");
+	$out.0.RateHalbjahr = str2decimal(trim($in.0.RateHalbjahr), "####,##", "de.DE");
+	$out.0.RateJahr = str2decimal(trim($in.0.RateJahr), "####,##", "de.DE");
 
 	return ALL;
 }
