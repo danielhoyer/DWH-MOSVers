@@ -48,11 +48,28 @@
 <Field name="Record_SRC" size="30" type="string"/>
 </Record>
 </Metadata>
+<Metadata id="Metadata14">
+<Record fieldDelimiter=";" name="h_sach" recordDelimiter="\n" type="delimited">
+<Field label="Sach-VNr_Hash" name="Sach_VNr_Hash" size="64" type="string"/>
+<Field label="Sach-VNr" name="Sach_VNr" size="30" type="string"/>
+<Field format="yyyy-MM-dd HH:mm:ss" label="Load_DTS" name="Load_DTS" size="19" type="date"/>
+<Field label="Record_SRC" name="Record_SRC" size="30" type="string"/>
+</Record>
+</Metadata>
 <Metadata id="Metadata12">
 <Record fieldDelimiter=";" name="l_kunde_bu" recordDelimiter="\n" type="delimited">
 <Field label="KuNr_BU-VNr_CompHash" name="KuNr_BU_VNr_CompHash" size="64" type="string"/>
 <Field label="KuNr_Hash" name="KuNr_Hash" size="64" type="string"/>
 <Field label="BU-VNr_Hash" name="BU_VNr_Hash" size="64" type="string"/>
+<Field format="yyyy-MM-dd HH:mm:ss" label="Load_DTS" name="Load_DTS" size="19" type="date"/>
+<Field label="Record_SRC" name="Record_SRC" size="30" type="string"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata17">
+<Record fieldDelimiter=";" name="l_kunde_sach" recordDelimiter="\n" type="delimited">
+<Field label="KuNr_Sach-VNr_CompHash" name="KuNr_Sach_VNr_CompHash" size="64" type="string"/>
+<Field label="KuNr_Hash" name="KuNr_Hash" size="64" type="string"/>
+<Field label="Sach-VNr_Hash" name="Sach_VNr_Hash" size="64" type="string"/>
 <Field format="yyyy-MM-dd HH:mm:ss" label="Load_DTS" name="Load_DTS" size="19" type="date"/>
 <Field label="Record_SRC" name="Record_SRC" size="30" type="string"/>
 </Record>
@@ -148,6 +165,48 @@
 <Field name="Record_SRC" size="30" type="string"/>
 </Record>
 </Metadata>
+<Metadata id="Metadata15">
+<Record fieldDelimiter=";" name="s_sach_allgemein" recordDelimiter="\n" type="delimited">
+<Field label="Sach-VNr_Hash" name="Sach_VNr_Hash" size="64" type="string"/>
+<Field format="yyyy-MM-dd HH:mm:ss" label="Load_DTS" name="Load_DTS" size="19" type="date"/>
+<Field label="Art" name="Art" size="3" type="string"/>
+<Field format="yyyy-MM-dd" label="Vbeginn" name="Vbeginn" size="10" type="date"/>
+<Field label="Laufzeit" name="Laufzeit" size="4" type="integer"/>
+<Field label="KFrist" name="KFrist" size="4" type="integer"/>
+<Field label="Detail_Hash_Diff" name="Detail_Hash_Diff" size="64" type="string"/>
+<Field label="Record_SRC" name="Record_SRC" size="30" type="string"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata16">
+<Record fieldDelimiter=";" name="s_sach_beitraege" recordDelimiter="\n" type="delimited">
+<Field label="Sach-VNr_Hash" name="Sach_VNr_Hash" size="64" type="string"/>
+<Field format="yyyy-MM-dd HH:mm:ss" label="Load_DTS" name="Load_DTS" size="19" trim="true" type="date"/>
+<Field label="VWert" length="8" name="VWert" scale="2" trim="true" type="decimal"/>
+<Field label="RateMonat" length="5" name="RateMonat" scale="2" trim="true" type="decimal"/>
+<Field label="RateQuartal" length="5" name="RateQuartal" scale="2" trim="true" type="decimal"/>
+<Field label="RateHalbjahr" length="6" name="RateHalbjahr" scale="2" trim="true" type="decimal"/>
+<Field label="RateJahr" length="6" name="RateJahr" scale="2" trim="true" type="decimal"/>
+<Field label="Detail_Hash_Diff" name="Detail_Hash_Diff" size="64" type="string"/>
+<Field label="Record_SRC" name="Record_SRC" size="30" type="string"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata13">
+<Record fieldDelimiter=";" name="sach" recordDelimiter="\n" type="delimited">
+<Field name="VNr" size="30" type="string"/>
+<Field format="yyyy-MM-dd HH:mm:ss" name="Zeitstempel" size="19" type="date"/>
+<Field name="KuNr" size="30" type="string"/>
+<Field name="Art" size="3" type="string"/>
+<Field length="8" name="VWert" scale="2" type="decimal"/>
+<Field format="yyyy-MM-dd" name="Vbeginn" size="10" type="date"/>
+<Field name="Laufzeit" size="4" type="integer"/>
+<Field name="KFrist" size="4" type="integer"/>
+<Field length="5" name="RateMonat" scale="2" type="decimal"/>
+<Field length="5" name="RateQuartal" scale="2" type="decimal"/>
+<Field length="6" name="RateHalbjahr" scale="2" type="decimal"/>
+<Field length="6" name="RateJahr" scale="2" type="decimal"/>
+<Field name="Datenquelle" size="30" type="string"/>
+</Record>
+</Metadata>
 <Metadata id="Metadata6">
 <Record fieldDelimiter=";" name="stammdaten" recordDelimiter="\n" type="delimited">
 <Field name="KuNr" size="30" type="string"/>
@@ -223,9 +282,13 @@ TRUNCATE `dwh_core`.`s_sach_beitraege`;]]></attr>
 <Node dbConnection="JDBC1" guiName="bu" guiX="-32" guiY="76" id="BU" type="DB_INPUT_TABLE">
 <attr name="sqlQuery"><![CDATA[SELECT * FROM bu;]]></attr>
 </Node>
+<Node dbConnection="JDBC0" dbTable="l_kunde_sach" guiName="DBOutputTable" guiX="2222" guiY="-163" id="DBOUTPUT_TABLE" type="DB_OUTPUT_TABLE"/>
 <Node dbConnection="JDBC0" dbTable="h_bu" errorAction="COMMIT" guiName="h_bu" guiX="596" guiY="76" id="H_BU" maxErrors="1000" type="DB_OUTPUT_TABLE"/>
 <Node dbConnection="JDBC0" dbTable="h_error" guiName="h_error" guiX="1164" guiY="-37" id="H_ERROR" type="DB_OUTPUT_TABLE"/>
 <Node dbConnection="JDBC0" dbTable="h_error" guiName="h_error" guiX="853" guiY="324" id="H_ERROR1" type="DB_OUTPUT_TABLE"/>
+<Node dbConnection="JDBC0" dbTable="h_error" guiName="h_error" guiX="2755" guiY="234" id="H_ERROR10" type="DB_OUTPUT_TABLE"/>
+<Node dbConnection="JDBC0" dbTable="h_error" guiName="h_error" guiX="2769" guiY="473" id="H_ERROR11" type="DB_OUTPUT_TABLE"/>
+<Node dbConnection="JDBC0" dbTable="h_error" guiName="h_error" guiX="2769" guiY="-190" id="H_ERROR12" type="DB_OUTPUT_TABLE"/>
 <Node dbConnection="JDBC0" dbTable="h_error" guiName="h_error" guiX="1164" guiY="169" id="H_ERROR2" type="DB_OUTPUT_TABLE"/>
 <Node dbConnection="JDBC0" dbTable="h_error" guiName="h_error" guiX="1120" guiY="538" id="H_ERROR3" type="DB_OUTPUT_TABLE"/>
 <Node dbConnection="JDBC0" dbTable="h_error" guiName="h_error" guiX="1247" guiY="739" id="H_ERROR4" type="DB_OUTPUT_TABLE"/>
@@ -233,7 +296,9 @@ TRUNCATE `dwh_core`.`s_sach_beitraege`;]]></attr>
 <Node dbConnection="JDBC0" dbTable="h_error" guiName="h_error" guiX="1288" guiY="1214" id="H_ERROR6" type="DB_OUTPUT_TABLE"/>
 <Node dbConnection="JDBC0" dbTable="h_error" guiName="h_error" guiX="1227" guiY="1466" id="H_ERROR7" type="DB_OUTPUT_TABLE"/>
 <Node dbConnection="JDBC0" dbTable="h_error" guiName="h_error" guiX="1161" guiY="-272" id="H_ERROR8" type="DB_OUTPUT_TABLE"/>
+<Node dbConnection="JDBC0" dbTable="h_error" guiName="h_error" guiX="2769" guiY="8" id="H_ERROR9" type="DB_OUTPUT_TABLE"/>
 <Node dbConnection="JDBC0" dbTable="h_kunde" guiName="h_kunde" guiX="559" guiY="538" id="H_KUNDE" maxErrors="1000" type="DB_OUTPUT_TABLE"/>
+<Node dbConnection="JDBC0" dbTable="h_sach" guiName="h_sach" guiX="2227" guiY="8" id="H_SACH" type="DB_OUTPUT_TABLE"/>
 <Node guiName="ku_nr != null" guiX="141" guiY="76" id="KU_NR_NULL" type="EXT_FILTER">
 <attr name="filterExpression"><![CDATA[//#CTL2
 $in.0.KuNr != null]]></attr>
@@ -370,6 +435,228 @@ function integer transform() {
 // function string getMessage() {}
 ]]></attr>
 </Node>
+<Node guiName="Reformat" guiX="1958" guiY="8" id="REFORMAT11" type="REFORMAT">
+<attr name="transform"><![CDATA[//#CTL2
+
+// Transforms input record into output record.
+function integer transform() {
+	$out.0.Sach_VNr = $in.0.VNr;
+	$out.0.Load_DTS = $in.0.Zeitstempel;
+	$out.0.Record_SRC = $in.0.Datenquelle;
+	$out.0.Sach_VNr_Hash = byte2hex(sha256($in.0.VNr));
+	$out.1.Sach_VNr_Hash = byte2hex(sha256($in.0.VNr));
+	$out.2.Sach_VNr_Hash = byte2hex(sha256($in.0.VNr));
+	$out.1.Load_DTS = $in.0.Zeitstempel;
+	$out.2.Load_DTS = $in.0.Zeitstempel;
+	$out.1.Art = $in.0.Art;
+	$out.1.Vbeginn = $in.0.Vbeginn;
+	$out.1.Laufzeit = $in.0.Laufzeit;
+	$out.1.KFrist = $in.0.KFrist;
+	$out.1.Record_SRC = $in.0.Datenquelle;
+	$out.2.VWert = $in.0.VWert;
+	$out.2.RateMonat = $in.0.RateMonat;
+	$out.2.RateQuartal = $in.0.RateQuartal;
+	$out.2.RateHalbjahr = $in.0.RateHalbjahr;
+	$out.2.RateJahr = $in.0.RateJahr;
+	$out.2.Record_SRC = $in.0.Datenquelle;
+	$out.1.Detail_Hash_Diff = byte2hex(sha256(concatWithSeparator("~", date2str($in.0.Zeitstempel, "yyyy-MM-dd HH:mm:ss", "de.DE"), $in.0.Art, date2str($in.0.Vbeginn, "yyyy-MM-dd HH:mm:ss", "de.DE"), toString($in.0.Laufzeit), toString($in.0.KFrist),$in.0.Datenquelle)));
+	$out.2.Detail_Hash_Diff = byte2hex(sha256(concatWithSeparator("~", date2str($in.0.Zeitstempel, "yyyy-MM-dd HH:mm:ss", "de.DE"), toString($in.0.VWert), toString($in.0.RateMonat), toString($in.0.RateQuartal), toString($in.0.RateHalbjahr), toString($in.0.RateJahr),$in.0.Datenquelle)));
+	$out.3.Sach_VNr_Hash = byte2hex(sha256($in.0.VNr));
+	$out.3.KuNr_Hash = byte2hex(sha256($in.0.KuNr));
+	$out.3.Load_DTS = $in.0.Zeitstempel;
+	$out.3.Record_SRC = $in.0.Datenquelle;
+	$out.3.KuNr_Sach_VNr_CompHash = byte2hex(sha256(concatWithSeparator("~",$in.0.KuNr, $in.0.VNr)));
+
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+</Node>
+<Node guiName="Reformat" guiX="2502" guiY="8" id="REFORMAT12" type="REFORMAT">
+<attr name="transform"><![CDATA[//#CTL2
+date now = today();
+string Record_SRC = "dwh_sa_iz.stammdaten";
+string category = "business";
+boolean done = false;
+
+// Transforms input record into output record.
+function integer transform() {
+	$out.0.id = dictionary.error_id++;
+	$out.0.Load_DTS = now;
+	$out.0.Record_SRC = Record_SRC;
+	$out.0.ID_Hash = byte2hex(sha256(num2str(dictionary.error_id)));
+	$out.1.Error_ID_Hash = byte2hex(sha256(num2str(dictionary.error_id)));
+	$out.1.Load_DTS = now;
+	$out.1.FehlerCat = category;
+	$out.1.Erledigt = done;
+	$out.1.Record_SRC = Record_SRC;
+	$out.1.Datensatz = str2byte(concatWithSeparator("~", $in.0.Sach_VNr_Hash, $in.0.Sach_VNr, date2str($in.0.Load_DTS, "yyyy-MM-dd HH:mm:ss", "de.DE"), $in.0.Record_SRC, num2str($in.0.ErrCode), $in.0.ErrText), "UTF-8");
+
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+</Node>
+<Node guiName="Reformat" guiX="2488" guiY="234" id="REFORMAT13" type="REFORMAT">
+<attr name="transform"><![CDATA[//#CTL2
+date now = today();
+string Record_SRC = "dwh_sa_iz.stammdaten";
+string category = "business";
+boolean done = false;
+
+// Transforms input record into output record.
+function integer transform() {
+	$out.0.id = dictionary.error_id++;
+	$out.0.Load_DTS = now;
+	$out.0.Record_SRC = Record_SRC;
+	$out.0.ID_Hash = byte2hex(sha256(num2str(dictionary.error_id)));
+	$out.1.Error_ID_Hash = byte2hex(sha256(num2str(dictionary.error_id)));
+	$out.1.Load_DTS = now;
+	$out.1.FehlerCat = category;
+	$out.1.Erledigt = done;
+	$out.1.Record_SRC = Record_SRC;
+	$out.1.Datensatz = str2byte(concatWithSeparator("~", $in.0.Sach_VNr_Hash, date2str($in.0.Load_DTS, "yyyy-MM-dd HH:mm:ss", "de.DE"), $in.0.Art, date2str($in.0.Vbeginn, "yyyy-MM-dd HH:mm:ss", "de.DE"),  toString($in.0.Laufzeit),toString($in.0.KFrist), $in.0.Detail_Hash_Diff, $in.0.Record_SRC, num2str($in.0.ErrCode), $in.0.ErrText), "UTF-8");
+
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+</Node>
+<Node guiName="Reformat" guiX="2502" guiY="473" id="REFORMAT14" type="REFORMAT">
+<attr name="transform"><![CDATA[//#CTL2
+date now = today();
+string Record_SRC = "dwh_sa_iz.stammdaten";
+string category = "business";
+boolean done = false;
+
+// Transforms input record into output record.
+function integer transform() {
+	$out.0.id = dictionary.error_id++;
+	$out.0.Load_DTS = now;
+	$out.0.Record_SRC = Record_SRC;
+	$out.0.ID_Hash = byte2hex(sha256(num2str(dictionary.error_id)));
+	$out.1.Error_ID_Hash = byte2hex(sha256(num2str(dictionary.error_id)));
+	$out.1.Load_DTS = now;
+	$out.1.FehlerCat = category;
+	$out.1.Erledigt = done;
+	$out.1.Record_SRC = Record_SRC;
+	$out.1.Datensatz = str2byte(concatWithSeparator("~", $in.0.Sach_VNr_Hash, date2str($in.0.Load_DTS, "yyyy-MM-dd HH:mm:ss", "de.DE"), toString($in.0.VWert),  toString($in.0.RateMonat), toString($in.0.RateQuartal), toString($in.0.RateHalbjahr), toString($in.0.RateJahr), $in.0.Detail_Hash_Diff, $in.0.Record_SRC, num2str($in.0.ErrCode), $in.0.ErrText), "UTF-8");
+
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+</Node>
+<Node guiName="Reformat" guiX="2502" guiY="-190" id="REFORMAT15" type="REFORMAT">
+<attr name="transform"><![CDATA[//#CTL2
+date now = today();
+string Record_SRC = "dwh_sa_iz.stammdaten";
+string category = "business";
+boolean done = false;
+
+// Transforms input record into output record.
+function integer transform() {
+	$out.0.id = dictionary.error_id++;
+	$out.0.Load_DTS = now;
+	$out.0.Record_SRC = Record_SRC;
+	$out.0.ID_Hash = byte2hex(sha256(num2str(dictionary.error_id)));
+	$out.1.Error_ID_Hash = byte2hex(sha256(num2str(dictionary.error_id)));
+	$out.1.Load_DTS = now;
+	$out.1.FehlerCat = category;
+	$out.1.Erledigt = done;
+	$out.1.Record_SRC = Record_SRC;
+	$out.1.Datensatz = str2byte(concatWithSeparator("~",$in.0.KuNr_Sach_VNr_CompHash, $in.0.KuNr_Hash, $in.0.Sach_VNr_Hash, date2str($in.0.Load_DTS, "yyyy-MM-dd HH:mm:ss", "de.DE"), $in.0.Record_SRC, num2str($in.0.ErrCode), $in.0.ErrText), "UTF-8");
+
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+</Node>
 <Node guiName="Reformat" guiX="564" guiY="324" id="REFORMAT2" type="REFORMAT">
 <attr name="transform"><![CDATA[//#CTL2
 date now = today();
@@ -430,7 +717,7 @@ function integer transform() {
 	$out.0.Record_SRC = Record_SRC;
 	$out.1.Error_ID_Hash = byte2hex(sha256(num2str(dictionary.error_id)));
 	$out.1.FehlerCat = category;
-	$out.1.Datensatz = str2byte(concatWithSeparator("~", $in.0.BU_VNr_Hash, date2str($in.0.Load_DTS, "yyyy-MM-dd HH:mm:ss", "de.DE"), toString($in.0.Wertbetrag), toString($in.0.RateMonat),toString($in.0.RateQuartal),toString($in.0.RateHalbjahr),toString($in.0.RateJahr), $in.0.Record_SRC, num2str($in.0.ErrCode), $in.0.ErrMessage), "UTF-8");
+	$out.1.Datensatz = str2byte(concatWithSeparator("~", $in.0.BU_VNr_Hash, date2str($in.0.Load_DTS, "yyyy-MM-dd HH:mm:ss", "de.DE"), toString($in.0.Wertbetrag), toString($in.0.RateMonat),toString($in.0.RateQuartal),toString($in.0.RateHalbjahr),toString($in.0.RateJahr), $in.0.Detail_Hash_Diff,  $in.0.Record_SRC, num2str($in.0.ErrCode), $in.0.ErrMessage), "UTF-8");
 	$out.1.Erledigt = done;
 	$out.1.Record_SRC = Record_SRC;
 	$out.1.Load_DTS = now;
@@ -586,7 +873,7 @@ function integer transform() {
 	$out.1.FehlerCat = category;
 	$out.1.Erledigt = done;
 	$out.1.Record_SRC = Record_SRC;
-	$out.1.Datensatz = str2byte(concatWithSeparator("~", $in.0.KuNr_Hash, date2str($in.0.Load_DTS, "yyyy-MM-dd HH:mm:ss", "de.DE"), $in.0.Strasse, $in.0.HNr, toString($in.0.PLZ), $in.0.Ort, $in.0.Record_SRC, num2str($in.0.ErrCode), $in.0.ErrText), "UTF-8");
+	$out.1.Datensatz = str2byte(concatWithSeparator("~", $in.0.KuNr_Hash, date2str($in.0.Load_DTS, "yyyy-MM-dd HH:mm:ss", "de.DE"), $in.0.Strasse, $in.0.HNr, toString($in.0.PLZ), $in.0.Ort, $in.0.Detail_Hash_Diff, $in.0.Record_SRC, num2str($in.0.ErrCode), $in.0.ErrText), "UTF-8");
 
 	return ALL;
 }
@@ -628,7 +915,7 @@ function integer transform() {
 	$out.1.FehlerCat = category;
 	$out.1.Erledigt = done;
 	$out.1.Record_SRC = Record_SRC;
-	$out.1.Datensatz = str2byte(concatWithSeparator("~", $in.0.KuNr_Hash, date2str($in.0.Load_DTS, "yyyy-MM-dd HH:mm:ss", "de.DE"), $in.0.Name, $in.0.Vorname_1, $in.0.Vorname_2, date2str($in.0.GebDat, "yyyy-MM-dd HH:mm:ss", "de.DE"), $in.0.GebOrt, $in.0.Record_SRC, num2str($in.0.ErrCode), $in.0.ErrText), "UTF-8");
+	$out.1.Datensatz = str2byte(concatWithSeparator("~", $in.0.KuNr_Hash, date2str($in.0.Load_DTS, "yyyy-MM-dd HH:mm:ss", "de.DE"), $in.0.Name, $in.0.Vorname_1, $in.0.Vorname_2, date2str($in.0.GebDat, "yyyy-MM-dd HH:mm:ss", "de.DE"), $in.0.GebOrt, $in.0.Detail_Hash_Diff, $in.0.Record_SRC, num2str($in.0.ErrCode), $in.0.ErrText), "UTF-8");
 
 	return ALL;
 }
@@ -670,7 +957,7 @@ function integer transform() {
 	$out.1.FehlerCat = category;
 	$out.1.Erledigt = done;
 	$out.1.Record_SRC = Record_SRC;
-	$out.1.Datensatz = str2byte(concatWithSeparator("~", $in.0.KuNr_Hash, date2str($in.0.Load_DTS, "yyyy-MM-dd HH:mm:ss", "de.DE"), $in.0.Tel_priv, $in.0.Tel_Arbeit, $in.0.Mobil, $in.0.Fax, $in.0.eMail_1, $in.0.eMail_2, $in.0.Prio_Kontakt, $in.0.Record_SRC, num2str($in.0.ErrCode), $in.0.ErrText), "UTF-8");
+	$out.1.Datensatz = str2byte(concatWithSeparator("~", $in.0.KuNr_Hash, date2str($in.0.Load_DTS, "yyyy-MM-dd HH:mm:ss", "de.DE"), $in.0.Tel_priv, $in.0.Tel_Arbeit, $in.0.Mobil, $in.0.Fax, $in.0.eMail_1, $in.0.eMail_2, $in.0.Prio_Kontakt,$in.0.Detail_Hash_Diff, $in.0.Record_SRC, num2str($in.0.ErrCode), $in.0.ErrText), "UTF-8");
 
 	return ALL;
 }
@@ -712,7 +999,7 @@ function integer transform() {
 	$out.1.FehlerCat = category;
 	$out.1.Erledigt = done;
 	$out.1.Record_SRC = Record_SRC;
-	$out.1.Datensatz = str2byte(concatWithSeparator("~", $in.0.KuNr_Hash, date2str($in.0.Load_DTS, "yyyy-MM-dd HH:mm:ss", "de.DE"), $in.0.FamStand, toString($in.0.Anz_Kinder), toString($in.0.Anz_Kinder_MV), $in.0.Ehepart_MV, $in.0.Record_SRC, num2str($in.0.ErrCode), $in.0.ErrText), "UTF-8");
+	$out.1.Datensatz = str2byte(concatWithSeparator("~", $in.0.KuNr_Hash, date2str($in.0.Load_DTS, "yyyy-MM-dd HH:mm:ss", "de.DE"), $in.0.FamStand, toString($in.0.Anz_Kinder), toString($in.0.Anz_Kinder_MV), $in.0.Ehepart_MV,$in.0.Detail_Hash_Diff, $in.0.Record_SRC, num2str($in.0.ErrCode), $in.0.ErrText), "UTF-8");
 
 	return ALL;
 }
@@ -736,12 +1023,18 @@ function integer transform() {
 // function string getMessage() {}
 ]]></attr>
 </Node>
+<Node dbConnection="JDBC0" guiName="sach" guiX="1661" guiY="8" id="SACH" type="DB_INPUT_TABLE">
+<attr name="sqlQuery"><![CDATA[select * from `dwh_sa_iz`.`sach`]]></attr>
+</Node>
 <Node dbConnection="JDBC1" guiName="stammdaten" guiX="-32" guiY="538" id="STAMMDATEN" type="DB_INPUT_TABLE">
 <attr name="sqlQuery"><![CDATA[select * from `dwh_sa_iz`.`stammdaten`]]></attr>
 </Node>
 <Node dbConnection="JDBC0" dbTable="s_bu" guiName="s_bu" guiX="596" guiY="169" id="S_BU" maxErrors="1000" type="DB_OUTPUT_TABLE"/>
 <Node dbConnection="JDBC0" dbTable="s_error" guiName="s_error" guiX="1164" guiY="76" id="S_ERROR" type="DB_OUTPUT_TABLE"/>
 <Node dbConnection="JDBC0" dbTable="s_error" guiName="s_error" guiX="848" guiY="433" id="S_ERROR1" type="DB_OUTPUT_TABLE"/>
+<Node dbConnection="JDBC0" dbTable="s_error" guiName="s_error" guiX="2750" guiY="343" id="S_ERROR10" type="DB_OUTPUT_TABLE"/>
+<Node dbConnection="JDBC0" dbTable="s_error" guiName="s_error" guiX="2764" guiY="582" id="S_ERROR11" type="DB_OUTPUT_TABLE"/>
+<Node dbConnection="JDBC0" dbTable="s_error" guiName="s_error" guiX="2764" guiY="-81" id="S_ERROR12" type="DB_OUTPUT_TABLE"/>
 <Node dbConnection="JDBC0" dbTable="s_error" guiName="s_error" guiX="1164" guiY="260" id="S_ERROR2" type="DB_OUTPUT_TABLE"/>
 <Node dbConnection="JDBC0" dbTable="s_error" guiName="s_error" guiX="1115" guiY="647" id="S_ERROR3" type="DB_OUTPUT_TABLE"/>
 <Node dbConnection="JDBC0" dbTable="s_error" guiName="s_error" guiX="1242" guiY="848" id="S_ERROR4" type="DB_OUTPUT_TABLE"/>
@@ -749,13 +1042,18 @@ function integer transform() {
 <Node dbConnection="JDBC0" dbTable="s_error" guiName="s_error" guiX="1283" guiY="1323" id="S_ERROR6" type="DB_OUTPUT_TABLE"/>
 <Node dbConnection="JDBC0" dbTable="s_error" guiName="s_error" guiX="1222" guiY="1575" id="S_ERROR7" type="DB_OUTPUT_TABLE"/>
 <Node dbConnection="JDBC0" dbTable="s_error" guiName="s_error" guiX="1156" guiY="-163" id="S_ERROR8" type="DB_OUTPUT_TABLE"/>
+<Node dbConnection="JDBC0" dbTable="s_error" guiName="s_error" guiX="2764" guiY="117" id="S_ERROR9" type="DB_OUTPUT_TABLE"/>
 <Node dbConnection="JDBC0" dbTable="s_kunde_adresse" guiName="s_kunde_adresse" guiX="559" guiY="668" id="S_KUNDE_ADRESSE" maxErrors="1000" type="DB_OUTPUT_TABLE"/>
 <Node dbConnection="JDBC0" dbTable="s_kunde_allgemein" guiName="s_kunde_allgemein" guiX="559" guiY="755" id="S_KUNDE_ALLGEMEIN" maxErrors="1000" type="DB_OUTPUT_TABLE"/>
 <Node dbConnection="JDBC0" dbTable="s_kunde_familie" guiName="s_kunde_familie" guiX="558" guiY="978" id="S_KUNDE_FAMILIE" maxErrors="1000" type="DB_OUTPUT_TABLE"/>
 <Node dbConnection="JDBC0" dbTable="s_kunde_kontakt" guiName="s_kunde_kontakt" guiX="559" guiY="843" id="S_KUNDE_KONTAKT" maxErrors="1000" type="DB_OUTPUT_TABLE"/>
+<Node dbConnection="JDBC0" dbTable="s_sach_allgemein" guiName="s_sach_allgemein" guiX="2222" guiY="234" id="S_SACH_ALLGEMEIN" type="DB_OUTPUT_TABLE"/>
+<Node dbConnection="JDBC0" dbTable="s_sach_beitraege" guiName="s_sach_beitraege" guiX="2223" guiY="473" id="S_SACH_BEITRAEGE" type="DB_OUTPUT_TABLE"/>
 <Edge fromNode="BU:0" guiBendpoints="" guiRouter="Manhattan" id="Edge0" inPort="Port 0 (in)" metadata="Metadata0" outPort="Port 0 (out)" toNode="KU_NR_NULL:0"/>
+<Edge fromNode="DBOUTPUT_TABLE:0" guiBendpoints="" guiRouter="Manhattan" id="Edge54" inPort="Port 0 (in)" outPort="Port 0 (rejected)" toNode="REFORMAT15:0"/>
 <Edge fromNode="H_BU:0" guiBendpoints="" guiRouter="Manhattan" id="Edge6" inPort="Port 0 (in)" metadata="h_bu" outPort="Port 0 (rejected)" toNode="REFORMAT1:0"/>
 <Edge fromNode="H_KUNDE:0" guiBendpoints="" guiRouter="Manhattan" id="Edge32" inPort="Port 0 (in)" outPort="Port 0 (rejected)" toNode="REFORMAT5:0"/>
+<Edge fromNode="H_SACH:0" guiBendpoints="" guiRouter="Manhattan" id="Edge29" inPort="Port 0 (in)" outPort="Port 0 (rejected)" toNode="REFORMAT12:0"/>
 <Edge fromNode="KU_NR_NULL:0" guiBendpoints="" guiRouter="Manhattan" id="Edge15" inPort="Port 0 (in)" outPort="Port 0 (accepted)" toNode="REFORMAT:0"/>
 <Edge fromNode="KU_NR_NULL:1" guiBendpoints="" guiRouter="Manhattan" id="Edge10" inPort="Port 0 (in)" outPort="Port 1 (rejected)" toNode="REFORMAT2:0"/>
 <Edge fromNode="L_KUNDE_BU:0" guiBendpoints="" guiRouter="Manhattan" id="Edge5" inPort="Port 0 (in)" outPort="Port 0 (rejected)" toNode="REFORMAT10:0"/>
@@ -766,6 +1064,18 @@ function integer transform() {
 <Edge fromNode="REFORMAT1:1" guiBendpoints="" guiRouter="Manhattan" id="Edge13" inPort="Port 0 (in)" metadata="Metadata5" outPort="Port 1 (out)" toNode="S_ERROR:0"/>
 <Edge fromNode="REFORMAT10:0" guiBendpoints="" guiRouter="Manhattan" id="Edge4" inPort="Port 0 (in)" metadata="Metadata2" outPort="Port 0 (out)" toNode="H_ERROR8:0"/>
 <Edge fromNode="REFORMAT10:1" guiBendpoints="" guiRouter="Manhattan" id="Edge3" inPort="Port 0 (in)" metadata="Metadata5" outPort="Port 1 (out)" toNode="S_ERROR8:0"/>
+<Edge fromNode="REFORMAT11:0" guiBendpoints="" guiRouter="Manhattan" id="Edge9" inPort="Port 0 (in)" metadata="Metadata14" outPort="Port 0 (out)" toNode="H_SACH:0"/>
+<Edge fromNode="REFORMAT11:1" guiBendpoints="" guiRouter="Manhattan" id="Edge11" inPort="Port 0 (in)" metadata="Metadata15" outPort="Port 1 (out)" toNode="S_SACH_ALLGEMEIN:0"/>
+<Edge fromNode="REFORMAT11:2" guiBendpoints="" guiRouter="Manhattan" id="Edge26" inPort="Port 0 (in)" metadata="Metadata16" outPort="Port 2 (out)" toNode="S_SACH_BEITRAEGE:0"/>
+<Edge fromNode="REFORMAT11:3" guiBendpoints="" guiRouter="Manhattan" id="Edge51" inPort="Port 0 (in)" metadata="Metadata17" outPort="Port 3 (out)" toNode="DBOUTPUT_TABLE:0"/>
+<Edge fromNode="REFORMAT12:0" guiBendpoints="" guiRouter="Manhattan" id="Edge28" inPort="Port 0 (in)" metadata="Metadata2" outPort="Port 0 (out)" toNode="H_ERROR9:0"/>
+<Edge fromNode="REFORMAT12:1" guiBendpoints="" guiRouter="Manhattan" id="Edge27" inPort="Port 0 (in)" metadata="Metadata5" outPort="Port 1 (out)" toNode="S_ERROR9:0"/>
+<Edge fromNode="REFORMAT13:0" guiBendpoints="" guiRouter="Manhattan" id="Edge30" inPort="Port 0 (in)" metadata="Metadata2" outPort="Port 0 (out)" toNode="H_ERROR10:0"/>
+<Edge fromNode="REFORMAT13:1" guiBendpoints="" guiRouter="Manhattan" id="Edge31" inPort="Port 0 (in)" metadata="Metadata5" outPort="Port 1 (out)" toNode="S_ERROR10:0"/>
+<Edge fromNode="REFORMAT14:0" guiBendpoints="" guiRouter="Manhattan" id="Edge47" inPort="Port 0 (in)" metadata="Metadata2" outPort="Port 0 (out)" toNode="H_ERROR11:0"/>
+<Edge fromNode="REFORMAT14:1" guiBendpoints="" guiRouter="Manhattan" id="Edge48" inPort="Port 0 (in)" metadata="Metadata5" outPort="Port 1 (out)" toNode="S_ERROR11:0"/>
+<Edge fromNode="REFORMAT15:0" guiBendpoints="" guiRouter="Manhattan" id="Edge52" inPort="Port 0 (in)" metadata="Metadata2" outPort="Port 0 (out)" toNode="H_ERROR12:0"/>
+<Edge fromNode="REFORMAT15:1" guiBendpoints="" guiRouter="Manhattan" id="Edge53" inPort="Port 0 (in)" metadata="Metadata5" outPort="Port 1 (out)" toNode="S_ERROR12:0"/>
 <Edge debugMode="false" fromNode="REFORMAT2:0" guiBendpoints="" guiRouter="Manhattan" id="Edge12" inPort="Port 0 (in)" metadata="Metadata2" outPort="Port 0 (out)" toNode="H_ERROR1:0"/>
 <Edge fromNode="REFORMAT2:1" guiBendpoints="" guiRouter="Manhattan" id="Edge14" inPort="Port 0 (in)" metadata="Metadata5" outPort="Port 1 (out)" toNode="S_ERROR1:0"/>
 <Edge fromNode="REFORMAT3:0" guiBendpoints="" guiRouter="Manhattan" id="Edge18" inPort="Port 0 (in)" metadata="Metadata2" outPort="Port 0 (out)" toNode="H_ERROR2:0"/>
@@ -785,11 +1095,14 @@ function integer transform() {
 <Edge fromNode="REFORMAT8:1" guiBendpoints="" guiRouter="Manhattan" id="Edge41" inPort="Port 0 (in)" metadata="Metadata5" outPort="Port 1 (out)" toNode="S_ERROR6:0"/>
 <Edge fromNode="REFORMAT9:0" guiBendpoints="" guiRouter="Manhattan" id="Edge45" inPort="Port 0 (in)" metadata="Metadata2" outPort="Port 0 (out)" toNode="H_ERROR7:0"/>
 <Edge fromNode="REFORMAT9:1" guiBendpoints="" guiRouter="Manhattan" id="Edge44" inPort="Port 0 (in)" metadata="Metadata5" outPort="Port 1 (out)" toNode="S_ERROR7:0"/>
+<Edge fromNode="SACH:0" guiBendpoints="" guiRouter="Manhattan" id="Edge8" inPort="Port 0 (in)" metadata="Metadata13" outPort="Port 0 (out)" toNode="REFORMAT11:0"/>
 <Edge fromNode="STAMMDATEN:0" guiBendpoints="" guiRouter="Manhattan" id="Edge20" inPort="Port 0 (in)" metadata="Metadata6" outPort="Port 0 (out)" toNode="REFORMAT4:0"/>
 <Edge fromNode="S_BU:0" guiBendpoints="" guiRouter="Manhattan" id="Edge17" inPort="Port 0 (in)" metadata="Metadata3" outPort="Port 0 (rejected)" toNode="REFORMAT3:0"/>
 <Edge fromNode="S_KUNDE_ADRESSE:0" guiBendpoints="" guiRouter="Manhattan" id="Edge37" inPort="Port 0 (in)" outPort="Port 0 (rejected)" toNode="REFORMAT6:0"/>
 <Edge fromNode="S_KUNDE_ALLGEMEIN:0" guiBendpoints="" guiRouter="Manhattan" id="Edge40" inPort="Port 0 (in)" outPort="Port 0 (rejected)" toNode="REFORMAT7:0"/>
 <Edge fromNode="S_KUNDE_FAMILIE:0" guiBendpoints="" guiRouter="Manhattan" id="Edge46" inPort="Port 0 (in)" outPort="Port 0 (rejected)" toNode="REFORMAT9:0"/>
 <Edge fromNode="S_KUNDE_KONTAKT:0" guiBendpoints="" guiRouter="Manhattan" id="Edge43" inPort="Port 0 (in)" outPort="Port 0 (rejected)" toNode="REFORMAT8:0"/>
+<Edge fromNode="S_SACH_ALLGEMEIN:0" guiBendpoints="" guiRouter="Manhattan" id="Edge49" inPort="Port 0 (in)" outPort="Port 0 (rejected)" toNode="REFORMAT13:0"/>
+<Edge fromNode="S_SACH_BEITRAEGE:0" guiBendpoints="" guiRouter="Manhattan" id="Edge50" inPort="Port 0 (in)" outPort="Port 0 (rejected)" toNode="REFORMAT14:0"/>
 </Phase>
 </Graph>
