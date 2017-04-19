@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Record fieldDelimiter=";" name="lookup_kunde" recordDelimiter="\n" type="delimited">
+<Field name="KuNr" size="30" type="string"/>
+</Record>
