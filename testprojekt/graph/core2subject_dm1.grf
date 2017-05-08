@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Graph author="Dan" created="Mon May 08 13:15:15 CEST 2017" guiVersion="4.6.0.M1" id="1494242222590" licenseCode="CLP1DDHBWM32801253EX" name="core2subject" showComponentDetails="true">
+<Global>
+<Metadata id="Metadata11">
+<Record fieldDelimiter=";" name="counter" previewAttachmentCharset="UTF-8" recordDelimiter="\r\n" type="delimited">
+<Field delimiter=";" name="count" type="integer"/>
+<Field name="KuNr" type="string"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata1">
+<Record fieldDelimiter=";" name="dm1_dim_kun" previewAttachmentCharset="UTF-8" recordDelimiter="\n" type="delimited">
+<Field name="KuNr" size="30" type="string"/>
+<Field name="Name" size="30" type="string"/>
+<Field name="Vorname_1" size="30" type="string"/>
+<Field name="Vorname_2" size="30" type="string"/>
+<Field name="Load_DTS" type="date"/>
+<Field name="KuNr_Hash" type="string"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata13" previewAttachmentCharset="UTF-8">
+<Record fieldDelimiter=";" name="dm1_dim_kun1_withoudDTS" previewAttachmentCharset="UTF-8" recordDelimiter="\n" type="delimited">
+<Field name="KuNr" size="30" type="string"/>
+<Field name="Name" size="30" type="string"/>
+<Field name="Vorname_1" size="30" type="string"/>
+<Field name="Vorname_2" size="30" type="string"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata10">
+<Record fieldDelimiter=";" name="dm1_dim_verart" recordDelimiter="\n" type="delimited">
+<Field name="VerArt_id" size="11" type="integer"/>
+<Field name="Anz_Lv" size="11" type="integer"/>
+<Field name="Anz_Kv" size="11" type="integer"/>
+<Field name="Anz_Bu" size="11" type="integer"/>
+<Field name="Anz_Sa" size="11" type="integer"/>
+<Field name="Anz_Kf" size="11" type="integer"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata0">
+<Record fieldDelimiter=";" name="dm1_dim_verart" recordDelimiter="\n" type="delimited">
+<Field name="VerArt_id" size="11" trim="true" type="integer"/>
+<Field name="Anz_Lv" size="11" trim="true" type="integer"/>
+<Field name="Anz_Kv" size="11" trim="true" type="integer"/>
+<Field name="Anz_Bu" size="11" trim="true" type="integer"/>
+<Field name="Anz_Sa" size="11" trim="true" type="integer"/>
+<Field name="Anz_Kf" size="11" trim="true" type="integer"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata2">
+<Record fieldDelimiter=";" name="dm1_fakt_anzverkun" recordDelimiter="\n" type="delimited">
+<Field name="KuNr" size="30" type="string"/>
+<Field name="VerArt_id" size="11" type="integer"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata4" previewAttachmentCharset="UTF-8">
+<Record fieldDelimiter=";" name="KuNr_BuHash" previewAttachmentCharset="UTF-8" recordDelimiter="\n" type="delimited">
+<Field name="KuNr" size="30" type="string"/>
+<Field name="BU_VNr_Hash" type="string"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata5">
+<Record fieldDelimiter=";" name="l_kunde_bu" recordDelimiter="\n" type="delimited">
+<Field label="KuNr_BU-VNr_CompHash" name="KuNr_BU_VNr_CompHash" size="64" type="string"/>
+<Field label="KuNr_Hash" name="KuNr_Hash" size="64" type="string"/>
+<Field label="BU-VNr_Hash" name="BU_VNr_Hash" size="64" type="string"/>
+<Field format="yyyy-MM-dd HH:mm:ss" label="Load_DTS" name="Load_DTS" size="19" type="date"/>
+<Field label="Record_SRC" name="Record_SRC" size="30" type="string"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata6">
+<Record fieldDelimiter=";" name="l_kunde_kfz" recordDelimiter="\n" type="delimited">
+<Field label="KuNr_KFZ-VNr_CompHash" name="KuNr_KFZ_VNr_CompHash" size="64" type="string"/>
+<Field label="KuNr_Hash" name="KuNr_Hash" size="64" type="string"/>
+<Field label="KFZ-VNr_Hash" name="KFZ_VNr_Hash" size="64" type="string"/>
+<Field format="yyyy-MM-dd HH:mm:ss" label="Load_DTS" name="Load_DTS" size="19" type="date"/>
+<Field label="Record_SRC" name="Record_SRC" size="30" type="string"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata7">
+<Record fieldDelimiter=";" name="l_kunde_kv" recordDelimiter="\n" type="delimited">
+<Field label="KuNr_KV-VNr_CompHash" name="KuNr_KV_VNr_CompHash" size="64" type="string"/>
+<Field label="KuNr_Hash" name="KuNr_Hash" size="64" type="string"/>
+<Field label="KV-VNr_Hash" name="KV_VNr_Hash" size="64" type="string"/>
+<Field format="yyyy-MM-dd HH:mm:ss" label="Load_DTS" name="Load_DTS" size="19" type="date"/>
+<Field label="Record_SRC" name="Record_SRC" size="30" type="string"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata8">
+<Record fieldDelimiter=";" name="l_kunde_lv" recordDelimiter="\n" type="delimited">
+<Field label="KuNr_LV-VNr_CompHash" name="KuNr_LV_VNr_CompHash" size="64" type="string"/>
+<Field label="KuNr_Hash" name="KuNr_Hash" size="64" type="string"/>
+<Field label="LV-VNr_Hash" name="LV_VNr_Hash" size="64" type="string"/>
+<Field format="yyyy-MM-dd HH:mm:ss" label="Load_DTS" name="Load_DTS" size="19" type="date"/>
+<Field label="Record_SRC" name="Record_SRC" size="30" type="string"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata9">
+<Record fieldDelimiter=";" name="l_kunde_sach" recordDelimiter="\n" type="delimited">
+<Field label="KuNr_Sach-VNr_CompHash" name="KuNr_Sach_VNr_CompHash" size="64" type="string"/>
+<Field label="KuNr_Hash" name="KuNr_Hash" size="64" type="string"/>
+<Field label="Sach-VNr_Hash" name="Sach_VNr_Hash" size="64" type="string"/>
+<Field format="yyyy-MM-dd HH:mm:ss" label="Load_DTS" name="Load_DTS" size="19" type="date"/>
+<Field label="Record_SRC" name="Record_SRC" size="30" type="string"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata3">
+<Record fieldDelimiter=";" name="load_dts" recordDelimiter="\r\n" type="delimited">
+<Field delimiter="\n" name="Load_DTS" type="date"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata12">
+<Record fieldDelimiter=";" name="recordName1" recordDelimiter="\r\n" type="delimited">
+<Field name="counterBU" type="integer"/>
+<Field name="counterKFZ" type="integer"/>
+<Field name="counterKV" type="integer"/>
+<Field name="counterLV" type="integer"/>
+<Field delimiter="\n" name="counterSach" type="integer"/>
+</Record>
+</Metadata>
+<Connection database="MYSQL" dbURL="jdbc:mysql://localhost:3306/dwh_core?user=root" id="JDBC0" jdbcSpecific="MYSQL" name="dwh_core" password="toor" type="JDBC" user="root"/>
+<Connection database="MYSQL" dbURL="jdbc:mysql://localhost:3306/dwh_help?user=root" id="JDBC2" jdbcSpecific="MYSQL" name="dwh_help" password="toor" type="JDBC" user="root"/>
+<Connection database="MYSQL" dbURL="jdbc:mysql://localhost:3306/dwh_subject?user=root" id="JDBC1" jdbcSpecific="MYSQL" name="dwh_subject" password="toor" type="JDBC" user="root"/>
+<GraphParameters>
+<GraphParameterFile fileURL="workspace.prm"/>
+</GraphParameters>
+<Dictionary>
+<Entry input="true" name="load_dts" output="true" type="date"/>
+</Dictionary>
+</Global>
+<Phase number="0">
+<Node dbConnection="JDBC0" guiName="DBInputTable" guiX="-9" guiY="-2" id="DBINPUT_TABLE" type="DB_INPUT_TABLE">
+<attr name="sqlQuery"><![CDATA[select `dwh_core`.`h_kunde`.`Load_DTS`
+from `dwh_core`.`h_kunde`]]></attr>
+</Node>
+<Node guiName="Reformat" guiX="195" guiY="-2" id="REFORMAT1" type="REFORMAT">
+<attr name="transform"><![CDATA[//#CTL2
+
+// Transforms input record into output record.
+function integer transform() {
+	dictionary.load_dts = $in.0.Load_DTS;
+
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+</Node>
+<Node guiName="Trash" guiX="407" guiY="-2" id="TRASH" type="TRASH"/>
+<Edge fromNode="DBINPUT_TABLE:0" guiBendpoints="" guiRouter="Manhattan" id="Edge15" inPort="Port 0 (in)" metadata="Metadata3" outPort="Port 0 (out)" toNode="REFORMAT1:0"/>
+<Edge fromNode="REFORMAT1:0" guiBendpoints="" guiRouter="Manhattan" id="Edge29" inPort="Port 0 (in)" outPort="Port 0 (out)" toNode="TRASH:0"/>
+</Phase>
+<Phase number="1">
+<Node aggregateKey="KuNr" guiName="Aggregate" guiX="1374" guiY="220" id="AGGREGATE" mapping="$count:=countnonnull($BU_VNr_Hash);$KuNr:=$KuNr;" type="AGGREGATE"/>
+<Node aggregateKey="KuNr" guiName="Aggregate" guiX="1374" guiY="376" id="AGGREGATE1" mapping="$count:=countnonnull($BU_VNr_Hash);$KuNr:=$KuNr;" type="AGGREGATE"/>
+<Node aggregateKey="KuNr" guiName="Aggregate" guiX="1374" guiY="496" id="AGGREGATE2" mapping="$count:=countnonnull($BU_VNr_Hash);$KuNr:=$KuNr;" type="AGGREGATE"/>
+<Node aggregateKey="KuNr" guiName="Aggregate" guiX="1374" guiY="609" id="AGGREGATE3" mapping="$count:=countnonnull($BU_VNr_Hash);$KuNr:=$KuNr;" type="AGGREGATE"/>
+<Node aggregateKey="KuNr" guiName="Aggregate" guiX="1374" guiY="731" id="AGGREGATE4" mapping="$count:=countnonnull($BU_VNr_Hash);$KuNr:=$KuNr;" type="AGGREGATE"/>
+<Node guiName="Combine" guiX="1617" guiY="220" id="COMBINE" type="COMBINE">
+<attr name="transform"><![CDATA[//#CTL2
+integer id = 1;
+
+// Transforms input record into output record.
+function integer transform() {
+	$out.0.Anz_Bu = $in.0.count;
+	$out.0.Anz_Kf = $in.1.count;
+	$out.0.Anz_Kv = $in.2.count;
+	$out.0.Anz_Lv = $in.3.count;
+	$out.0.Anz_Sa = $in.4.count;
+	$out.0.VerArt_id = id++;
+
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+</Node>
+<Node dbConnection="JDBC1" dbTable="dm1_dim_kun" guiName="dm1_dim_kun" guiX="1771" guiY="74" id="DM1_DIM_KUN" type="DB_OUTPUT_TABLE"/>
+<Node dbConnection="JDBC1" dbTable="dm1_dim_verart" guiName="dm1_dim_verart" guiX="1805" guiY="220" id="DM1_DIM_VERART1" type="DB_OUTPUT_TABLE"/>
+<Node guiName="ExtHashJoin" guiX="790" guiY="220" id="EXT_HASH_JOIN1" joinKey="$KuNr_Hash=$KuNr_Hash" joinType="leftOuter" type="EXT_HASH_JOIN">
+<attr name="transform"><![CDATA[//#CTL2
+
+// Transforms input record into output record.
+function integer transform() {
+	$out.0.KuNr = $in.0.KuNr;
+	$out.0.BU_VNr_Hash = $in.1.BU_VNr_Hash;
+
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+</Node>
+<Node guiName="ExtHashJoin" guiX="791" guiY="351" id="EXT_HASH_JOIN2" joinKey="$KuNr_Hash=$KuNr_Hash" joinType="leftOuter" type="EXT_HASH_JOIN">
+<attr name="transform"><![CDATA[//#CTL2
+
+// Transforms input record into output record.
+function integer transform() {
+	$out.0.KuNr = $in.0.KuNr;
+	$out.0.BU_VNr_Hash = $in.1.KFZ_VNr_Hash;
+
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+</Node>
+<Node guiName="ExtHashJoin" guiX="791" guiY="488" id="EXT_HASH_JOIN3" joinKey="$KuNr_Hash=$KuNr_Hash" joinType="leftOuter" type="EXT_HASH_JOIN">
+<attr name="transform"><![CDATA[//#CTL2
+
+// Transforms input record into output record.
+function integer transform() {
+	$out.0.KuNr = $in.0.KuNr;
+	$out.0.BU_VNr_Hash = $in.1.KV_VNr_Hash;
+
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+</Node>
+<Node guiName="ExtHashJoin" guiX="791" guiY="601" id="EXT_HASH_JOIN4" joinKey="$KuNr_Hash=$KuNr_Hash" joinType="leftOuter" type="EXT_HASH_JOIN">
+<attr name="transform"><![CDATA[//#CTL2
+
+// Transforms input record into output record.
+function integer transform() {
+	$out.0.KuNr = $in.0.KuNr;
+	$out.0.BU_VNr_Hash = $in.1.LV_VNr_Hash;
+
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+</Node>
+<Node guiName="ExtHashJoin" guiX="792" guiY="723" id="EXT_HASH_JOIN5" joinKey="$KuNr_Hash=$KuNr_Hash" joinType="leftOuter" type="EXT_HASH_JOIN">
+<attr name="transform"><![CDATA[//#CTL2
+
+// Transforms input record into output record.
+function integer transform() {
+	$out.0.KuNr = $in.0.KuNr;
+	$out.0.BU_VNr_Hash = $in.1.Sach_VNr_Hash;
+
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+</Node>
+<Node guiName="ExtSort" guiX="1070" guiY="220" id="EXT_SORT" sortKey="KuNr(a)" type="EXT_SORT"/>
+<Node guiName="ExtSort" guiX="1070" guiY="376" id="EXT_SORT1" sortKey="KuNr(a)" type="EXT_SORT"/>
+<Node guiName="ExtSort" guiX="1070" guiY="496" id="EXT_SORT2" sortKey="KuNr(a)" type="EXT_SORT"/>
+<Node guiName="ExtSort" guiX="1070" guiY="609" id="EXT_SORT3" sortKey="KuNr(a)" type="EXT_SORT"/>
+<Node guiName="ExtSort" guiX="1070" guiY="731" id="EXT_SORT4" sortKey="KuNr(a)" type="EXT_SORT"/>
+<Node guiName="ExtSort" guiX="1051" guiY="108" id="EXT_SORT5" sortKey="KuNr(a)" type="EXT_SORT"/>
+<Node guiName="Filter" guiX="179" guiY="156" id="FILTER" type="EXT_FILTER">
+<attr name="filterExpression"><![CDATA[//#CTL2
+$in.0.Load_DTS == dictionary.load_dts]]></attr>
+</Node>
+<Node guiName="Filter" guiX="180" guiY="271" id="FILTER1" type="EXT_FILTER">
+<attr name="filterExpression"><![CDATA[//#CTL2
+$in.0.Load_DTS == dictionary.load_dts]]></attr>
+</Node>
+<Node guiName="Filter" guiX="180" guiY="385" id="FILTER2" type="EXT_FILTER">
+<attr name="filterExpression"><![CDATA[//#CTL2
+$in.0.Load_DTS == dictionary.load_dts]]></attr>
+</Node>
+<Node guiName="Filter" guiX="180" guiY="522" id="FILTER3" type="EXT_FILTER">
+<attr name="filterExpression"><![CDATA[//#CTL2
+$in.0.Load_DTS == dictionary.load_dts]]></attr>
+</Node>
+<Node guiName="Filter" guiX="180" guiY="635" id="FILTER4" type="EXT_FILTER">
+<attr name="filterExpression"><![CDATA[//#CTL2
+$in.0.Load_DTS == dictionary.load_dts]]></attr>
+</Node>
+<Node guiName="Filter" guiX="181" guiY="757" id="FILTER5" type="EXT_FILTER">
+<attr name="filterExpression"><![CDATA[//#CTL2
+$in.0.Load_DTS == dictionary.load_dts]]></attr>
+</Node>
+<Node dbConnection="JDBC0" guiName="Kundendaten" guiX="-9" guiY="156" id="KUNDENDATEN" type="DB_INPUT_TABLE">
+<attr name="sqlQuery"><![CDATA[select dwh_core.h_kunde.KuNr, `dwh_core`.`s_kunde_allgemein`.`Name`,`dwh_core`.`s_kunde_allgemein`.`Vorname_1`,
+`dwh_core`.`s_kunde_allgemein`.`Vorname_2`, dwh_core.h_kunde.Load_DTS, dwh_core.s_kunde_allgemein.KuNr_Hash
+from `dwh_core`.`s_kunde_allgemein`, `dwh_core`.`h_kunde`
+where dwh_core.s_kunde_allgemein.KuNr_Hash = dwh_core.h_kunde.KuNr_Hash; ]]></attr>
+</Node>
+<Node dbConnection="JDBC0" guiName="l_kunde_bu" guiX="-9" guiY="271" id="L_KUNDE_BU" type="DB_INPUT_TABLE">
+<attr name="sqlQuery"><![CDATA[select * from `dwh_core`.`l_kunde_bu`]]></attr>
+</Node>
+<Node dbConnection="JDBC0" guiName="l_kunde_kfz" guiX="-9" guiY="385" id="L_KUNDE_KFZ" type="DB_INPUT_TABLE">
+<attr name="sqlQuery"><![CDATA[select * from `dwh_core`.`l_kunde_kfz`]]></attr>
+</Node>
+<Node dbConnection="JDBC0" guiName="l_kunde_kv" guiX="-9" guiY="522" id="L_KUNDE_KV" type="DB_INPUT_TABLE">
+<attr name="sqlQuery"><![CDATA[select * from `dwh_core`.`l_kunde_kv`]]></attr>
+</Node>
+<Node dbConnection="JDBC0" guiName="l_kunde_lv" guiX="-9" guiY="635" id="L_KUNDE_LV" type="DB_INPUT_TABLE">
+<attr name="sqlQuery"><![CDATA[select * from `dwh_core`.`l_kunde_lv`]]></attr>
+</Node>
+<Node dbConnection="JDBC0" guiName="l_kunde_sach" guiX="-8" guiY="757" id="L_KUNDE_SACH" type="DB_INPUT_TABLE">
+<attr name="sqlQuery"><![CDATA[select * from `dwh_core`.`l_kunde_sach`]]></attr>
+</Node>
+<Node guiName="Reformat" guiX="1410" guiY="63" id="REFORMAT" type="REFORMAT">
+<attr name="transform"><![CDATA[//#CTL2
+
+// Transforms input record into output record.
+function integer transform() {
+	$out.0.KuNr = $in.0.KuNr;
+	$out.0.Name = $in.0.Name;
+	$out.0.Vorname_1 = $in.0.Vorname_1;
+	$out.0.Vorname_2 = $in.0.Vorname_2;
+
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+</Node>
+<Node guiName="SimpleCopy" guiX="417" guiY="136" id="SIMPLE_COPY" type="SIMPLE_COPY"/>
+<Edge fromNode="AGGREGATE:0" guiBendpoints="" guiRouter="Manhattan" id="Edge105" inPort="Port 0 (in)" metadata="Metadata11" outPort="Port 0 (out)" toNode="COMBINE:0"/>
+<Edge fromNode="AGGREGATE1:0" guiBendpoints="" guiRouter="Manhattan" id="Edge131" inPort="Port 1 (in)" metadata="Metadata11" outPort="Port 0 (out)" toNode="COMBINE:1"/>
+<Edge fromNode="AGGREGATE2:0" guiBendpoints="" guiRouter="Manhattan" id="Edge132" inPort="Port 2 (in)" metadata="Metadata11" outPort="Port 0 (out)" toNode="COMBINE:2"/>
+<Edge fromNode="AGGREGATE3:0" guiBendpoints="" guiRouter="Manhattan" id="Edge133" inPort="Port 3 (in)" metadata="Metadata11" outPort="Port 0 (out)" toNode="COMBINE:3"/>
+<Edge fromNode="AGGREGATE4:0" guiBendpoints="" guiRouter="Manhattan" id="Edge134" inPort="Port 4 (in)" metadata="Metadata11" outPort="Port 0 (out)" toNode="COMBINE:4"/>
+<Edge fromNode="COMBINE:0" guiBendpoints="" guiRouter="Manhattan" id="Edge144" inPort="Port 0 (in)" metadata="Metadata10" outPort="Port 0 (out)" toNode="DM1_DIM_VERART1:0"/>
+<Edge fromNode="EXT_HASH_JOIN1:0" guiBendpoints="" guiRouter="Manhattan" id="Edge100" inPort="Port 0 (in)" metadata="Metadata4" outPort="Port 0 (out)" toNode="EXT_SORT:0"/>
+<Edge fromNode="EXT_HASH_JOIN2:0" guiBendpoints="" guiRouter="Manhattan" id="Edge127" inPort="Port 0 (in)" metadata="Metadata4" outPort="Port 0 (out)" toNode="EXT_SORT1:0"/>
+<Edge fromNode="EXT_HASH_JOIN3:0" guiBendpoints="" guiRouter="Manhattan" id="Edge128" inPort="Port 0 (in)" metadata="Metadata4" outPort="Port 0 (out)" toNode="EXT_SORT2:0"/>
+<Edge fromNode="EXT_HASH_JOIN4:0" guiBendpoints="" guiRouter="Manhattan" id="Edge129" inPort="Port 0 (in)" metadata="Metadata4" outPort="Port 0 (out)" toNode="EXT_SORT3:0"/>
+<Edge fromNode="EXT_HASH_JOIN5:0" guiBendpoints="" guiRouter="Manhattan" id="Edge130" inPort="Port 0 (in)" metadata="Metadata4" outPort="Port 0 (out)" toNode="EXT_SORT4:0"/>
+<Edge fromNode="EXT_SORT:0" guiBendpoints="" guiRouter="Manhattan" id="Edge103" inPort="Port 0 (in)" outPort="Port 0 (out)" toNode="AGGREGATE:0"/>
+<Edge fromNode="EXT_SORT1:0" guiBendpoints="" guiRouter="Manhattan" id="Edge123" inPort="Port 0 (in)" outPort="Port 0 (out)" toNode="AGGREGATE1:0"/>
+<Edge fromNode="EXT_SORT2:0" guiBendpoints="" guiRouter="Manhattan" id="Edge124" inPort="Port 0 (in)" outPort="Port 0 (out)" toNode="AGGREGATE2:0"/>
+<Edge fromNode="EXT_SORT3:0" guiBendpoints="" guiRouter="Manhattan" id="Edge125" inPort="Port 0 (in)" outPort="Port 0 (out)" toNode="AGGREGATE3:0"/>
+<Edge fromNode="EXT_SORT4:0" guiBendpoints="" guiRouter="Manhattan" id="Edge126" inPort="Port 0 (in)" outPort="Port 0 (out)" toNode="AGGREGATE4:0"/>
+<Edge fromNode="EXT_SORT5:0" guiBendpoints="" guiRouter="Manhattan" id="Edge140" inPort="Port 0 (in)" outPort="Port 0 (out)" toNode="REFORMAT:0"/>
+<Edge fromNode="FILTER:0" guiBendpoints="" guiRouter="Manhattan" id="Edge35" inPort="Port 0 (in)" outPort="Port 0 (accepted)" toNode="SIMPLE_COPY:0"/>
+<Edge fromNode="FILTER1:0" guiBendpoints="" guiRouter="Manhattan" id="Edge99" inPort="Port 1 (slave)" outPort="Port 0 (accepted)" toNode="EXT_HASH_JOIN1:1"/>
+<Edge fromNode="FILTER2:0" guiBendpoints="" guiRouter="Manhattan" id="Edge135" inPort="Port 1 (slave)" outPort="Port 0 (accepted)" toNode="EXT_HASH_JOIN2:1"/>
+<Edge fromNode="FILTER3:0" guiBendpoints="" guiRouter="Manhattan" id="Edge136" inPort="Port 1 (slave)" outPort="Port 0 (accepted)" toNode="EXT_HASH_JOIN3:1"/>
+<Edge fromNode="FILTER4:0" guiBendpoints="" guiRouter="Manhattan" id="Edge137" inPort="Port 1 (slave)" outPort="Port 0 (accepted)" toNode="EXT_HASH_JOIN4:1"/>
+<Edge fromNode="FILTER5:0" guiBendpoints="" guiRouter="Manhattan" id="Edge138" inPort="Port 1 (slave)" outPort="Port 0 (accepted)" toNode="EXT_HASH_JOIN5:1"/>
+<Edge fromNode="KUNDENDATEN:0" guiBendpoints="" guiRouter="Manhattan" id="Edge9" inPort="Port 0 (in)" metadata="Metadata1" outPort="Port 0 (out)" toNode="FILTER:0"/>
+<Edge fromNode="L_KUNDE_BU:0" guiBendpoints="" guiRouter="Manhattan" id="Edge17" inPort="Port 0 (in)" metadata="Metadata5" outPort="Port 0 (out)" toNode="FILTER1:0"/>
+<Edge fromNode="L_KUNDE_KFZ:0" guiBendpoints="" guiRouter="Manhattan" id="Edge114" inPort="Port 0 (in)" metadata="Metadata6" outPort="Port 0 (out)" toNode="FILTER2:0"/>
+<Edge fromNode="L_KUNDE_KV:0" guiBendpoints="" guiRouter="Manhattan" id="Edge116" inPort="Port 0 (in)" metadata="Metadata7" outPort="Port 0 (out)" toNode="FILTER3:0"/>
+<Edge fromNode="L_KUNDE_LV:0" guiBendpoints="" guiRouter="Manhattan" id="Edge107" inPort="Port 0 (in)" metadata="Metadata8" outPort="Port 0 (out)" toNode="FILTER4:0"/>
+<Edge fromNode="L_KUNDE_SACH:0" guiBendpoints="" guiRouter="Manhattan" id="Edge110" inPort="Port 0 (in)" metadata="Metadata9" outPort="Port 0 (out)" toNode="FILTER5:0"/>
+<Edge fromNode="REFORMAT:0" guiBendpoints="" guiRouter="Manhattan" id="Edge0" inPort="Port 0 (in)" metadata="Metadata13" outPort="Port 0 (out)" toNode="DM1_DIM_KUN:0"/>
+<Edge fromNode="SIMPLE_COPY:0" guiBendpoints="" guiRouter="Manhattan" id="Edge37" inPort="Port 0 (driver)" outPort="Port 0 (out)" toNode="EXT_HASH_JOIN1:0"/>
+<Edge fromNode="SIMPLE_COPY:1" guiBendpoints="" guiRouter="Manhattan" id="Edge119" inPort="Port 0 (driver)" outPort="Port 1 (out)" toNode="EXT_HASH_JOIN2:0"/>
+<Edge fromNode="SIMPLE_COPY:2" guiBendpoints="" guiRouter="Manhattan" id="Edge120" inPort="Port 0 (driver)" outPort="Port 2 (out)" toNode="EXT_HASH_JOIN3:0"/>
+<Edge fromNode="SIMPLE_COPY:3" guiBendpoints="" guiRouter="Manhattan" id="Edge121" inPort="Port 0 (driver)" outPort="Port 3 (out)" toNode="EXT_HASH_JOIN4:0"/>
+<Edge fromNode="SIMPLE_COPY:4" guiBendpoints="" guiRouter="Manhattan" id="Edge122" inPort="Port 0 (driver)" outPort="Port 4 (out)" toNode="EXT_HASH_JOIN5:0"/>
+<Edge fromNode="SIMPLE_COPY:5" guiBendpoints="" guiRouter="Manhattan" id="Edge139" inPort="Port 0 (in)" outPort="Port 5 (out)" toNode="EXT_SORT5:0"/>
+</Phase>
+<Phase number="2">
+<Node guiName="Combine" guiX="417" guiY="1006" id="COMBINE1" type="COMBINE">
+<attr name="transform"><![CDATA[//#CTL2
+
+// Transforms input record into output record.
+function integer transform() {
+	$out.0.VerArt_id = $in.0.VerArt_id;
+	$out.0.KuNr = $in.1.KuNr;
+
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+</Node>
+<Node dbConnection="JDBC1" guiName="dm1_dim_kunde" guiX="148" guiY="1057" id="DM1_DIM_KUNDE" type="DB_INPUT_TABLE">
+<attr name="sqlQuery"><![CDATA[select * from `dwh_subject`.`dm1_dim_kun`]]></attr>
+</Node>
+<Node dbConnection="JDBC1" guiName="dm1_dim_verart" guiX="148" guiY="942" id="DM1_DIM_VERART" type="DB_INPUT_TABLE">
+<attr name="sqlQuery"><![CDATA[select * from `dwh_subject`.`dm1_dim_verart`]]></attr>
+</Node>
+<Node dbConnection="JDBC1" dbTable="dm1_fakt_anzverkun" guiName="dm1_fakt" guiX="669" guiY="1006" id="DM1_FAKT" type="DB_OUTPUT_TABLE"/>
+<Edge fromNode="COMBINE1:0" guiBendpoints="" guiRouter="Manhattan" id="Edge143" inPort="Port 0 (in)" metadata="Metadata2" outPort="Port 0 (out)" toNode="DM1_FAKT:0"/>
+<Edge fromNode="DM1_DIM_KUNDE:0" guiBendpoints="" guiRouter="Manhattan" id="Edge142" inPort="Port 1 (in)" metadata="Metadata1" outPort="Port 0 (out)" toNode="COMBINE1:1"/>
+<Edge fromNode="DM1_DIM_VERART:0" guiBendpoints="" guiRouter="Manhattan" id="Edge141" inPort="Port 0 (in)" metadata="Metadata10" outPort="Port 0 (out)" toNode="COMBINE1:0"/>
+</Phase>
+</Graph>

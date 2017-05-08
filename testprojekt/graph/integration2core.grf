@@ -441,16 +441,8 @@
 <GraphParameters>
 <GraphParameterFile fileURL="workspace.prm"/>
 </GraphParameters>
+<Sequence cached="1000" id="Sequence0" name="error_id" start="1" step="1" type="PRIMITIVE_SEQUENCE"/>
 <LookupTable id="LookupTable1" lookupConfig="${LOOKUP_DIR}/simpleLookup1.cfg"/>
-<RichTextNote backgroundColor="FAF6D6" folded="false" fontSize="medium" height="155" id="Note0" textColor="444444" width="223" x="1309" y="24">
-<attr name="text"><![CDATA[h3. hashdiff for error table??
-
-bzw hashdiff????]]></attr>
-</RichTextNote>
-<RichTextNote backgroundColor="FAF6D6" folded="false" fontSize="medium" height="275" id="Note1" textColor="444444" width="275" x="1487" y="1553">
-<attr name="text"><![CDATA[h3. Quelle in s_error überall austauschen
-]]></attr>
-</RichTextNote>
 <Dictionary>
 <Entry dictval.value="1" input="true" name="error_id" output="true" type="integer"/>
 </Dictionary>
@@ -1067,7 +1059,7 @@ function integer transform() {
 </Phase>
 <Phase number="3">
 <Node dbConnection="JDBC0" dbTable="h_error" guiName="h_error" guiX="2755" guiY="234" id="H_ERROR10" type="DB_OUTPUT_TABLE"/>
-<Node dbConnection="JDBC0" dbTable="h_error" guiName="h_error" guiX="2769" guiY="473" id="H_ERROR11" type="DB_OUTPUT_TABLE"/>
+<Node dbConnection="JDBC0" dbTable="h_error" guiName="h_error" guiX="2750" guiY="449" id="H_ERROR11" type="DB_OUTPUT_TABLE"/>
 <Node dbConnection="JDBC0" dbTable="h_error" guiName="h_error" guiX="2769" guiY="-190" id="H_ERROR12" type="DB_OUTPUT_TABLE"/>
 <Node dbConnection="JDBC0" dbTable="h_error" guiName="h_error" guiX="2002" guiY="298" id="H_ERROR30" type="DB_OUTPUT_TABLE"/>
 <Node dbConnection="JDBC0" dbTable="h_error" guiName="h_error" guiX="2769" guiY="8" id="H_ERROR9" type="DB_OUTPUT_TABLE"/>
@@ -1215,7 +1207,7 @@ function integer transform() {
 // function string getMessage() {}
 ]]></attr>
 </Node>
-<Node guiName="Reformat" guiX="2502" guiY="473" id="REFORMAT14" type="REFORMAT">
+<Node guiName="Reformat" guiX="2483" guiY="449" id="REFORMAT14" type="REFORMAT">
 <attr name="transform"><![CDATA[//#CTL2
 date now = today();
 string Record_SRC = "dwh_sa_iz.sach";
@@ -1345,12 +1337,12 @@ function integer transform() {
 <attr name="sqlQuery"><![CDATA[select * from `dwh_sa_iz`.`sach`]]></attr>
 </Node>
 <Node dbConnection="JDBC0" dbTable="s_error" guiName="s_error" guiX="2750" guiY="343" id="S_ERROR10" type="DB_OUTPUT_TABLE"/>
-<Node dbConnection="JDBC0" dbTable="s_error" guiName="s_error" guiX="2764" guiY="582" id="S_ERROR11" type="DB_OUTPUT_TABLE"/>
+<Node dbConnection="JDBC0" dbTable="s_error" guiName="s_error" guiX="2745" guiY="558" id="S_ERROR11" type="DB_OUTPUT_TABLE"/>
 <Node dbConnection="JDBC0" dbTable="s_error" guiName="s_error" guiX="2764" guiY="-81" id="S_ERROR12" type="DB_OUTPUT_TABLE"/>
 <Node dbConnection="JDBC0" dbTable="s_error" guiName="s_error" guiX="1997" guiY="407" id="S_ERROR30" type="DB_OUTPUT_TABLE"/>
 <Node dbConnection="JDBC0" dbTable="s_error" guiName="s_error" guiX="2764" guiY="117" id="S_ERROR9" type="DB_OUTPUT_TABLE"/>
 <Node dbConnection="JDBC0" dbTable="s_sach_allgemein" guiName="s_sach_allgemein" guiX="2222" guiY="234" id="S_SACH_ALLGEMEIN" maxErrors="1000" type="DB_OUTPUT_TABLE"/>
-<Node dbConnection="JDBC0" dbTable="s_sach_beitraege" guiName="s_sach_beitraege" guiX="2223" guiY="473" id="S_SACH_BEITRAEGE" maxErrors="1000" type="DB_OUTPUT_TABLE"/>
+<Node dbConnection="JDBC0" dbTable="s_sach_beitraege" guiName="s_sach_beitraege" guiX="2204" guiY="449" id="S_SACH_BEITRAEGE" maxErrors="1000" type="DB_OUTPUT_TABLE"/>
 <Edge fromNode="H_SACH:0" guiBendpoints="" guiRouter="Manhattan" id="Edge29" inPort="Port 0 (in)" outPort="Port 0 (rejected)" toNode="REFORMAT12:0"/>
 <Edge fromNode="KU_NR_NULL4:0" guiBendpoints="" guiRouter="Manhattan" id="Edge132" inPort="Port 0 (in)" outPort="Port 0 (accepted)" toNode="REFORMAT11:0"/>
 <Edge fromNode="KU_NR_NULL4:1" guiBendpoints="" guiRouter="Manhattan" id="Edge129" inPort="Port 0 (in)" outPort="Port 1 (rejected)" toNode="REFORMAT36:0"/>
