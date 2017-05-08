@@ -214,15 +214,17 @@ function integer transform() {
 <Edge fromNode="REFORMAT1:0" guiBendpoints="" guiRouter="Manhattan" id="Edge29" inPort="Port 0 (in)" outPort="Port 0 (out)" toNode="TRASH:0"/>
 </Phase>
 <Phase number="1">
-<Node aggregateKey="Jahr" guiName="Aggregate" guiX="846" guiY="267" id="AGGREGATE" mapping="$Auszahlung:=sum($Auszahlung);$Jahr:=$Jahr;" sorted="false" type="AGGREGATE"/>
-<Node guiName="ExtSort" guiX="449" guiY="258" id="EXT_SORT3" sortKey="KuNr(a)" type="EXT_SORT"/>
-<Node guiName="Filter" guiX="231" guiY="258" id="FILTER4" type="EXT_FILTER">
+<Node aggregateKey="Jahr" guiName="Aggregate" guiX="850" guiY="267" id="AGGREGATE" mapping="$Auszahlung:=sum($Auszahlung);$Jahr:=$Jahr;" sorted="true" type="AGGREGATE"/>
+<Node aggregateKey="Jahr" guiName="Aggregate" guiX="850" guiY="152" id="AGGREGATE1" mapping="$AnzLv:=countnonnull($KuNr);" sorted="true" type="AGGREGATE"/>
+<Node dbConnection="JDBC1" dbTable="dm2_dim_lv" guiName="dm2_dim_lv" guiX="1307" guiY="152" id="DM2_DIM_LV" type="DB_OUTPUT_TABLE"/>
+<Node dbConnection="JDBC1" dbTable="dm2_dim_time" guiName="dm2_dim_time" guiX="1330" guiY="403" id="DM2_DIM_TIME" type="DB_OUTPUT_TABLE"/>
+<Node guiName="ExtSort" guiX="474" guiY="249" id="EXT_SORT" sortKey="Jahr(a)" type="EXT_SORT"/>
+<Node guiName="ExtSort" guiX="100" guiY="258" id="EXT_SORT3" sortKey="KuNr(a)" type="EXT_SORT"/>
+<Node guiName="Filter" guiX="-118" guiY="258" id="FILTER4" type="EXT_FILTER">
 <attr name="filterExpression"><![CDATA[//#CTL2
 $in.0.Load_DTS == dictionary.load_dts AND $in.0.Vbeginn != null]]></attr>
 </Node>
-<Node fileURL="${DATATMP_DIR}/New_File" guiName="FlatFileWriter" guiX="1313" guiY="258" id="FLAT_FILE_WRITER" type="FLAT_FILE_WRITER"/>
-<Node fileURL="${DATATMP_DIR}/New_File (1)" guiName="FlatFileWriter" guiX="1382" guiY="416" id="FLAT_FILE_WRITER1" type="FLAT_FILE_WRITER"/>
-<Node dbConnection="JDBC0" guiName="lv_infos" guiX="42" guiY="258" id="LV_INFOS" type="DB_INPUT_TABLE">
+<Node dbConnection="JDBC0" guiName="lv_infos" guiX="-307" guiY="258" id="LV_INFOS" type="DB_INPUT_TABLE">
 <attr name="sqlQuery"><![CDATA[select `dwh_core`.`h_kunde`.`KuNr`, `dwh_core`.`s_kunde_allgemein`.`GebDat`, `dwh_core`.`s_lv_allgemein`.`Vbeginn`,
 	`dwh_core`.`s_lv_allgemein`.`Laufzeit`, `dwh_core`.`s_lv_beitraege`.`RateJahr`, `dwh_core`.`s_lv_beitraege`.`Wertfaktor`, `dwh_core`.`h_kunde`.`Load_DTS`
 from `dwh_core`.`h_kunde` 
@@ -235,7 +237,7 @@ from `dwh_core`.`h_kunde`
 				left outer join `dwh_core`.`s_lv_beitraege` on
                 (`dwh_core`.`l_kunde_lv`.`LV-VNr_Hash` = `dwh_core`.`s_lv_beitraege`.`LU-VNr_Hash` AND `dwh_core`.`l_kunde_lv`.`Load_DTS` = `dwh_core`.`s_lv_beitraege`.`Load_DTS`)]]></attr>
 </Node>
-<Node guiName="Reformat" guiX="647" guiY="258" id="REFORMAT" type="REFORMAT">
+<Node guiName="Reformat" guiX="298" guiY="258" id="REFORMAT" type="REFORMAT">
 <attr name="transform"><![CDATA[//#CTL2
 integer y = getYear(today());
 integer id = 1;
@@ -276,16 +278,14 @@ iif(startsWith($in.0.Laufzeit, "R-"), dictionary.rentenAlter-str2integer(charAt(
 // function string getMessage() {}
 ]]></attr>
 </Node>
-<Node guiName="Reformat" guiX="1093" guiY="267" id="REFORMAT3" type="REFORMAT">
+<Node guiName="Reformat" guiX="1077" guiY="152" id="REFORMAT2" type="REFORMAT">
 <attr name="transform"><![CDATA[//#CTL2
 integer id = 1;
 
 // Transforms input record into output record.
 function integer transform() {
-	$out.0.Auszahlung = $in.0.Auszahlung;
-	$out.1.Jahr = $in.0.Jahr;
-	$out.1.TimeId = id++;
-	$out.0.Time_Id = id;
+	$out.0.AnzLv = $in.0.AnzLv;
+	$out.0.Lv_Id = id++;
 
 	return ALL;
 }
@@ -309,12 +309,55 @@ function integer transform() {
 // function string getMessage() {}
 ]]></attr>
 </Node>
+<Node guiName="Reformat" guiX="1093" guiY="267" id="REFORMAT3" type="REFORMAT">
+<attr name="transform"><![CDATA[//#CTL2
+integer id = 1;
+
+// Transforms input record into output record.
+function integer transform() {
+	$out.0.Auszahlung = $in.0.Auszahlung;
+	$out.1.Jahr = $in.0.Jahr;
+	$out.1.TimeId = id;
+	$out.0.Lv_Id = id;
+	$out.0.Time_Id = id++;
+
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+</Node>
+<Node guiName="SimpleCopy" guiX="658" guiY="258" id="SIMPLE_COPY" type="SIMPLE_COPY"/>
 <Edge fromNode="AGGREGATE:0" guiBendpoints="" guiRouter="Manhattan" id="Edge14" inPort="Port 0 (in)" metadata="Metadata20" outPort="Port 0 (out)" toNode="REFORMAT3:0"/>
+<Edge fromNode="AGGREGATE1:0" guiBendpoints="" guiRouter="Manhattan" id="Edge21" inPort="Port 0 (in)" metadata="Metadata15" outPort="Port 0 (out)" toNode="REFORMAT2:0"/>
+<Edge fromNode="EXT_SORT:0" guiBendpoints="" guiRouter="Manhattan" id="Edge23" inPort="Port 0 (in)" outPort="Port 0 (out)" toNode="SIMPLE_COPY:0"/>
 <Edge fromNode="EXT_SORT3:0" guiBendpoints="" guiRouter="Manhattan" id="Edge3" inPort="Port 0 (in)" outPort="Port 0 (out)" toNode="REFORMAT:0"/>
 <Edge fromNode="FILTER4:0" guiBendpoints="" guiRouter="Manhattan" id="Edge2" inPort="Port 0 (in)" outPort="Port 0 (accepted)" toNode="EXT_SORT3:0"/>
 <Edge fromNode="LV_INFOS:0" guiBendpoints="" guiRouter="Manhattan" id="Edge1" inPort="Port 0 (in)" metadata="Metadata14" outPort="Port 0 (out)" toNode="FILTER4:0"/>
-<Edge fromNode="REFORMAT:0" guiBendpoints="" guiRouter="Manhattan" id="Edge12" inPort="Port 0 (in)" metadata="Metadata19" outPort="Port 0 (out)" toNode="AGGREGATE:0"/>
-<Edge fromNode="REFORMAT3:0" guiBendpoints="" guiRouter="Manhattan" id="Edge16" inPort="Port 0 (in)" metadata="Metadata17" outPort="Port 0 (out)" toNode="FLAT_FILE_WRITER1:0"/>
-<Edge fromNode="REFORMAT3:1" guiBendpoints="" guiRouter="Manhattan" id="Edge10" inPort="Port 0 (in)" metadata="Metadata18" outPort="Port 1 (out)" toNode="FLAT_FILE_WRITER:0"/>
+<Edge fromNode="REFORMAT:0" guiBendpoints="" guiRouter="Manhattan" id="Edge12" inPort="Port 0 (in)" metadata="Metadata19" outPort="Port 0 (out)" toNode="EXT_SORT:0"/>
+<Edge fromNode="REFORMAT2:0" guiBendpoints="" guiRouter="Manhattan" id="Edge22" inPort="Port 0 (in)" metadata="Metadata15" outPort="Port 0 (out)" toNode="DM2_DIM_LV:0"/>
+<Edge fromNode="REFORMAT3:0" guiBendpoints="" guiRouter="Manhattan" id="Edge16" inPort="Port 0 (in)" metadata="Metadata17" outPort="Port 0 (out)" toNode="DM2_FAKT:0"/>
+<Edge fromNode="REFORMAT3:1" guiBendpoints="" guiRouter="Manhattan" id="Edge10" inPort="Port 0 (in)" metadata="Metadata18" outPort="Port 1 (out)" toNode="DM2_DIM_TIME:0"/>
+<Edge fromNode="SIMPLE_COPY:0" guiBendpoints="" guiRouter="Manhattan" id="Edge19" inPort="Port 0 (in)" outPort="Port 0 (out)" toNode="AGGREGATE:0"/>
+<Edge fromNode="SIMPLE_COPY:1" guiBendpoints="" guiRouter="Manhattan" id="Edge20" inPort="Port 0 (in)" outPort="Port 1 (out)" toNode="AGGREGATE1:0"/>
+</Phase>
+<Phase number="2">
+<Node dbConnection="JDBC1" dbTable="dm2_fakt_auslv" guiName="dm2_fakt" guiX="1333" guiY="267" id="DM2_FAKT" type="DB_OUTPUT_TABLE"/>
 </Phase>
 </Graph>
