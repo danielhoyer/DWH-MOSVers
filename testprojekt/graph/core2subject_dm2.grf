@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Graph author="Dan" created="Mon May 08 13:15:15 CEST 2017" guiVersion="4.6.0.M1" id="1494242222590" licenseCode="CLP1DDHBWM32801253EX" name="core2subject" showComponentDetails="true">
+<Global>
+<Metadata id="Metadata19">
+<Record fieldDelimiter=";" name="CopyOf_dm2_fakt_auslv" recordDelimiter="\n" type="delimited">
+<Field name="KuNr" size="11" trim="true" type="string"/>
+<Field length="9" name="Auszahlung" scale="2" trim="true" type="decimal"/>
+<Field name="Jahr" type="integer"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata11">
+<Record fieldDelimiter=";" name="counter" previewAttachmentCharset="UTF-8" recordDelimiter="\r\n" type="delimited">
+<Field delimiter=";" name="count" type="integer"/>
+<Field name="KuNr" type="string"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata1">
+<Record fieldDelimiter=";" name="dm1_dim_kun" previewAttachmentCharset="UTF-8" recordDelimiter="\n" type="delimited">
+<Field name="KuNr" size="30" type="string"/>
+<Field name="Name" size="30" type="string"/>
+<Field name="Vorname_1" size="30" type="string"/>
+<Field name="Vorname_2" size="30" type="string"/>
+<Field name="Load_DTS" type="date"/>
+<Field name="KuNr_Hash" type="string"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata13" previewAttachmentCharset="UTF-8">
+<Record fieldDelimiter=";" name="dm1_dim_kun1_withoudDTS" previewAttachmentCharset="UTF-8" recordDelimiter="\n" type="delimited">
+<Field name="KuNr" size="30" type="string"/>
+<Field name="Name" size="30" type="string"/>
+<Field name="Vorname_1" size="30" type="string"/>
+<Field name="Vorname_2" size="30" type="string"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata10">
+<Record fieldDelimiter=";" name="dm1_dim_verart" recordDelimiter="\n" type="delimited">
+<Field name="VerArt_id" size="11" type="integer"/>
+<Field name="Anz_Lv" size="11" type="integer"/>
+<Field name="Anz_Kv" size="11" type="integer"/>
+<Field name="Anz_Bu" size="11" type="integer"/>
+<Field name="Anz_Sa" size="11" type="integer"/>
+<Field name="Anz_Kf" size="11" type="integer"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata0">
+<Record fieldDelimiter=";" name="dm1_dim_verart" recordDelimiter="\n" type="delimited">
+<Field name="VerArt_id" size="11" trim="true" type="integer"/>
+<Field name="Anz_Lv" size="11" trim="true" type="integer"/>
+<Field name="Anz_Kv" size="11" trim="true" type="integer"/>
+<Field name="Anz_Bu" size="11" trim="true" type="integer"/>
+<Field name="Anz_Sa" size="11" trim="true" type="integer"/>
+<Field name="Anz_Kf" size="11" trim="true" type="integer"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata2">
+<Record fieldDelimiter=";" name="dm1_fakt_anzverkun" recordDelimiter="\n" type="delimited">
+<Field name="KuNr" size="30" type="string"/>
+<Field name="VerArt_id" size="11" type="integer"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata15">
+<Record fieldDelimiter=";" name="dm2_dim_lv" recordDelimiter="\n" type="delimited">
+<Field name="Lv_Id" size="11" type="integer"/>
+<Field name="AnzLv" size="11" type="integer"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata16" previewAttachmentCharset="UTF-8">
+<Record fieldDelimiter=";" name="dm2_dim_time" previewAttachmentCharset="UTF-8" recordDelimiter="\n" type="delimited">
+<Field name="Jahr" size="11" trim="true" type="integer"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata18">
+<Record fieldDelimiter=";" name="dm2_dim_time_db" previewAttachmentCharset="UTF-8" recordDelimiter="\n" type="delimited">
+<Field name="TimeId" type="integer"/>
+<Field name="Jahr" size="11" type="integer"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata17">
+<Record fieldDelimiter=";" name="dm2_fakt_auslv" recordDelimiter="\n" type="delimited">
+<Field name="Lv_Id" size="11" type="integer"/>
+<Field name="Time_Id" size="11" type="integer"/>
+<Field length="9" name="Auszahlung" scale="2" type="decimal"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata4" previewAttachmentCharset="UTF-8">
+<Record fieldDelimiter=";" name="KuNr_BuHash" previewAttachmentCharset="UTF-8" recordDelimiter="\n" type="delimited">
+<Field name="KuNr" size="30" type="string"/>
+<Field name="BU_VNr_Hash" type="string"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata5">
+<Record fieldDelimiter=";" name="l_kunde_bu" recordDelimiter="\n" type="delimited">
+<Field label="KuNr_BU-VNr_CompHash" name="KuNr_BU_VNr_CompHash" size="64" type="string"/>
+<Field label="KuNr_Hash" name="KuNr_Hash" size="64" type="string"/>
+<Field label="BU-VNr_Hash" name="BU_VNr_Hash" size="64" type="string"/>
+<Field format="yyyy-MM-dd HH:mm:ss" label="Load_DTS" name="Load_DTS" size="19" type="date"/>
+<Field label="Record_SRC" name="Record_SRC" size="30" type="string"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata6">
+<Record fieldDelimiter=";" name="l_kunde_kfz" recordDelimiter="\n" type="delimited">
+<Field label="KuNr_KFZ-VNr_CompHash" name="KuNr_KFZ_VNr_CompHash" size="64" type="string"/>
+<Field label="KuNr_Hash" name="KuNr_Hash" size="64" type="string"/>
+<Field label="KFZ-VNr_Hash" name="KFZ_VNr_Hash" size="64" type="string"/>
+<Field format="yyyy-MM-dd HH:mm:ss" label="Load_DTS" name="Load_DTS" size="19" type="date"/>
+<Field label="Record_SRC" name="Record_SRC" size="30" type="string"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata7">
+<Record fieldDelimiter=";" name="l_kunde_kv" recordDelimiter="\n" type="delimited">
+<Field label="KuNr_KV-VNr_CompHash" name="KuNr_KV_VNr_CompHash" size="64" type="string"/>
+<Field label="KuNr_Hash" name="KuNr_Hash" size="64" type="string"/>
+<Field label="KV-VNr_Hash" name="KV_VNr_Hash" size="64" type="string"/>
+<Field format="yyyy-MM-dd HH:mm:ss" label="Load_DTS" name="Load_DTS" size="19" type="date"/>
+<Field label="Record_SRC" name="Record_SRC" size="30" type="string"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata8">
+<Record fieldDelimiter=";" name="l_kunde_lv" recordDelimiter="\n" type="delimited">
+<Field label="KuNr_LV-VNr_CompHash" name="KuNr_LV_VNr_CompHash" size="64" type="string"/>
+<Field label="KuNr_Hash" name="KuNr_Hash" size="64" type="string"/>
+<Field label="LV-VNr_Hash" name="LV_VNr_Hash" size="64" type="string"/>
+<Field format="yyyy-MM-dd HH:mm:ss" label="Load_DTS" name="Load_DTS" size="19" type="date"/>
+<Field label="Record_SRC" name="Record_SRC" size="30" type="string"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata9">
+<Record fieldDelimiter=";" name="l_kunde_sach" recordDelimiter="\n" type="delimited">
+<Field label="KuNr_Sach-VNr_CompHash" name="KuNr_Sach_VNr_CompHash" size="64" type="string"/>
+<Field label="KuNr_Hash" name="KuNr_Hash" size="64" type="string"/>
+<Field label="Sach-VNr_Hash" name="Sach_VNr_Hash" size="64" type="string"/>
+<Field format="yyyy-MM-dd HH:mm:ss" label="Load_DTS" name="Load_DTS" size="19" type="date"/>
+<Field label="Record_SRC" name="Record_SRC" size="30" type="string"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata3">
+<Record fieldDelimiter=";" name="load_dts" recordDelimiter="\r\n" type="delimited">
+<Field delimiter="\n" name="Load_DTS" type="date"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata14">
+<Record fieldDelimiter=";" name="lv_infos" previewAttachmentCharset="UTF-8" recordDelimiter="\r\n" type="delimited">
+<Field delimiter=";" name="KuNr" type="string"/>
+<Field name="GebDat" type="date"/>
+<Field name="Vbeginn" type="date"/>
+<Field name="Laufzeit" type="string"/>
+<Field name="RateJahr" type="decimal"/>
+<Field name="Wertfaktor" type="decimal"/>
+<Field name="Load_DTS" type="date"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata12">
+<Record fieldDelimiter=";" name="recordName1" recordDelimiter="\r\n" type="delimited">
+<Field name="counterBU" type="integer"/>
+<Field name="counterKFZ" type="integer"/>
+<Field name="counterKV" type="integer"/>
+<Field name="counterLV" type="integer"/>
+<Field delimiter="\n" name="counterSach" type="integer"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata20">
+<Record fieldDelimiter=";" name="temporary" previewAttachmentCharset="UTF-8" recordDelimiter="\n" type="delimited">
+<Field length="9" name="Auszahlung" scale="2" type="decimal"/>
+<Field name="Jahr" type="integer"/>
+</Record>
+</Metadata>
+<Connection database="MYSQL" dbURL="jdbc:mysql://localhost:3306/dwh_core?user=root" id="JDBC0" jdbcSpecific="MYSQL" name="dwh_core" password="toor" type="JDBC" user="root"/>
+<Connection database="MYSQL" dbURL="jdbc:mysql://localhost:3306/dwh_help?user=root" id="JDBC2" jdbcSpecific="MYSQL" name="dwh_help" password="toor" type="JDBC" user="root"/>
+<Connection database="MYSQL" dbURL="jdbc:mysql://localhost:3306/dwh_subject?user=root" id="JDBC1" jdbcSpecific="MYSQL" name="dwh_subject" password="toor" type="JDBC" user="root"/>
+<GraphParameters>
+<GraphParameterFile fileURL="workspace.prm"/>
+</GraphParameters>
+<Dictionary>
+<Entry input="true" name="load_dts" output="true" type="date"/>
+<Entry dictval.value="67" input="true" name="rentenAlter" output="true" type="integer"/>
+</Dictionary>
+</Global>
+<Phase number="0">
+<Node dbConnection="JDBC0" guiName="DBInputTable" guiX="-9" guiY="-2" id="DBINPUT_TABLE" type="DB_INPUT_TABLE">
+<attr name="sqlQuery"><![CDATA[select `dwh_core`.`h_kunde`.`Load_DTS`
+from `dwh_core`.`h_kunde`]]></attr>
+</Node>
+<Node guiName="Reformat" guiX="195" guiY="-2" id="REFORMAT1" type="REFORMAT">
+<attr name="transform"><![CDATA[//#CTL2
+
+// Transforms input record into output record.
+function integer transform() {
+	dictionary.load_dts = $in.0.Load_DTS;
+
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+</Node>
+<Node guiName="Trash" guiX="407" guiY="-2" id="TRASH" type="TRASH"/>
+<Edge fromNode="DBINPUT_TABLE:0" guiBendpoints="" guiRouter="Manhattan" id="Edge15" inPort="Port 0 (in)" metadata="Metadata3" outPort="Port 0 (out)" toNode="REFORMAT1:0"/>
+<Edge fromNode="REFORMAT1:0" guiBendpoints="" guiRouter="Manhattan" id="Edge29" inPort="Port 0 (in)" outPort="Port 0 (out)" toNode="TRASH:0"/>
+</Phase>
+<Phase number="1">
+<Node aggregateKey="Jahr" guiName="Aggregate" guiX="846" guiY="267" id="AGGREGATE" mapping="$Auszahlung:=sum($Auszahlung);$Jahr:=$Jahr;" sorted="false" type="AGGREGATE"/>
+<Node guiName="ExtSort" guiX="449" guiY="258" id="EXT_SORT3" sortKey="KuNr(a)" type="EXT_SORT"/>
+<Node guiName="Filter" guiX="231" guiY="258" id="FILTER4" type="EXT_FILTER">
+<attr name="filterExpression"><![CDATA[//#CTL2
+$in.0.Load_DTS == dictionary.load_dts AND $in.0.Vbeginn != null]]></attr>
+</Node>
+<Node fileURL="${DATATMP_DIR}/New_File" guiName="FlatFileWriter" guiX="1313" guiY="258" id="FLAT_FILE_WRITER" type="FLAT_FILE_WRITER"/>
+<Node fileURL="${DATATMP_DIR}/New_File (1)" guiName="FlatFileWriter" guiX="1382" guiY="416" id="FLAT_FILE_WRITER1" type="FLAT_FILE_WRITER"/>
+<Node dbConnection="JDBC0" guiName="lv_infos" guiX="42" guiY="258" id="LV_INFOS" type="DB_INPUT_TABLE">
+<attr name="sqlQuery"><![CDATA[select `dwh_core`.`h_kunde`.`KuNr`, `dwh_core`.`s_kunde_allgemein`.`GebDat`, `dwh_core`.`s_lv_allgemein`.`Vbeginn`,
+	`dwh_core`.`s_lv_allgemein`.`Laufzeit`, `dwh_core`.`s_lv_beitraege`.`RateJahr`, `dwh_core`.`s_lv_beitraege`.`Wertfaktor`, `dwh_core`.`h_kunde`.`Load_DTS`
+from `dwh_core`.`h_kunde` 
+	left outer join `dwh_core`.`s_kunde_allgemein` on 
+	(`dwh_core`.`h_kunde`.`KuNr_Hash` = `dwh_core`.`s_kunde_allgemein`.`KuNr_Hash` AND `dwh_core`.`h_kunde`.`Load_DTS` = `dwh_core`.`s_kunde_allgemein`.`Load_DTS`)
+		left outer join `dwh_core`.`l_kunde_lv` on  
+		(`dwh_core`.`h_kunde`.`KuNr_Hash` = `dwh_core`.`l_kunde_lv`.`KuNr_Hash` AND `dwh_core`.`h_kunde`.`Load_DTS` = `dwh_core`.`l_kunde_lv`.`Load_DTS`)
+			left outer join `dwh_core`.`s_lv_allgemein` on 
+            (`dwh_core`.`l_kunde_lv`.`LV-VNr_Hash` = `dwh_core`.`s_lv_allgemein`.`LU-VNr_Hash` AND `dwh_core`.`l_kunde_lv`.`Load_DTS` = `dwh_core`.`s_lv_allgemein`.`Load_DTS`)
+				left outer join `dwh_core`.`s_lv_beitraege` on
+                (`dwh_core`.`l_kunde_lv`.`LV-VNr_Hash` = `dwh_core`.`s_lv_beitraege`.`LU-VNr_Hash` AND `dwh_core`.`l_kunde_lv`.`Load_DTS` = `dwh_core`.`s_lv_beitraege`.`Load_DTS`)]]></attr>
+</Node>
+<Node guiName="Reformat" guiX="647" guiY="258" id="REFORMAT" type="REFORMAT">
+<attr name="transform"><![CDATA[//#CTL2
+integer y = getYear(today());
+integer id = 1;
+
+// Transforms input record into output record.
+function integer transform() {
+	$out.0.Jahr = getYear($in.0.GebDat) + 
+iif(startsWith($in.0.Laufzeit, "R-"), dictionary.rentenAlter-str2integer(charAt($in.0.Laufzeit, length($in.0.Laufzeit)-1)),
+		 iif(startsWith($in.0.Laufzeit, "R"), dictionary.rentenAlter,str2integer($in.0.Laufzeit)));
+	$out.0.Auszahlung = (getYear($in.0.GebDat) + 
+iif(startsWith($in.0.Laufzeit, "R-"), dictionary.rentenAlter-str2integer(charAt($in.0.Laufzeit, length($in.0.Laufzeit)-1)),
+		 iif(startsWith($in.0.Laufzeit, "R"), dictionary.rentenAlter,str2integer($in.0.Laufzeit)))
+		 
+-getYear($in.0.Vbeginn))
+
+*$in.0.RateJahr*$in.0.Wertfaktor;
+	$out.0.KuNr = $in.0.KuNr;
+
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+</Node>
+<Node guiName="Reformat" guiX="1093" guiY="267" id="REFORMAT3" type="REFORMAT">
+<attr name="transform"><![CDATA[//#CTL2
+integer id = 1;
+
+// Transforms input record into output record.
+function integer transform() {
+	$out.0.Auszahlung = $in.0.Auszahlung;
+	$out.1.Jahr = $in.0.Jahr;
+	$out.1.TimeId = id++;
+	$out.0.Time_Id = id;
+
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+</Node>
+<Edge fromNode="AGGREGATE:0" guiBendpoints="" guiRouter="Manhattan" id="Edge14" inPort="Port 0 (in)" metadata="Metadata20" outPort="Port 0 (out)" toNode="REFORMAT3:0"/>
+<Edge fromNode="EXT_SORT3:0" guiBendpoints="" guiRouter="Manhattan" id="Edge3" inPort="Port 0 (in)" outPort="Port 0 (out)" toNode="REFORMAT:0"/>
+<Edge fromNode="FILTER4:0" guiBendpoints="" guiRouter="Manhattan" id="Edge2" inPort="Port 0 (in)" outPort="Port 0 (accepted)" toNode="EXT_SORT3:0"/>
+<Edge fromNode="LV_INFOS:0" guiBendpoints="" guiRouter="Manhattan" id="Edge1" inPort="Port 0 (in)" metadata="Metadata14" outPort="Port 0 (out)" toNode="FILTER4:0"/>
+<Edge fromNode="REFORMAT:0" guiBendpoints="" guiRouter="Manhattan" id="Edge12" inPort="Port 0 (in)" metadata="Metadata19" outPort="Port 0 (out)" toNode="AGGREGATE:0"/>
+<Edge fromNode="REFORMAT3:0" guiBendpoints="" guiRouter="Manhattan" id="Edge16" inPort="Port 0 (in)" metadata="Metadata17" outPort="Port 0 (out)" toNode="FLAT_FILE_WRITER1:0"/>
+<Edge fromNode="REFORMAT3:1" guiBendpoints="" guiRouter="Manhattan" id="Edge10" inPort="Port 0 (in)" metadata="Metadata18" outPort="Port 1 (out)" toNode="FLAT_FILE_WRITER:0"/>
+</Phase>
+</Graph>

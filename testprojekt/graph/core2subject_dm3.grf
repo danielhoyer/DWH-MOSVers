@@ -7,16 +7,6 @@
 <Field name="KuNr" type="string"/>
 </Record>
 </Metadata>
-<Metadata id="Metadata10">
-<Record fieldDelimiter=";" name="dm1_dim_verart" recordDelimiter="\n" type="delimited">
-<Field name="VerArt_id" size="11" type="integer"/>
-<Field name="Anz_Lv" size="11" type="integer"/>
-<Field name="Anz_Kv" size="11" type="integer"/>
-<Field name="Anz_Bu" size="11" type="integer"/>
-<Field name="Anz_Sa" size="11" type="integer"/>
-<Field name="Anz_Kf" size="11" type="integer"/>
-</Record>
-</Metadata>
 <Metadata id="Metadata1">
 <Record fieldDelimiter=";" name="dm3_dim_kun" previewAttachmentCharset="UTF-8" recordDelimiter="\n" type="delimited">
 <Field name="KuNr" size="30" type="string"/>
@@ -44,16 +34,6 @@
 <Field name="Hrg" size="11" type="integer"/>
 <Field name="Sth" size="11" type="integer"/>
 <Field name="KuNr" type="string"/>
-</Record>
-</Metadata>
-<Metadata id="Metadata5" previewAttachmentCharset="UTF-8">
-<Record fieldDelimiter=";" name="dm3_dim_sacart_db" previewAttachmentCharset="UTF-8" recordDelimiter="\n" type="delimited">
-<Field name="SacArt_id" size="11" trim="true" type="integer"/>
-<Field name="Gla" size="11" trim="true" type="integer"/>
-<Field name="Gvv" size="11" trim="true" type="integer"/>
-<Field name="Hr" size="11" trim="true" type="integer"/>
-<Field name="Hrg" size="11" trim="true" type="integer"/>
-<Field name="Sth" size="11" trim="true" type="integer"/>
 </Record>
 </Metadata>
 <Metadata id="Metadata6" previewAttachmentCharset="UTF-8">
@@ -146,8 +126,8 @@ function integer transform() {
 <Node aggregateKey="KuNr" guiName="Aggregate" guiX="1464" guiY="253" id="AGGREGATE4" mapping="$count:=count();$KuNr:=$KuNr;" sorted="false" type="AGGREGATE"/>
 <Node aggregateKey="KuNr" guiName="Aggregate" guiX="1464" guiY="370" id="AGGREGATE5" mapping="$count:=count();$KuNr:=$KuNr;" sorted="false" type="AGGREGATE"/>
 <Node aggregateKey="KuNr" guiName="Aggregate" guiX="1464" guiY="746" id="AGGREGATE6" mapping="$count:=count();$KuNr:=$KuNr;" sorted="false" type="AGGREGATE"/>
-<Node dbConnection="JDBC1" dbTable="dm3_dim_sacart" guiName="DBOutputTable" guiX="2286" guiY="472" id="DBOUTPUT_TABLE" type="DB_OUTPUT_TABLE"/>
 <Node dbConnection="JDBC1" dbTable="dm3_dim_kun" guiName="dm3_dim_kun" guiX="1996" guiY="67" id="DM3_DIM_KUN" type="DB_OUTPUT_TABLE"/>
+<Node dbConnection="JDBC1" dbTable="dm3_dim_sacart" guiName="dm3_dim_sacart" guiX="2286" guiY="472" id="DM3_DIM_SACART" type="DB_OUTPUT_TABLE"/>
 <Node guiName="ExtHashJoin" guiX="801" guiY="244" id="EXT_HASH_JOIN5" joinKey="$KuNr=$KuNr" joinType="leftOuter" type="EXT_HASH_JOIN">
 <attr name="transform"><![CDATA[//#CTL2
 
@@ -356,7 +336,7 @@ $in.0.Art == "STH"]]></attr>
 <Edge fromNode="KU_NR_ART:0" guiBendpoints="" guiRouter="Manhattan" id="Edge110" inPort="Port 0 (in)" metadata="Metadata9" outPort="Port 0 (out)" toNode="FILTER5:0"/>
 <Edge fromNode="NULL:0" guiBendpoints="" guiRouter="Manhattan" id="Edge22" inPort="Port 0 (in)" outPort="Port 0 (accepted)" toNode="AGGREGATE6:0"/>
 <Edge fromNode="REFORMAT:0" guiBendpoints="" guiRouter="Manhattan" id="Edge0" inPort="Port 0 (in)" metadata="Metadata13" outPort="Port 0 (out)" toNode="DM3_DIM_KUN:0"/>
-<Edge fromNode="REFORMAT2:0" guiBendpoints="" guiRouter="Manhattan" id="Edge31" inPort="Port 0 (in)" metadata="Metadata6" outPort="Port 0 (out)" toNode="DBOUTPUT_TABLE:0"/>
+<Edge fromNode="REFORMAT2:0" guiBendpoints="" guiRouter="Manhattan" id="Edge31" inPort="Port 0 (in)" metadata="Metadata6" outPort="Port 0 (out)" toNode="DM3_DIM_SACART:0"/>
 <Edge fromNode="SIMPLE_COPY:0" guiBendpoints="" guiRouter="Manhattan" id="Edge122" inPort="Port 1 (slave)" outPort="Port 0 (out)" toNode="EXT_HASH_JOIN5:1"/>
 <Edge fromNode="SIMPLE_COPY:1" guiBendpoints="" guiRouter="Manhattan" id="Edge139" inPort="Port 0 (in)" outPort="Port 1 (out)" toNode="EXT_SORT5:0"/>
 <Edge fromNode="SIMPLE_COPY:2" guiBendpoints="" guiRouter="Manhattan" id="Edge25" inPort="Port 0 (driver)" outPort="Port 2 (out)" toNode="EXT_HASH_JOIN:0"/>
