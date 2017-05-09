@@ -72,7 +72,6 @@
 </Record>
 </Metadata>
 <Connection database="MYSQL" dbURL="jdbc:mysql://localhost:3306/dwh_core?user=root" id="JDBC0" jdbcSpecific="MYSQL" name="dwh_core" password="toor" type="JDBC" user="root"/>
-<Connection database="MYSQL" dbURL="jdbc:mysql://localhost:3306/dwh_help?user=root" id="JDBC2" jdbcSpecific="MYSQL" name="dwh_help" password="toor" type="JDBC" user="root"/>
 <Connection database="MYSQL" dbURL="jdbc:mysql://localhost:3306/dwh_subject?user=root" id="JDBC1" jdbcSpecific="MYSQL" name="dwh_subject" password="toor" type="JDBC" user="root"/>
 <GraphParameters>
 <GraphParameterFile fileURL="workspace.prm"/>

@@ -8,65 +8,10 @@
 <Field name="Jahr" type="integer"/>
 </Record>
 </Metadata>
-<Metadata id="Metadata11">
-<Record fieldDelimiter=";" name="counter" previewAttachmentCharset="UTF-8" recordDelimiter="\r\n" type="delimited">
-<Field delimiter=";" name="count" type="integer"/>
-<Field name="KuNr" type="string"/>
-</Record>
-</Metadata>
-<Metadata id="Metadata1">
-<Record fieldDelimiter=";" name="dm1_dim_kun" previewAttachmentCharset="UTF-8" recordDelimiter="\n" type="delimited">
-<Field name="KuNr" size="30" type="string"/>
-<Field name="Name" size="30" type="string"/>
-<Field name="Vorname_1" size="30" type="string"/>
-<Field name="Vorname_2" size="30" type="string"/>
-<Field name="Load_DTS" type="date"/>
-<Field name="KuNr_Hash" type="string"/>
-</Record>
-</Metadata>
-<Metadata id="Metadata13" previewAttachmentCharset="UTF-8">
-<Record fieldDelimiter=";" name="dm1_dim_kun1_withoudDTS" previewAttachmentCharset="UTF-8" recordDelimiter="\n" type="delimited">
-<Field name="KuNr" size="30" type="string"/>
-<Field name="Name" size="30" type="string"/>
-<Field name="Vorname_1" size="30" type="string"/>
-<Field name="Vorname_2" size="30" type="string"/>
-</Record>
-</Metadata>
-<Metadata id="Metadata10">
-<Record fieldDelimiter=";" name="dm1_dim_verart" recordDelimiter="\n" type="delimited">
-<Field name="VerArt_id" size="11" type="integer"/>
-<Field name="Anz_Lv" size="11" type="integer"/>
-<Field name="Anz_Kv" size="11" type="integer"/>
-<Field name="Anz_Bu" size="11" type="integer"/>
-<Field name="Anz_Sa" size="11" type="integer"/>
-<Field name="Anz_Kf" size="11" type="integer"/>
-</Record>
-</Metadata>
-<Metadata id="Metadata0">
-<Record fieldDelimiter=";" name="dm1_dim_verart" recordDelimiter="\n" type="delimited">
-<Field name="VerArt_id" size="11" trim="true" type="integer"/>
-<Field name="Anz_Lv" size="11" trim="true" type="integer"/>
-<Field name="Anz_Kv" size="11" trim="true" type="integer"/>
-<Field name="Anz_Bu" size="11" trim="true" type="integer"/>
-<Field name="Anz_Sa" size="11" trim="true" type="integer"/>
-<Field name="Anz_Kf" size="11" trim="true" type="integer"/>
-</Record>
-</Metadata>
-<Metadata id="Metadata2">
-<Record fieldDelimiter=";" name="dm1_fakt_anzverkun" recordDelimiter="\n" type="delimited">
-<Field name="KuNr" size="30" type="string"/>
-<Field name="VerArt_id" size="11" type="integer"/>
-</Record>
-</Metadata>
 <Metadata id="Metadata15">
 <Record fieldDelimiter=";" name="dm2_dim_lv" recordDelimiter="\n" type="delimited">
 <Field name="Lv_Id" size="11" type="integer"/>
 <Field name="AnzLv" size="11" type="integer"/>
-</Record>
-</Metadata>
-<Metadata id="Metadata16" previewAttachmentCharset="UTF-8">
-<Record fieldDelimiter=";" name="dm2_dim_time" previewAttachmentCharset="UTF-8" recordDelimiter="\n" type="delimited">
-<Field name="Jahr" size="11" trim="true" type="integer"/>
 </Record>
 </Metadata>
 <Metadata id="Metadata18">
@@ -80,57 +25,6 @@
 <Field name="Lv_Id" size="11" type="integer"/>
 <Field name="Time_Id" size="11" type="integer"/>
 <Field length="9" name="Auszahlung" scale="2" type="decimal"/>
-</Record>
-</Metadata>
-<Metadata id="Metadata4" previewAttachmentCharset="UTF-8">
-<Record fieldDelimiter=";" name="KuNr_BuHash" previewAttachmentCharset="UTF-8" recordDelimiter="\n" type="delimited">
-<Field name="KuNr" size="30" type="string"/>
-<Field name="BU_VNr_Hash" type="string"/>
-</Record>
-</Metadata>
-<Metadata id="Metadata5">
-<Record fieldDelimiter=";" name="l_kunde_bu" recordDelimiter="\n" type="delimited">
-<Field label="KuNr_BU-VNr_CompHash" name="KuNr_BU_VNr_CompHash" size="64" type="string"/>
-<Field label="KuNr_Hash" name="KuNr_Hash" size="64" type="string"/>
-<Field label="BU-VNr_Hash" name="BU_VNr_Hash" size="64" type="string"/>
-<Field format="yyyy-MM-dd HH:mm:ss" label="Load_DTS" name="Load_DTS" size="19" type="date"/>
-<Field label="Record_SRC" name="Record_SRC" size="30" type="string"/>
-</Record>
-</Metadata>
-<Metadata id="Metadata6">
-<Record fieldDelimiter=";" name="l_kunde_kfz" recordDelimiter="\n" type="delimited">
-<Field label="KuNr_KFZ-VNr_CompHash" name="KuNr_KFZ_VNr_CompHash" size="64" type="string"/>
-<Field label="KuNr_Hash" name="KuNr_Hash" size="64" type="string"/>
-<Field label="KFZ-VNr_Hash" name="KFZ_VNr_Hash" size="64" type="string"/>
-<Field format="yyyy-MM-dd HH:mm:ss" label="Load_DTS" name="Load_DTS" size="19" type="date"/>
-<Field label="Record_SRC" name="Record_SRC" size="30" type="string"/>
-</Record>
-</Metadata>
-<Metadata id="Metadata7">
-<Record fieldDelimiter=";" name="l_kunde_kv" recordDelimiter="\n" type="delimited">
-<Field label="KuNr_KV-VNr_CompHash" name="KuNr_KV_VNr_CompHash" size="64" type="string"/>
-<Field label="KuNr_Hash" name="KuNr_Hash" size="64" type="string"/>
-<Field label="KV-VNr_Hash" name="KV_VNr_Hash" size="64" type="string"/>
-<Field format="yyyy-MM-dd HH:mm:ss" label="Load_DTS" name="Load_DTS" size="19" type="date"/>
-<Field label="Record_SRC" name="Record_SRC" size="30" type="string"/>
-</Record>
-</Metadata>
-<Metadata id="Metadata8">
-<Record fieldDelimiter=";" name="l_kunde_lv" recordDelimiter="\n" type="delimited">
-<Field label="KuNr_LV-VNr_CompHash" name="KuNr_LV_VNr_CompHash" size="64" type="string"/>
-<Field label="KuNr_Hash" name="KuNr_Hash" size="64" type="string"/>
-<Field label="LV-VNr_Hash" name="LV_VNr_Hash" size="64" type="string"/>
-<Field format="yyyy-MM-dd HH:mm:ss" label="Load_DTS" name="Load_DTS" size="19" type="date"/>
-<Field label="Record_SRC" name="Record_SRC" size="30" type="string"/>
-</Record>
-</Metadata>
-<Metadata id="Metadata9">
-<Record fieldDelimiter=";" name="l_kunde_sach" recordDelimiter="\n" type="delimited">
-<Field label="KuNr_Sach-VNr_CompHash" name="KuNr_Sach_VNr_CompHash" size="64" type="string"/>
-<Field label="KuNr_Hash" name="KuNr_Hash" size="64" type="string"/>
-<Field label="Sach-VNr_Hash" name="Sach_VNr_Hash" size="64" type="string"/>
-<Field format="yyyy-MM-dd HH:mm:ss" label="Load_DTS" name="Load_DTS" size="19" type="date"/>
-<Field label="Record_SRC" name="Record_SRC" size="30" type="string"/>
 </Record>
 </Metadata>
 <Metadata id="Metadata3">
@@ -149,15 +43,6 @@
 <Field name="Load_DTS" type="date"/>
 </Record>
 </Metadata>
-<Metadata id="Metadata12">
-<Record fieldDelimiter=";" name="recordName1" recordDelimiter="\r\n" type="delimited">
-<Field name="counterBU" type="integer"/>
-<Field name="counterKFZ" type="integer"/>
-<Field name="counterKV" type="integer"/>
-<Field name="counterLV" type="integer"/>
-<Field delimiter="\n" name="counterSach" type="integer"/>
-</Record>
-</Metadata>
 <Metadata id="Metadata20">
 <Record fieldDelimiter=";" name="temporary" previewAttachmentCharset="UTF-8" recordDelimiter="\n" type="delimited">
 <Field length="9" name="Auszahlung" scale="2" type="decimal"/>
@@ -165,7 +50,6 @@
 </Record>
 </Metadata>
 <Connection database="MYSQL" dbURL="jdbc:mysql://localhost:3306/dwh_core?user=root" id="JDBC0" jdbcSpecific="MYSQL" name="dwh_core" password="toor" type="JDBC" user="root"/>
-<Connection database="MYSQL" dbURL="jdbc:mysql://localhost:3306/dwh_help?user=root" id="JDBC2" jdbcSpecific="MYSQL" name="dwh_help" password="toor" type="JDBC" user="root"/>
 <Connection database="MYSQL" dbURL="jdbc:mysql://localhost:3306/dwh_subject?user=root" id="JDBC1" jdbcSpecific="MYSQL" name="dwh_subject" password="toor" type="JDBC" user="root"/>
 <GraphParameters>
 <GraphParameterFile fileURL="workspace.prm"/>

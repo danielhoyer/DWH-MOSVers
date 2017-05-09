@@ -17,43 +17,11 @@
 <Field name="aggregated" trim="true" type="integer"/>
 </Record>
 </Metadata>
-<Metadata id="Metadata2">
-<Record fieldDelimiter=";" name="CopyOf_kfz_infos" recordDelimiter="\n" type="delimited">
-<Field name="KuNr" size="30" type="string"/>
-<Field format="yyyy-MM-dd" name="Vbeginn" size="10" trim="true" type="date"/>
-<Field length="6" name="HPJahr" scale="2" trim="true" type="decimal"/>
-<Field length="6" name="TKJahr" scale="2" trim="true" type="decimal"/>
-<Field length="6" name="VKJahr" scale="2" trim="true" type="decimal"/>
-</Record>
-</Metadata>
 <Metadata id="Metadata12">
 <Record fieldDelimiter=";" name="CopyOf_kunde_kfz_infos" recordDelimiter="\n" type="delimited">
 <Field name="KuNr" size="30" type="string"/>
 <Field name="PLZ" size="11" trim="true" type="integer"/>
 <Field format="yyyy-MM-dd" name="Vbeginn" size="10" trim="true" type="integer"/>
-</Record>
-</Metadata>
-<Metadata id="Metadata1">
-<Record fieldDelimiter=";" name="CopyOf_kv_infos" recordDelimiter="\n" type="delimited">
-<Field name="KuNr" size="30" type="string"/>
-<Field format="yyyy-MM-dd" name="Vbeginn" size="10" trim="true" type="date"/>
-<Field length="11" name="RateJahr" scale="2" trim="true" type="decimal"/>
-</Record>
-</Metadata>
-<Metadata id="Metadata0" previewAttachmentCharset="UTF-8">
-<Record fieldDelimiter=";" name="CopyOf_lv_infos" previewAttachmentCharset="UTF-8" recordDelimiter="\n" type="delimited">
-<Field name="KuNr" size="30" type="string"/>
-<Field format="yyyy-MM-dd" name="Vbeginn" size="10" trim="true" type="integer"/>
-<Field length="7" name="RateJahr" scale="2" trim="true" type="decimal"/>
-<Field name="EndJahr" trim="true" type="integer"/>
-</Record>
-</Metadata>
-<Metadata id="Metadata4">
-<Record fieldDelimiter=";" name="CopyOf_sach_infos" recordDelimiter="\n" type="delimited">
-<Field name="KuNr" size="30" type="string"/>
-<Field name="Vbeginn" type="date"/>
-<Field length="6" name="RateJahr" scale="2" trim="true" type="decimal"/>
-<Field name="EndJahr" trim="true" type="integer"/>
 </Record>
 </Metadata>
 <Metadata id="Metadata14">
@@ -75,16 +43,6 @@
 <Field name="KfzAbsJahReg" size="11" type="integer"/>
 </Record>
 </Metadata>
-<Metadata id="Metadata8">
-<Record fieldDelimiter=";" name="kfz_infos" recordDelimiter="\n" type="delimited">
-<Field name="KuNr" size="30" type="string"/>
-<Field format="yyyy-MM-dd" name="Vbeginn" size="10" type="date"/>
-<Field length="6" name="HPMonat" scale="2" type="decimal"/>
-<Field length="6" name="TKMonat" scale="2" type="decimal"/>
-<Field length="6" name="VKMonat" scale="2" type="decimal"/>
-<Field format="yyyy-MM-dd HH:mm:ss" name="Load_DTS" size="19" type="date"/>
-</Record>
-</Metadata>
 <Metadata id="Metadata11">
 <Record fieldDelimiter=";" name="kunde_kfz_infos" recordDelimiter="\n" type="delimited">
 <Field name="KuNr" size="30" type="string"/>
@@ -92,52 +50,12 @@
 <Field format="yyyy-MM-dd" name="Vbeginn" size="10" type="date"/>
 </Record>
 </Metadata>
-<Metadata id="Metadata7">
-<Record fieldDelimiter=";" name="kv_infos" recordDelimiter="\n" type="delimited">
-<Field name="KuNr" size="30" type="string"/>
-<Field format="yyyy-MM-dd" name="Vbeginn" size="10" type="date"/>
-<Field length="6" name="RateMonat" scale="2" type="decimal"/>
-<Field format="yyyy-MM-dd HH:mm:ss" name="Load_DTS" size="19" type="date"/>
-</Record>
-</Metadata>
 <Metadata id="Metadata3">
 <Record fieldDelimiter=";" name="load_dts" recordDelimiter="\r\n" type="delimited">
 <Field delimiter="\n" name="Load_DTS" type="date"/>
 </Record>
 </Metadata>
-<Metadata id="Metadata5">
-<Record fieldDelimiter=";" name="lv_infos" recordDelimiter="\n" type="delimited">
-<Field name="KuNr" size="30" type="string"/>
-<Field format="yyyy-MM-dd" name="GebDat" size="10" type="date"/>
-<Field format="yyyy-MM-dd" name="Vbeginn" size="10" type="date"/>
-<Field name="Laufzeit" size="30" type="string"/>
-<Field length="7" name="RateJahr" scale="2" type="decimal"/>
-<Field format="yyyy-MM-dd HH:mm:ss" name="Load_DTS" size="19" type="date"/>
-</Record>
-</Metadata>
-<Metadata id="Metadata6" previewAttachmentCharset="UTF-8">
-<Record fieldDelimiter=";" name="lv_infos_aggr" previewAttachmentCharset="UTF-8" recordDelimiter="\n" type="delimited">
-<Field format="yyyy-MM-dd" name="Vbeginn" size="10" trim="true" type="integer"/>
-<Field name="EndJahr" trim="true" type="integer"/>
-<Field length="7" name="RateJahr" scale="2" trim="true" type="decimal"/>
-</Record>
-</Metadata>
-<Metadata id="Metadata9" previewAttachmentCharset="UTF-8">
-<Record fieldDelimiter=";" name="min_jahr" previewAttachmentCharset="UTF-8" recordDelimiter="\n" type="delimited">
-<Field format="yyyy-MM-dd" name="Vbeginn" size="10" trim="true" type="integer"/>
-</Record>
-</Metadata>
-<Metadata id="Metadata10">
-<Record fieldDelimiter=";" name="sach_infos" recordDelimiter="\n" type="delimited">
-<Field name="KuNr" size="30" type="string"/>
-<Field format="yyyy-MM-dd" name="Vbeginn" size="10" type="date"/>
-<Field name="Laufzeit" size="4" type="integer"/>
-<Field length="6" name="RateJahr" scale="2" type="decimal"/>
-<Field format="yyyy-MM-dd HH:mm:ss" name="Load_DTS" size="19" type="date"/>
-</Record>
-</Metadata>
 <Connection database="MYSQL" dbURL="jdbc:mysql://localhost:3306/dwh_core?user=root" id="JDBC0" jdbcSpecific="MYSQL" name="dwh_core" password="toor" type="JDBC" user="root"/>
-<Connection database="MYSQL" dbURL="jdbc:mysql://localhost:3306/dwh_help?user=root" id="JDBC2" jdbcSpecific="MYSQL" name="dwh_help" password="toor" type="JDBC" user="root"/>
 <Connection database="MYSQL" dbURL="jdbc:mysql://localhost:3306/dwh_subject?user=root" id="JDBC1" jdbcSpecific="MYSQL" name="dwh_subject" password="toor" type="JDBC" user="root"/>
 <GraphParameters>
 <GraphParameterFile fileURL="workspace.prm"/>
@@ -150,8 +68,6 @@
 </LookupTable>
 <Dictionary>
 <Entry input="true" name="load_dts" output="true" type="date"/>
-<Entry dictval.value="67" input="true" name="rentenAlter" output="true" type="integer"/>
-<Entry input="true" name="minJahr" output="true" type="integer"/>
 </Dictionary>
 </Global>
 <Phase number="0">

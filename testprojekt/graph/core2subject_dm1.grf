@@ -35,16 +35,6 @@
 <Field name="Anz_Kf" size="11" type="integer"/>
 </Record>
 </Metadata>
-<Metadata id="Metadata0">
-<Record fieldDelimiter=";" name="dm1_dim_verart" recordDelimiter="\n" type="delimited">
-<Field name="VerArt_id" size="11" trim="true" type="integer"/>
-<Field name="Anz_Lv" size="11" trim="true" type="integer"/>
-<Field name="Anz_Kv" size="11" trim="true" type="integer"/>
-<Field name="Anz_Bu" size="11" trim="true" type="integer"/>
-<Field name="Anz_Sa" size="11" trim="true" type="integer"/>
-<Field name="Anz_Kf" size="11" trim="true" type="integer"/>
-</Record>
-</Metadata>
 <Metadata id="Metadata2">
 <Record fieldDelimiter=";" name="dm1_fakt_anzverkun" recordDelimiter="\n" type="delimited">
 <Field name="KuNr" size="30" type="string"/>
@@ -107,17 +97,7 @@
 <Field delimiter="\n" name="Load_DTS" type="date"/>
 </Record>
 </Metadata>
-<Metadata id="Metadata12">
-<Record fieldDelimiter=";" name="recordName1" recordDelimiter="\r\n" type="delimited">
-<Field name="counterBU" type="integer"/>
-<Field name="counterKFZ" type="integer"/>
-<Field name="counterKV" type="integer"/>
-<Field name="counterLV" type="integer"/>
-<Field delimiter="\n" name="counterSach" type="integer"/>
-</Record>
-</Metadata>
 <Connection database="MYSQL" dbURL="jdbc:mysql://localhost:3306/dwh_core?user=root" id="JDBC0" jdbcSpecific="MYSQL" name="dwh_core" password="toor" type="JDBC" user="root"/>
-<Connection database="MYSQL" dbURL="jdbc:mysql://localhost:3306/dwh_help?user=root" id="JDBC2" jdbcSpecific="MYSQL" name="dwh_help" password="toor" type="JDBC" user="root"/>
 <Connection database="MYSQL" dbURL="jdbc:mysql://localhost:3306/dwh_subject?user=root" id="JDBC1" jdbcSpecific="MYSQL" name="dwh_subject" password="toor" type="JDBC" user="root"/>
 <GraphParameters>
 <GraphParameterFile fileURL="workspace.prm"/>
